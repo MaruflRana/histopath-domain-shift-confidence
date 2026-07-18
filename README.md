@@ -59,6 +59,14 @@ CPU or other CUDA builds may be used for independent development, but they are n
 
 Data are not redistributed. The governed loader uses only the Hugging Face dataset `wltjr1007/Camelyon17-WILDS` through `datasets`; the WILDS/CodaLab automatic download is not part of this pipeline. Users must obtain access under the dataset's terms and keep local data and Hugging Face caches outside version control.
 
+## Data availability
+
+The source dataset is publicly available through the CAMELYON17-WILDS benchmark and the Hugging Face dataset mirror identified in the Methods. The study did not redistribute source histopathology images. Aggregate result tables, non-image figures, protocol documentation, and reproducibility materials supporting this article are publicly available at https://github.com/MaruflRana/histopath-domain-shift-confidence. Raw patch-level predictions, source images, trained checkpoints, authorization records, and local run-state artifacts are not publicly distributed.
+
+## Code availability
+
+Source code, configurations, guarded evaluation scripts, manuscript-generation scripts, and reproducibility documentation are publicly available at https://github.com/MaruflRana/histopath-domain-shift-confidence. The repository intentionally excludes source histopathology images, trained checkpoints, raw patch-level predictions, credentials, authorization records, run sentinels, and environment-specific caches.
+
 ## Reproduction workflow
 
 1. Read `PROJECT_PROTOCOL.md`, `REPRODUCIBILITY.md`, and `docs/SESSION_STATE.md`.
@@ -109,11 +117,18 @@ Software citation metadata are in [CITATION.cff](./CITATION.cff). The manuscript
 
 No DOI, journal publication metadata, release date, or software version has been assigned.
 
-## Author and contact
+## Authors and contact
+
+- Jishan Islam Maruf — first author and principal contributor
+- Ishtiak Al Mamoon — supervision, validation, and manuscript review
+- Shared affiliation: Department of Computer Science and Engineering, IUBAT—International University of Business Agriculture and Technology
+
+Corresponding author:
 
 - Jishan Islam Maruf
-- Department of Computer Science and Engineering, IUBAT
-- Email: jishanislammaruf62@gmail.com
+- jishanislammaruf62@gmail.com
+
+Authorship metadata was updated after the initial public release. Scientific results, protected exp09 evidence, model roles, and final interpretations were unchanged.
 
 ## License status
 
@@ -121,7 +136,7 @@ No open-source license has yet been assigned. All rights are reserved until a li
 
 ## AI-use disclosure summary
 
-OpenAI ChatGPT and Codex and Anthropic Claude Code supported code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. The author reviewed and validated the experimental decisions, execution, sources, results, interpretation, and manuscript revisions and remains responsible for the work. No generative-AI image tool was used to create or alter scientific figures, images, data, or experimental results.
+During preparation of this work, the corresponding author used OpenAI ChatGPT and Codex and Anthropic Claude Code to support code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. All experimental decisions, code execution, source verification, statistical results, scientific interpretation, and manuscript revisions were reviewed and validated by the corresponding author. Both authors reviewed and approved the final manuscript and this disclosure. No generative AI or AI-assisted image-generation tool was used to create or alter scientific figures, images, data, or experimental results.
 
 ## Reproducibility limitations
 

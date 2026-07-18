@@ -34,9 +34,14 @@ CODE_OUT = OUT / "code_release"
 
 TITLE = "When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift"
 ARTICLE_TYPE = "Original Research Article"
-AUTHOR = "Jishan Islam Maruf"
-EMAIL = "jishanislammaruf62@gmail.com"
-PHONE = "+880 2 55091801-5"
+AUTHOR_1 = "Jishan Islam Maruf"
+AUTHOR_1_EMAIL = "jishanislammaruf62@gmail.com"
+AUTHOR_2 = "Ishtiak Al Mamoon"
+AUTHOR_2_EMAIL = "ishtiak.cse@iubat.edu"
+AUTHOR = AUTHOR_1
+EMAIL = AUTHOR_1_EMAIL
+AUTHOR_METADATA = f"{AUTHOR_1}; {AUTHOR_2}"
+REPOSITORY_URL = "https://github.com/MaruflRana/histopath-domain-shift-confidence"
 AFFILIATION_LINES = [
     "Department of Computer Science and Engineering,",
     "IUBAT—International University of Business Agriculture and Technology,",
@@ -48,16 +53,18 @@ AFFILIATION_LINES = [
 AFFILIATION = " ".join(AFFILIATION_LINES)
 
 FUNDING = "This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors."
-COMPETING = "The author declares that there are no competing financial or personal interests that could have influenced the work reported in this article."
-INTEREST_LONG = "Jishan Islam Maruf declares that he has no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper."
+COMPETING = "The authors declare that they have no known competing financial interests or personal relationships that could have influenced the work reported in this article."
+INTEREST_LONG = "Jishan Islam Maruf and Ishtiak Al Mamoon declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper."
 ETHICS = "Ethics approval and informed consent were not required for this study because it involved secondary analysis of a publicly available, de-identified benchmark dataset. No participants were prospectively recruited, no intervention was performed, and no identifiable private information was accessed. Responsibility for the original data collection and its associated ethical approvals remained with the original dataset creators."
 CONSENT = "Not applicable. The manuscript contains no identifiable individual-level information."
-CREDIT = "Jishan Islam Maruf: Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Visualization, Writing – original draft, Writing – review and editing, and Project administration."
-ACKNOWLEDGEMENTS = "The author acknowledges the creators and maintainers of the CAMELYON17 and WILDS resources and the open-source scientific-software communities whose tools supported the reproducible analysis."
+CREDIT = "Jishan Islam Maruf: Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Visualization, Writing – original draft, Writing – review and editing, and Project administration.\n\nIshtiak Al Mamoon: Supervision, Validation, and Writing – review and editing."
+ACKNOWLEDGEMENTS = "The authors acknowledge the creators and maintainers of the CAMELYON17 and WILDS resources and the open-source scientific-software communities whose tools supported the reproducible analysis."
 AI_HEADING = "Declaration of generative AI and AI-assisted technologies in the manuscript preparation process"
-AI_DECLARATION = "During the preparation of this work, the author used OpenAI ChatGPT and Codex and Anthropic Claude Code to support code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. All experimental decisions, code execution, source verification, statistical results, scientific interpretation, and manuscript revisions were reviewed and validated by the author. The author edited the generated material as necessary and takes full responsibility for the content of the article. No generative AI or AI-assisted image-generation tool was used to create or alter scientific figures, images, data, or experimental results."
-DATA_AVAILABILITY = "The source dataset is publicly available through the CAMELYON17-WILDS benchmark and the Hugging Face dataset mirror identified in the Methods. The study did not redistribute source histopathology images. Analysis code, configuration files, frozen protocol records, and non-image derived result tables are available from the corresponding author on reasonable request, subject to the original dataset terms and repository-size constraints."
-CODE_AVAILABILITY = "The analysis code, configurations, evaluation guards, and manuscript-generation scripts are available from the corresponding author on reasonable request. A sanitized public archival release is planned, excluding source images, credentials, environment-specific cache files, and files restricted by source-dataset terms."
+AI_DECLARATION = "During preparation of this work, the corresponding author used OpenAI ChatGPT and Codex and Anthropic Claude Code to support code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. All experimental decisions, code execution, source verification, statistical results, scientific interpretation, and manuscript revisions were reviewed and validated by the corresponding author. Both authors reviewed and approved the final manuscript and this disclosure. No generative AI or AI-assisted image-generation tool was used to create or alter scientific figures, images, data, or experimental results."
+PUBLIC_DATA_AVAILABILITY = f"The source dataset is publicly available through the CAMELYON17-WILDS benchmark and the Hugging Face dataset mirror identified in the Methods. The study did not redistribute source histopathology images. Aggregate result tables, non-image figures, protocol documentation, and reproducibility materials supporting this article are publicly available at {REPOSITORY_URL}. Raw patch-level predictions, source images, trained checkpoints, authorization records, and local run-state artifacts are not publicly distributed."
+PUBLIC_CODE_AVAILABILITY = f"Source code, configurations, guarded evaluation scripts, manuscript-generation scripts, and reproducibility documentation are publicly available at {REPOSITORY_URL}. The repository intentionally excludes source histopathology images, trained checkpoints, raw patch-level predictions, credentials, authorization records, run sentinels, and environment-specific caches."
+BLINDED_DATA_AVAILABILITY = "The source dataset is publicly available through the CAMELYON17-WILDS benchmark and the dataset mirror identified in the Methods. Source histopathology images were not redistributed. Aggregate result tables, non-image figures, protocol documentation, and reproducibility materials are available in a public repository. The identifying repository address is withheld from the blinded manuscript and is provided separately to the editorial office."
+BLINDED_CODE_AVAILABILITY = "Source code, configurations, guarded evaluation scripts, manuscript-generation scripts, and reproducibility documentation are available in a public repository. The identifying repository address is withheld from the blinded manuscript and is provided separately to the editorial office. Source images, trained checkpoints, raw patch-level predictions, authorization records, run sentinels, credentials, and environment-specific caches are excluded."
 
 ABSTRACT = """Hospital domain shift can alter discrimination, confidence reliability, and threshold behavior in computational pathology. We evaluated tumor-patch classification using a locked Camelyon17-WILDS design: centers 0, 3, and 4 for training and in-distribution validation, center 1 for out-of-distribution development, and center 2 for one reserved final evaluation. A center-stratified empirical risk minimization (ERM) control was matched to a predeclared Group Distributionally Robust Optimization (GroupDRO) candidate. On development center 1, GroupDRO achieved higher area under the receiver operating characteristic curve (AUROC) than ERM (0.8956 vs 0.8673). This ordering reversed on center 2: ERM achieved AUROC 0.6984 vs 0.6634 and sensitivity at threshold 0.5 of 0.2411 vs 0.1106, with 32,275 vs 37,825 false negatives. GroupDRO retained higher specificity (0.9569 vs 0.9012). Temperatures fixed before test access improved expected calibration error, Brier score, and negative log-likelihood for both models without changing hard predictions or total false negatives. Fourteen operating points selected only on in-distribution validation data did not reliably preserve nominal sensitivity or specificity on the reserved hospital. A strict one-shot, predeclared hospital evaluation exposed a development-to-test reversal that would have been hidden by reporting the development out-of-distribution center as final evidence. These findings show that development gains, calibrated confidence, and operating thresholds require separately reserved hospital validation; they do not establish clinical readiness."""
 
@@ -424,8 +431,8 @@ def build_manuscript_sections(sections):
         ("4.4 Operating-point instability", sections["5.4 Operating-point instability is a separate transport problem"]),
         ("4.5 Limitations", sections["6. Limitations"]),
         ("5. Conclusion", sections["7. Conclusion"]),
-        ("Data availability", DATA_AVAILABILITY),
-        ("Code availability", CODE_AVAILABILITY),
+        ("Data availability", BLINDED_DATA_AVAILABILITY),
+        ("Code availability", BLINDED_CODE_AVAILABILITY),
         ("Ethics approval and informed consent", ETHICS),
         ("Consent for publication", CONSENT),
         ("Funding", FUNDING),
@@ -476,8 +483,8 @@ def style_document(doc, anonymized=False):
     core = doc.core_properties
     core.title = TITLE
     core.subject = ARTICLE_TYPE
-    core.author = "Anonymous" if anonymized else AUTHOR
-    core.last_modified_by = "Anonymous" if anonymized else AUTHOR
+    core.author = "Anonymous" if anonymized else AUTHOR_METADATA
+    core.last_modified_by = "Anonymous" if anonymized else AUTHOR_METADATA
     core.keywords = "; ".join(KEYWORDS)
     footer = section.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -743,13 +750,20 @@ def make_title_page(manuscript_word_count, abstract_words):
     subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
     subtitle.add_run(ARTICLE_TYPE).italic = True
     doc.add_heading("Author information", level=1)
-    add_label_value(doc, "Author", AUTHOR)
-    add_label_value(doc, "Affiliation", AFFILIATION)
-    add_label_value(doc, "Corresponding author", AUTHOR)
-    add_label_value(doc, "Email", EMAIL)
-    add_label_value(doc, "Postal address", AFFILIATION)
-    add_label_value(doc, "Institutional telephone", PHONE)
+    for byline in [f"{AUTHOR_1}¹*", f"{AUTHOR_2}¹"]:
+        paragraph = doc.add_paragraph()
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        paragraph.add_run(byline)
+    affiliation = doc.add_paragraph()
+    affiliation.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    affiliation.add_run("¹ " + AFFILIATION)
+    add_label_value(doc, "Author 1 email", AUTHOR_1_EMAIL)
+    add_label_value(doc, "Author 2 email", AUTHOR_2_EMAIL)
+    add_label_value(doc, "Corresponding author", AUTHOR_1)
+    add_label_value(doc, "Corresponding-author email", AUTHOR_1_EMAIL)
+    add_label_value(doc, "Corresponding-author postal address", AFFILIATION)
     doc.add_heading("Manuscript counts", level=1)
+    add_label_value(doc, "Authors", 2)
     add_label_value(doc, "Main-text word count", manuscript_word_count)
     add_label_value(doc, "Abstract word count", abstract_words)
     add_label_value(doc, "Tables", 5)
@@ -758,8 +772,8 @@ def make_title_page(manuscript_word_count, abstract_words):
     for heading, text in [
         ("Funding", FUNDING), ("Declaration of competing interests", COMPETING),
         ("CRediT author statement", CREDIT), ("Acknowledgements", ACKNOWLEDGEMENTS),
-        ("Data availability", DATA_AVAILABILITY), ("Code availability", CODE_AVAILABILITY),
-        ("AI-use declaration summary", "OpenAI ChatGPT and Codex and Anthropic Claude Code supported code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. The author reviewed all scientific decisions, results, interpretation, and revisions. No generative AI tool created or altered scientific figures, images, data, or results."),
+        ("Data availability", PUBLIC_DATA_AVAILABILITY), ("Code availability", PUBLIC_CODE_AVAILABILITY),
+        ("AI-use declaration", AI_DECLARATION),
     ]:
         doc.add_heading(heading, level=1)
         add_text_blocks(doc, text)
@@ -777,18 +791,18 @@ def make_cover_letter():
         "This pathology-informatics study evaluates whether a development-stage domain-generalization gain, probability calibration, and validation-selected operating policies transfer to a separately reserved hospital. In a locked Camelyon17-WILDS design, the predeclared GroupDRO primary candidate outperformed a matched ERM control on development center 1, but that ordering reversed on the one-shot final center-2 evaluation. The matched control achieved higher final AUROC, AUPRC, accuracy, sensitivity, F1, and fewer false negatives, while GroupDRO retained higher specificity and slightly higher precision.",
         "The negative model finding is paired with a positive protocol contribution. The model pair, checkpoints, temperatures, metrics, thresholds, and run limit were fixed before test access. The reserved center was evaluated once; temperatures were applied without test-set refitting, thresholds were not selected on test data, and no post-test model selection occurred. The analysis also shows that frozen temperature scaling improved confidence reliability without reducing total misses and that candidate operating points transferred poorly across hospitals.",
         "JPI readers may benefit from this evidence-focused account of hospital shift, model-governance discipline, calibration transfer, and operating-point instability in computational pathology. The manuscript does not claim clinical deployment readiness, a clinically validated threshold, whole-slide or patient-level effectiveness, or universal superiority of either method.",
-        "This work has not been published previously, no preprint is asserted in the project record, and the manuscript is not under consideration elsewhere. As the sole author, I approve the submitted version and confirm that the work will not be submitted elsewhere while it is under JPI review. This research received no specific grant. I declare no competing interests. The study used a public, de-identified benchmark dataset and involved no prospective recruitment or identifiable private information.",
-        "During manuscript preparation, OpenAI ChatGPT and Codex and Anthropic Claude Code supported code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. I reviewed and validated all scientific decisions, execution, sources, results, interpretation, and revisions. No generative AI tool created or altered scientific figures, images, data, or experimental results.",
+        f"{AUTHOR_1} is the first and corresponding author and principal contributor. {AUTHOR_2} is the second author. Both authors reviewed and approved the final manuscript, approve submission to the Journal of Pathology Informatics, accept accountability for the work, and confirm that no author-order dispute exists.",
+        "This work has not been published previously, no preprint is asserted in the project record, and the manuscript is not under consideration elsewhere. Both authors approve the submitted version and confirm that the manuscript is not under consideration elsewhere. This research received no specific grant. The authors declare no competing interests. The study used a public, de-identified benchmark dataset and involved no prospective recruitment or identifiable private information.",
+        f"The public GitHub repository at {REPOSITORY_URL} contains sanitized code, aggregate results, documentation, and non-image figures. Source images, trained checkpoints, raw patch-level predictions, authorization records, and local run-state artifacts are excluded. No test rerun or post-test model selection occurred.",
+        AI_DECLARATION,
         "Thank you for your consideration.",
     ]
     for text in paragraphs:
         add_text_blocks(doc, text)
     doc.add_paragraph("Sincerely,")
-    doc.add_paragraph(AUTHOR)
-    doc.add_paragraph("Corresponding author")
+    doc.add_paragraph(f"{AUTHOR_1}, corresponding author, {AUTHOR_1_EMAIL}")
+    doc.add_paragraph(f"{AUTHOR_2}, second author, {AUTHOR_2_EMAIL}")
     doc.add_paragraph(AFFILIATION)
-    doc.add_paragraph(EMAIL)
-    doc.add_paragraph(PHONE)
     path = OUT / "JPI_Cover_Letter.docx"
     doc.save(path)
     scrub_docx(path)
@@ -812,7 +826,7 @@ def make_interest():
     style_document(doc)
     doc.add_heading("Declaration of Interest", level=1)
     add_text_blocks(doc, INTEREST_LONG)
-    add_text_blocks(doc, "I have nothing to declare.")
+    add_text_blocks(doc, "The authors have nothing to declare.")
     path = OUT / "JPI_Declaration_of_Interest.docx"
     doc.save(path)
     scrub_docx(path)
@@ -827,7 +841,7 @@ def make_author_declarations():
         ("Declaration of competing interests", COMPETING),
         ("Ethics approval and informed consent", ETHICS),
         ("Consent for publication", CONSENT),
-        ("Data availability", DATA_AVAILABILITY), ("Code availability", CODE_AVAILABILITY),
+        ("Data availability", PUBLIC_DATA_AVAILABILITY), ("Code availability", PUBLIC_CODE_AVAILABILITY),
         (AI_HEADING, AI_DECLARATION), ("Acknowledgements", ACKNOWLEDGEMENTS),
     ]:
         doc.add_heading(heading, level=1)
@@ -925,12 +939,15 @@ def make_supplement(data):
     doc.add_heading("S7. Expanded limitations", level=1)
     limitations = source_sections()["6. Limitations"]
     add_text_blocks(doc, strip_markdown(replace_citations(limitations, {})) if not re.search(r"\[@", limitations) else re.sub(r"\s*\[@[^\]]+\]", "", limitations))
-    doc.add_heading("S8. Supplementary inventory", level=1)
+    doc.add_heading("S8. Data and code availability", level=1)
+    add_label_value(doc, "Data availability", BLINDED_DATA_AVAILABILITY)
+    add_label_value(doc, "Code availability", BLINDED_CODE_AVAILABILITY)
+    doc.add_heading("S9. Supplementary inventory", level=1)
     inventory = [
         ["Table S1", "Locked hospital split mapping"], ["Table S2", "Checkpoint hashes and frozen temperatures"],
         ["Table S3", "All 14 frozen candidate operating points"], ["Table S4", "One-shot run provenance"],
         ["Table S5", "Complete high-confidence false-negative audit"], ["Checklist S1", "Reproducibility checklist summary"],
-        ["Text S1", "Expanded limitations"],
+        ["Text S1", "Expanded limitations"], ["Text S2", "Blinded data and code availability"],
     ]
     add_plain_table(doc, ["Item", "Content"], inventory, widths=[1.2, 5.3], font_size=8)
     path = OUT / "JPI_Supplementary_Material.docx"
@@ -982,7 +999,7 @@ def claim_rows():
         (40, "Study limitations", "Yes", "4.5", "Hospital, dataset, patch-level, model, cache, method, calibration, and threshold limitations are explicit."),
         (41, "Implications for practice and intended role", "Yes", "4.1-4.5; 5. Conclusion", "Protocol implications are discussed while clinical readiness and clinical thresholds are explicitly disclaimed."),
         (42, "Protocol or additional technical details", "Yes", "2.7; Supplementary material", "Frozen protocol, one-shot provenance, thresholds, and hashes are supplied."),
-        (43, "Software, trained model, and data availability", "Yes", "Data availability; Code availability", "Access conditions and planned sanitized archival release are stated; no images or checkpoints are redistributed."),
+        (43, "Software, trained model, and data availability", "Yes", "Data availability; Code availability", "Public repository availability and exclusions are stated; the identifying address is withheld in blinded files; source images, checkpoints, and raw predictions are not redistributed."),
         (44, "Funding and role of funders", "Yes", "Funding", "No specific grant was received; therefore no funder had a role."),
     ]
     return values
@@ -1011,7 +1028,7 @@ def scrub_docx(path, anonymized=False):
                 text = data.decode("utf-8")
                 text = re.sub(r"\s+w:rsid(?:R|RDefault|P|RPr|Sect|Del|Tr|RStyle)=\"[^\"]*\"", "", text)
                 if info.filename == "docProps/core.xml":
-                    identity = "Anonymous" if anonymized else AUTHOR
+                    identity = "Anonymous" if anonymized else AUTHOR_METADATA
                     text = re.sub(r"<dc:creator>.*?</dc:creator>", f"<dc:creator>{identity}</dc:creator>", text)
                     text = re.sub(r"<cp:lastModifiedBy>.*?</cp:lastModifiedBy>", f"<cp:lastModifiedBy>{identity}</cp:lastModifiedBy>", text)
                 if info.filename == "docProps/app.xml" and anonymized:
@@ -1228,6 +1245,9 @@ def write_package_docs(abstract_words, manuscript_words, references):
 | Figure resolution verified | PASS | Lossless, unchanged-pixel copies tagged 300 dpi; dimensions in manifest |
 | Supplementary material cited | PASS | Supplementary Table S3 cited in Results 3.5 |
 | Cover letter complete | PASS | `JPI_Cover_Letter.docx` |
+| Two-author approvals complete | PASS | Corresponding-author confirmation record and rebuilt declarations |
+| Public/blinded repository separation | PASS | Exact URL is absent from blinded files and present in identity-bearing/public statements |
+| Reviewer code package anonymous | PASS | Existing ZIP audit passed; rebuild was not required |
 
 Main-text word count: {manuscript_words}. PDF rendering and final human visual inspection are recorded separately in the anonymization and final submission audits.
 """
@@ -1239,11 +1259,16 @@ Main-text word count: {manuscript_words}. PDF rendering and final human visual i
 - Journal: Journal of Pathology Informatics (Elsevier)
 - Article type: {ARTICLE_TYPE}
 - Title: {TITLE}
-- Corresponding author: {AUTHOR} ({EMAIL})
+- Authors: {AUTHOR_1}; {AUTHOR_2}
+- Author order: {AUTHOR_1} first; {AUTHOR_2} second
+- Corresponding author: {AUTHOR_1} ({AUTHOR_1_EMAIL})
+- Public repository: {REPOSITORY_URL}
 - Abstract: {abstract_words} words
 - Main tables: 5
 - Main figures: 6
 - Supplementary files: 2 (`JPI_Supplementary_Material.docx` and `JPI_CLAIM_Checklist.docx`)
+- Official author guide: https://www.sciencedirect.com/journal/journal-of-pathology-informatics/publish/guide-for-authors
+- CLAIM 2024 guideline: https://pubs.rsna.org/doi/10.1148/ryai.240300
 
 ## File roles and recommended upload order
 
@@ -1262,7 +1287,7 @@ Main-text word count: {manuscript_words}. PDF rendering and final human visual i
 
 ## Manual submission-system fields
 
-Enter the exact title, sole author identity, affiliation, corresponding-author address/email/telephone, seven keywords, funding declaration, competing-interest declaration, ethics/consent statements, data/code availability statements, and generative-AI disclosure from the prepared files. Select Original Research Article and double-anonymized review. No ORCID is supplied.
+Enter the exact title, two-author order, shared affiliation, corresponding-author address/email, seven keywords, funding declaration, competing-interest declaration, ethics/consent statements, data/code availability statements, CRediT roles, and generative-AI disclosure from the prepared files. Jishan Islam Maruf remains first and corresponding author; Ishtiak Al Mamoon is second author and is not a corresponding author. All ten coauthor confirmations are complete. Select Original Research Article and double-anonymized review. No ORCID is supplied.
 
 The current article-processing charge and any waiver eligibility must be re-verified on the official JPI/Elsevier pages immediately before submission because charges and policies may change. This package intentionally records no unverified APC amount.
 
@@ -1286,7 +1311,7 @@ def validate_docx_identity(path, anonymized=False):
         names = archive.namelist()
         xml = "\n".join(archive.read(name).decode("utf-8", errors="ignore") for name in names if name.endswith(".xml") or name.endswith(".rels"))
     if anonymized:
-        forbidden = [AUTHOR, EMAIL, "IUBAT", PHONE, "Embankment Drive", "jishanislammaruf62", "Acknowledgements", "CRediT author"]
+        forbidden = [AUTHOR_1, AUTHOR_2, AUTHOR_1_EMAIL, AUTHOR_2_EMAIL, "IUBAT", "Embankment Drive", "MaruflRana", REPOSITORY_URL, "jishanislammaruf62", "ishtiak.cse", "telephone", "Room 1017", "Extension 310", "Acknowledgements", "CRediT author"]
         local_username = os.environ.get("USERNAME", "").strip()
         if local_username:
             forbidden.append(local_username)
@@ -1331,20 +1356,17 @@ def package_assertions(manuscript_sections, references, data):
                 fail(f"Accepted metric mismatch for {model}/{metric}: {observed} != {value}")
     if "predeclared GroupDRO primary" not in all_text or "matched ERM control" not in all_text:
         fail("Controlled model roles are not preserved")
+    if REPOSITORY_URL in all_text or any(value in all_text for value in [AUTHOR_1, AUTHOR_2, AUTHOR_1_EMAIL, AUTHOR_2_EMAIL, "IUBAT", "MaruflRana"]):
+        fail("Blinded manuscript content contains identifying authorship or repository text")
+    if BLINDED_DATA_AVAILABILITY not in all_text or BLINDED_CODE_AVAILABILITY not in all_text:
+        fail("Blinded availability wording is not exact")
+    if COMPETING not in all_text or AI_DECLARATION not in all_text:
+        fail("Final competing-interest or AI-use declaration is not exact")
     if len(references) == 0:
         fail("No references generated")
 
 
-def main():
-    if OUT.exists():
-        if (OUT / "JPI_9D_Build_Record.json").exists():
-            fail(f"Completed output root already exists: {OUT}")
-        if OUT.resolve().parent != (ROOT / "submission").resolve():
-            fail(f"Refusing to clear unexpected path: {OUT.resolve()}")
-        shutil.rmtree(OUT)
-        OUT.mkdir(parents=True)
-    else:
-        OUT.mkdir(parents=True)
+def prepare_package_inputs():
     source = source_sections()
     raw_sections = build_manuscript_sections(source)
     raw_citation_text = "\n".join(body for _, body in raw_sections)
@@ -1362,6 +1384,62 @@ def main():
     manuscript_words = word_count(re.sub(r"\[@[^\]]+\]", "", main_text))
     abstract_words = word_count(ABSTRACT)
     package_assertions(numbered_sections, references, data)
+    return numbered_sections, references, data, payload, manuscript_words, abstract_words, keys, bib
+
+
+def authorship_update_only():
+    if not OUT.exists() or not (OUT / "JPI_9D_Build_Record.json").exists():
+        fail(f"Completed Milestone 9D package is required for a targeted 9F update: {OUT}")
+    numbered_sections, references, data, payload, manuscript_words, abstract_words, _, _ = prepare_package_inputs()
+    make_manuscript(numbered_sections, references, payload)
+    markdown_manuscript(numbered_sections, references, payload)
+    make_title_page(manuscript_words, abstract_words)
+    make_cover_letter()
+    make_interest()
+    make_author_declarations()
+    make_supplement(data)
+    make_claim_checklist()
+    write_package_docs(abstract_words, manuscript_words, references)
+    affected = [
+        "JPI_Title_Page.docx", "JPI_Cover_Letter.docx", "JPI_Declaration_of_Interest.docx",
+        "JPI_Author_Declarations.docx", "JPI_Anonymized_Manuscript.docx",
+        "JPI_Supplementary_Material.docx", "JPI_CLAIM_Checklist.docx",
+    ]
+    blinded = {"JPI_Anonymized_Manuscript.docx", "JPI_Supplementary_Material.docx", "JPI_CLAIM_Checklist.docx"}
+    for name in affected:
+        validate_docx_identity(OUT / name, anonymized=name in blinded)
+    record = {
+        "milestone": "9F",
+        "mode": "authorship_update_only",
+        "authors": [AUTHOR_1, AUTHOR_2],
+        "corresponding_author": AUTHOR_1,
+        "reviewer_code_zip_rebuilt": False,
+        "scientific_tables_or_figures_regenerated": False,
+        "dataset_loaded": False,
+        "hf_split_accessed": False,
+        "image_data_read": False,
+        "checkpoint_access": False,
+        "model_inference": False,
+        "training": False,
+        "calibration_fitting": False,
+        "threshold_tuning": False,
+        "second_ood_test_attempt": False,
+        "affected_files": affected + ["JPI_Anonymized_Manuscript.md", "JPI_Submission_Checklist.md", "JPI_Submission_Package_README.md"],
+    }
+    print(json.dumps(record, indent=2))
+
+
+def main():
+    if OUT.exists():
+        if (OUT / "JPI_9D_Build_Record.json").exists():
+            fail(f"Completed output root already exists: {OUT}")
+        if OUT.resolve().parent != (ROOT / "submission").resolve():
+            fail(f"Refusing to clear unexpected path: {OUT.resolve()}")
+        shutil.rmtree(OUT)
+        OUT.mkdir(parents=True)
+    else:
+        OUT.mkdir(parents=True)
+    numbered_sections, references, data, payload, manuscript_words, abstract_words, keys, bib = prepare_package_inputs()
     make_manuscript(numbered_sections, references, payload)
     markdown_manuscript(numbered_sections, references, payload)
     make_title_page(manuscript_words, abstract_words)
@@ -1408,4 +1486,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description="Build or selectively update the JPI submission package.")
+    parser.add_argument("--authorship-update-only", action="store_true", help="Rebuild only Milestone 9F authorship and availability documents.")
+    args = parser.parse_args()
+    if args.authorship_update_only:
+        authorship_update_only()
+    else:
+        main()

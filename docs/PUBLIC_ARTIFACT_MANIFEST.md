@@ -5,6 +5,7 @@ This classification governs the GitHub publication. It does not delete or alter 
 ## Public and committed
 
 - Root protocol, publication, contribution, security, citation, and reproducibility documentation.
+- Public two-author metadata, confirmation checklist, CRediT roles, and availability statements.
 - `src/`, the governed numbered `scripts/` pipeline, safe configs, verified references, and manuscript/source documentation.
 - Portable aggregate metric JSON files and aggregate, non-row-level CSV tables.
 - Accepted chart PNGs, including final exp09 and manuscript-facing figures.
@@ -30,7 +31,7 @@ This classification governs the GitHub publication. It does not delete or alter 
 
 - The final-test authorization JSON, frozen private-governance config, run-state JSON, completion sentinels, and pre-authorization template/checklist files.
 - Local CA certificates, environment files, credentials, IDE/agent state, and temporary files.
-- `JPI_Title_Page.docx` and `JPI_Cover_Letter.docx`, because the accepted local copies contain a private telephone number. Author name, affiliation, and public contact email remain documented in the repository.
+- `JPI_Title_Page.docx` and `JPI_Cover_Letter.docx`, because identity-bearing editorial files remain local under repository policy. Their Milestone 9F copies contain the finalized two-author metadata and no telephone, room, or extension detail.
 - Historical aggregate JSON files that embed machine-local absolute provenance paths; equivalent scientific values remain available in portable aggregate tables and documentation.
 
 ## Excluded because redundant or non-portable
@@ -41,3 +42,13 @@ This classification governs the GitHub publication. It does not delete or alter 
 ## Scientific evidence policy
 
 The committed exp09 artifacts are aggregate only. Raw per-patch predictions, logits, image or patient metadata, authorization state, and sentinels are not public. Checkpoint identity is represented by SHA256 hashes in `README.md` and `REPRODUCIBILITY.md`.
+
+## Milestone 9F authorship and anonymity policy
+
+- Public metadata identifies Jishan Islam Maruf first and Ishtiak Al Mamoon second.
+- Jishan Islam Maruf remains corresponding author and principal contributor.
+- The anonymized manuscript, supplement, CLAIM checklist, and reviewer ZIP contain no author,
+  affiliation, or identifying repository address.
+- The existing reviewer ZIP passed its identity/repository/security scan and was not rebuilt.
+- Scientific result tables, figures, exp09 evidence, model roles, and final interpretation were
+  unchanged.

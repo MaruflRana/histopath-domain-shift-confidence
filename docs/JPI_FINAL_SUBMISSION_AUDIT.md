@@ -1,11 +1,23 @@
 # Journal of Pathology Informatics Final Submission Audit
 
-**Milestone:** 9D
+**Milestone:** 9F
 **Article type:** Original Research Article
 **Target:** Journal of Pathology Informatics
-**Overall verdict:** **PASS — ready for human pre-upload review**
+**Overall verdict:** **FINALIZED — READY FOR FINAL HUMAN REVIEW**
 
-This was a formatting and quality-assurance milestone using saved manuscript and result artifacts only. No dataset, image, checkpoint, model, or inference path was accessed.
+Milestone 9F finalized two-author metadata and public/blinded availability wording using saved
+manuscript and aggregate result artifacts only. No dataset, HF split, histopathology image,
+checkpoint, model, or inference path was accessed.
+
+## Final authorship
+
+- Author order: Jishan Islam Maruf; Ishtiak Al Mamoon.
+- First, corresponding, and principal-contributor author: Jishan Islam Maruf.
+- Second author: Ishtiak Al Mamoon; not a corresponding author.
+- Shared affiliation: Department of Computer Science and Engineering,
+  IUBAT—International University of Business Agriculture and Technology.
+- Ishtiak Al Mamoon CRediT: Supervision, Validation, and Writing – review and editing.
+- All ten coauthor confirmations: approved.
 
 ## Scientific-integrity checks
 
@@ -24,26 +36,29 @@ This was a formatting and quality-assurance milestone using saved manuscript and
 | 11 | No universal model claim appears | PASS | Neither universal ERM superiority nor universal GroupDRO failure is claimed |
 | 12 | No WSI/patient-level effectiveness claim appears | PASS | Patch-level limitation is explicit |
 | 13 | Ethics statement is supported and bounded | PASS | Public, de-identified secondary analysis; no IUBAT exemption claimed |
-| 14 | AI assistance is disclosed | PASS | Full required declaration before References; summary on title page and cover letter |
+| 14 | AI assistance is disclosed and approved by both authors | PASS | Exact final declaration before References and in identity-bearing declarations |
 | 15 | No generative-AI figure creation occurred | PASS | Submission figures are pixel-identical copies of accepted exp09b figures |
+| 16 | Author order and contribution roles are exact | PASS | Jishan first/corresponding/principal; Ishtiak second with only the approved three CRediT roles |
+| 17 | Public and blinded availability statements are separated | PASS | Public URL appears only in public/identity-bearing files; blinded wording withholds the identifying address |
+| 18 | Competing-interest wording is final | PASS | Both authors declare no known competing interests or relevant personal relationships |
 
 ## Journal-format and package checks
 
 | # | Check | Result | Evidence |
 |---:|---|---|---|
-| 16 | Citations are defined and numbered correctly | PASS | 30 references, first-appearance order 1–30, no missing or duplicate list number |
-| 17 | Abstract is no more than 250 words | PASS | 221 words |
-| 18 | Keyword count is exactly seven | PASS | Seven binding English keywords |
-| 19 | Five highlights meet the 85-character limit | PASS | 68, 69, 63, 64, and 69 characters |
-| 20 | Double-anonymization audit passes | PASS | See `submission/jpi/JPI_Anonymization_Audit.md` |
-| 21 | All DOCX files open successfully | PASS | Ten editable DOCX files parsed successfully |
-| 22 | PDF proof renders without clipping | PASS | 11 pages rendered and visually inspected |
-| 23 | All figures pass visual inspection | PASS | Six PNG and six TIFF copies; source pixels unchanged; 300 dpi metadata |
-| 24 | All tables are readable and cited | PASS | Five editable main tables, sequentially cited |
-| 25 | No placeholders remain | PASS | No unresolved citation, TODO, TBD, or insertion marker detected |
-| 26 | No exp09 evidence artifact changed | PASS | Authorization, metrics, tables, and run/summary state hashes match accepted baselines |
-| 27 | No dataset or model action occurred | PASS | Build helpers import no `torch`, `torchvision`, `datasets`, or project data/model module |
-| 28 | No second `ood_test` attempt occurred | PASS | Attempt count remains one; scripts 38 and 39 were not run |
+| 19 | Citations are defined and numbered correctly | PASS | 30 references, first-appearance order 1–30, no missing or duplicate list number |
+| 20 | Abstract is no more than 250 words | PASS | 221 words |
+| 21 | Keyword count is exactly seven | PASS | Seven binding English keywords |
+| 22 | Five highlights meet the 85-character limit | PASS | 68, 69, 63, 64, and 69 characters |
+| 23 | Double-anonymization audit passes | PASS | Manuscript, supplement, CLAIM checklist, and reviewer ZIP; see `submission/jpi/JPI_Anonymization_Audit.md` |
+| 24 | Affected DOCX files open successfully | PASS | Seven rebuilt DOCX files parsed and passed OOXML structure checks |
+| 25 | PDF proof renders without clipping | PASS | 11 pages rendered and visually inspected |
+| 26 | Scientific figures remain unchanged | PASS | 64-file scientific-figure tree digest matches the pre-9F baseline; no figure was regenerated or opened by the builder |
+| 27 | All tables remain unchanged | PASS | 99-file result-table tree digest matches the pre-9F baseline |
+| 28 | No placeholders remain in final package metadata | PASS | No pending coauthor or availability marker detected |
+| 29 | No exp09 evidence artifact changed | PASS | All nine protected hashes match accepted baselines |
+| 30 | No dataset or model action occurred | PASS | Targeted build imports no project data/model module and records every prohibited action as false |
+| 31 | No second `ood_test` attempt occurred | PASS | Attempt count remains one; scripts 38 and 39 were not run |
 
 ## References, tables, and figures
 
@@ -55,7 +70,10 @@ This was a formatting and quality-assurance milestone using saved manuscript and
 
 ## Code-release QA
 
-The sanitized local archive contains 91 files and is reproducibly timestamped. It excludes images, caches, `.venv`, credentials, checkpoints, raw patch-level predictions, authorization records, run sentinels, and JPI build helpers containing author metadata. Credential/path scanning passed. Archive SHA256:
+The sanitized local archive contains 91 files. It excludes images, caches, `.venv`, credentials,
+checkpoints, raw patch-level predictions, authorization records, run sentinels, and JPI build
+helpers containing author metadata. Its 9F identity/repository/credential/path scan passed, so it
+was not rebuilt. Archive SHA256:
 
 `27FF9ED54AA4C4A1898216B8E098D6716DB0709FC81D6845E835FA6ABDE1ED2C`
 
@@ -67,4 +85,8 @@ Microsoft Word, LibreOffice, and Pandoc were unavailable in the environment. The
 
 ## Final disposition
 
-The package is scientifically and structurally complete. The only remaining action is a human visual review in the intended desktop editor and manual entry/upload through the JPI submission system. Do not rerun `ood_test` or reopen model development.
+The authorship and availability update is finalized. The package is scientifically and
+structurally complete, but it has not been submitted. The remaining action is a human visual
+review in Microsoft Word, re-verification of portal/APC/waiver requirements, and manual
+entry/upload through the JPI submission system. Do not rerun `ood_test` or reopen model
+development.

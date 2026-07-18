@@ -7,9 +7,9 @@ Chronological record of completed, accepted milestones. Each entry lists goal, w
 built, how it was verified, and the accepted outcome. Development milestones remain
 development evidence; Milestone 9A is the completed locked final center-2 evaluation.
 
-**Current state:** the latest completed milestone is **Milestone 9E**. The single explicitly
+**Current state:** the latest completed milestone is **Milestone 9F**. The single explicitly
 authorized `ood_test` inference and CSV-only summary completed with attempt count 1 in Milestone
-9A; Milestones 9B through 9E did not rerun `ood_test`. No second `ood_test` inference is
+9A; Milestones 9B through 9F did not rerun `ood_test`. No second `ood_test` inference is
 authorized. Earlier entries preserve
 their then-current “latest milestone” and “next step” wording as historical record only; those
 statements are not active instructions. Current next action is final JPI portal review and manual
@@ -2214,3 +2214,30 @@ No threshold has been committed.
 - **Exact next recommendation:** complete the human Microsoft Word/JPI portal review, re-check
   current APC/waiver and submission fields, and submit manually. Do not reopen model development,
   rerun `ood_test`, or begin another experiment/manuscript rewrite.
+
+## Milestone 9F — Finalized coauthorship and public availability metadata ✅ COMPLETE / ACCEPTED
+
+- **Date:** 2026-07-18.
+- **Scope:** authorship and publication metadata only. No dataset/HF split/image, checkpoint,
+  model, inference, training, calibration fitting, threshold tuning, post-test selection, or
+  second `ood_test` attempt; scripts 38 and 39 were not run.
+- **Final authorship:** Jishan Islam Maruf first; Ishtiak Al Mamoon second. Jishan remains
+  corresponding author and principal contributor. Ishtiak's CRediT roles are limited to
+  Supervision, Validation, and Writing – review and editing. All ten confirmations are approved.
+- **Availability:** public and identity-bearing files use the exact GitHub data/code statements;
+  blinded files state that a public repository exists while withholding its identifying address.
+  The repository remains unlicensed and no DOI/release metadata was invented.
+- **Affected package:** rebuilt the title page, cover letter, author declarations, declaration of
+  interest, anonymized manuscript DOCX/Markdown/PDF, supplement, CLAIM checklist, and submission
+  README/checklist. Result tables and scientific figures were not regenerated.
+- **Anonymization:** PASS for the manuscript, supplement, CLAIM checklist, and 91-entry reviewer
+  ZIP. Both authors, emails, IUBAT, `MaruflRana`, the exact URL, personal paths, comments, tracked
+  changes, hidden text, and custom properties are absent. The ZIP did not require rebuilding.
+- **Scientific immutability:** 9/9 protected hashes passed before and after. The 99-file
+  result-table tree digest and 64-file scientific-figure tree digest were unchanged. Scientific
+  manuscript numeric tokens, GroupDRO-primary/ERM-control roles, and the unfavorable final
+  reversal remained unchanged.
+- **Status:** **FINALIZED — READY FOR FINAL HUMAN REVIEW**. The manuscript is not submitted.
+- **Exact next recommendation:** open the affected DOCX files in Microsoft Word, re-check current
+  JPI portal/APC/waiver and file-designation requirements, inspect the portal proof, and submit
+  manually. Do not rerun `ood_test` or reopen model development.

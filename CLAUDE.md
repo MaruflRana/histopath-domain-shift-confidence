@@ -14,16 +14,20 @@ source of truth for data. When instructions disagree, follow the stricter rule.
 - The pipeline is script-based (`scripts/00…43`), Windows-native, and uses Hugging Face.
 - Data comes only from `wltjr1007/Camelyon17-WILDS`. Never use WILDS/CodaLab download.
 - The four logical splits in §4 are locked. Never invent random splits.
-- **Latest completed milestone = 9E.** Milestones 1 through 9E are complete and accepted.
+- **Latest completed milestone = 9F.** Milestones 1 through 9F are complete and accepted.
+- Milestone 9F finalized author order Jishan Islam Maruf then Ishtiak Al Mamoon. Jishan remains
+  first/corresponding author and principal contributor; Ishtiak's roles are limited to
+  Supervision, Validation, and Writing – review and editing. Public/blinded availability wording
+  and affected submission files were rebuilt and audited. No scientific/test action occurred.
 - Milestone 9E published the sanitized project to the public GitHub repository
   `https://github.com/MaruflRana/histopath-domain-shift-confidence` on `main`. The initial public
   commit is `9907d6efb546c529fa5226fd0182edac17878b86`. Publication audits passed; datasets,
   checkpoints, raw predictions, authorization/run-state/sentinel files, caches, certificates,
   local archives, and redundant TIFF copies were excluded. Accepted exp09 hashes remained
   unchanged and no dataset/model/test action occurred.
-- Milestone 9D created the complete Journal of Pathology Informatics (JPI) Original Research
-  submission package under `submission/jpi/` for sole author Jishan Islam Maruf
-  (`jishanislammaruf62@gmail.com`). It includes the title page, double-anonymized manuscript,
+- Milestone 9D created the original Journal of Pathology Informatics (JPI) Original Research
+  submission package under `submission/jpi/`; Milestone 9F superseded its initial author metadata
+  with the finalized two-author record. It includes the title page, double-anonymized manuscript,
   PDF proof, highlights, cover letter, declarations, editable tables, six figure pairs,
   supplementary material, CLAIM checklist, sanitized code archive, and PASS audits.
 - The JPI abstract is **221 words**, there are exactly **7** keywords, and all five highlights
@@ -153,7 +157,18 @@ by `src/data/hf_camelyon17.py`.
 
 ## 8. Current accepted state
 
-**Milestones 1 through 9E are complete and accepted.**
+**Milestones 1 through 9F are complete and accepted.**
+
+Milestone 9F finalized the approved coauthorship and publication metadata. Final author order is
+Jishan Islam Maruf followed by Ishtiak Al Mamoon; Jishan remains first author, corresponding
+author, and principal contributor. Ishtiak's exact CRediT roles are Supervision, Validation, and
+Writing – review and editing. The title page, cover letter, declarations, anonymized manuscript,
+supplement, CLAIM checklist, public metadata, and availability statements were updated. Blinded
+files withhold the identifying GitHub address and passed anonymity/metadata audits. The reviewer
+ZIP remained anonymous and did not require rebuilding. All nine protected hashes plus the complete
+result-table and scientific-figure tree digests remained unchanged. No dataset, HF split, image,
+checkpoint, inference, training, calibration fitting, threshold tuning, or second `ood_test`
+attempt occurred. The manuscript remains unsubmitted and model development remains closed.
 
 Milestone 9E sanitized, initialized, audited, and published the repository at
 `https://github.com/MaruflRana/histopath-domain-shift-confidence` as a public GitHub repository

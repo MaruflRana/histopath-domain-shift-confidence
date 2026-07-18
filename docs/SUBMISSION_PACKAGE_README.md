@@ -2,18 +2,24 @@
 
 ## Current submission package
 
-Milestone 9D completed the Journal of Pathology Informatics Original Research package at
-`submission/jpi/` for sole author Jishan Islam Maruf. The authoritative upload map is
+Milestone 9F finalized the Journal of Pathology Informatics Original Research package at
+`submission/jpi/` for first and corresponding author Jishan Islam Maruf and second author Ishtiak
+Al Mamoon. The authoritative upload map is
 `submission/jpi/JPI_Submission_Package_README.md`. The double-anonymization audit and final
 scientific-integrity audit both pass. The abstract is 221 words, there are seven keywords and five
 compliant highlights, and all standard declarations—including AI-use disclosure—are complete.
+
+All ten coauthor confirmations are recorded in `docs/COAUTHOR_CONFIRMATION_CHECKLIST.md`. Jishan
+Islam Maruf remains the principal contributor. Ishtiak Al Mamoon's CRediT roles are limited to
+Supervision, Validation, and Writing – review and editing. Public data/code statements name the
+GitHub repository; blinded files withhold its identifying address.
 
 Milestone 9E published the sanitized, submission-aligned project to the public GitHub repository
 `https://github.com/MaruflRana/histopath-domain-shift-confidence` on branch `main`. The initial
 public commit is `9907d6efb546c529fa5226fd0182edac17878b86`. The public repository intentionally
 excludes datasets, checkpoints, raw predictions, private authorization/run-state/sentinel files,
-certificates, local archives, redundant TIFF copies, and identity-bearing documents containing
-private telephone information. Accepted exp09 evidence remained immutable, and no dataset,
+certificates, local archives, redundant TIFF copies, and local identity-bearing editorial
+documents. Accepted exp09 evidence remained immutable, and no dataset,
 model, checkpoint, image, HF split, or inference path was accessed during publication.
 
 ## Recommended positioning

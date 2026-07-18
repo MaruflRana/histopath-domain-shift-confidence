@@ -216,27 +216,33 @@ The study's main implication is that development OOD gains, calibration results,
 
 ## Data availability
 
-The study used the publicly distributed Camelyon17-WILDS benchmark. The official WILDS dataset page describes the standardized Camelyon17 variant as public-domain/CC0 and documents its hospital-domain structure [@Koh2021WILDS; @WILDSCamelyon17Dataset]. This project accessed a Hugging Face mirror identified as `wltjr1007/Camelyon17-WILDS`; the authors must verify the final mirror-specific access wording and repository link before submission.
+The source dataset is publicly available through the CAMELYON17-WILDS benchmark and the Hugging Face dataset mirror identified in the Methods. The study did not redistribute source histopathology images. Aggregate result tables, non-image figures, protocol documentation, and reproducibility materials supporting this article are publicly available at https://github.com/MaruflRana/histopath-domain-shift-confidence. Raw patch-level predictions, source images, trained checkpoints, authorization records, and local run-state artifacts are not publicly distributed.
 
 ## Code availability
 
-Code, frozen configuration, checkpoint provenance, output schemas, final metrics, and reproducibility records are organized in the project repository. Public repository location, release tag, archival DOI, and artifact-access instructions are placeholders to be completed before submission.
+Source code, configurations, guarded evaluation scripts, manuscript-generation scripts, and reproducibility documentation are publicly available at https://github.com/MaruflRana/histopath-domain-shift-confidence. The repository intentionally excludes source histopathology images, trained checkpoints, raw patch-level predictions, credentials, authorization records, run sentinels, and environment-specific caches.
 
 ## Ethics statement
 
-This study performed secondary computational analysis of a publicly distributed benchmark dataset and involved no new patient recruitment or intervention. The appropriate institutional review, exemption, consent, and de-identification statement must be confirmed by the authors and aligned with the dataset's original governance before submission. [AUTHOR TO CONFIRM: ethics/IRB language]
+Ethics approval and informed consent were not required for this study because it involved secondary analysis of a publicly available, de-identified benchmark dataset. No participants were prospectively recruited, no intervention was performed, and no identifiable private information was accessed. Responsibility for the original data collection and its associated ethical approvals remained with the original dataset creators.
 
 ## Conflict of interest
 
-[AUTHOR TO COMPLETE: conflict-of-interest declaration]
+The authors declare that they have no known competing financial interests or personal relationships that could have influenced the work reported in this article.
 
 ## Funding
 
-[AUTHOR TO COMPLETE: funding sources and grant numbers]
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
 
 ## Author contributions
 
-[AUTHOR TO COMPLETE: author roles using the target venue's contribution taxonomy]
+Jishan Islam Maruf: Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Visualization, Writing – original draft, Writing – review and editing, and Project administration.
+
+Ishtiak Al Mamoon: Supervision, Validation, and Writing – review and editing.
+
+## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
+
+During preparation of this work, the corresponding author used OpenAI ChatGPT and Codex and Anthropic Claude Code to support code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. All experimental decisions, code execution, source verification, statistical results, scientific interpretation, and manuscript revisions were reviewed and validated by the corresponding author. Both authors reviewed and approved the final manuscript and this disclosure. No generative AI or AI-assisted image-generation tool was used to create or alter scientific figures, images, data, or experimental results.
 
 ## Acknowledgments
 

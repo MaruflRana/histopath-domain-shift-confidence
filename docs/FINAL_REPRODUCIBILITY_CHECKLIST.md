@@ -18,7 +18,8 @@ Dataset identifier: `wltjr1007/Camelyon17-WILDS`.
 | 7F GroupDRO-by-center | Predeclared primary | `results/checkpoints/exp07f_groupdro_resnet18/best.pt` | 134,250,665 | `CE0DC65DC6106648F2ABB77C603746A1DB2B856F9672B01C2E8F540BEEAD8502` |
 | 7F center-stratified ERM | Matched control | `results/checkpoints/exp07f_centerstrat_erm_resnet18/best.pt` | 134,250,601 | `8BF990BE517A41AA74D111E0A4F4111A05A9FE416919261D979F2FD65AE974FF` |
 
-The hashes above are read from the accepted frozen manifests and inference sentinel. Milestone 9B does not load either checkpoint.
+The hashes above are read from the accepted frozen manifests and inference sentinel. Milestones 9B
+through 9F did not load either checkpoint.
 
 ## Frozen temperatures
 
@@ -116,3 +117,17 @@ The hashes above are read from the accepted frozen manifests and inference senti
 ## Why a second run is prohibited
 
 The reserved hospital was intended to provide one unbiased final evaluation after the model pair, checkpoints, temperatures, thresholds, metrics, and output policy were frozen. Once center 2 was read, another inference attempt could enable test-driven debugging or selection and would break the one-shot interpretation. The durable `RUN_STARTED`/attempt record and completed sentinels therefore remain permanent. All later manuscript and reporting work must use the saved exp09 artifacts.
+
+## Milestone 9F public availability and authorship update
+
+- Public repository: `https://github.com/MaruflRana/histopath-domain-shift-confidence`
+- Public aggregate artifacts: result tables, non-image figures, protocol documentation, source
+  code/configurations, guarded evaluation scripts, manuscript-generation scripts, and
+  reproducibility documentation.
+- Excluded artifacts: source histopathology images, trained checkpoints, raw patch-level
+  predictions, credentials, authorization records, run sentinels, local run state, and caches.
+- Final author order: Jishan Islam Maruf; Ishtiak Al Mamoon.
+- Corresponding author and principal contributor: Jishan Islam Maruf.
+- Milestone mode: authorship/publication metadata only; no dataset, HF split, image, checkpoint,
+  inference, training, calibration fitting, threshold tuning, or second `ood_test` attempt.
+- Protected exp09 hash audit: 9/9 PASS before and after the update.

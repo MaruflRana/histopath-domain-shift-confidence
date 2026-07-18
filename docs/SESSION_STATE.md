@@ -10,13 +10,24 @@ project so a fresh session can resume with zero ambiguity._
 
 ## 1. One-line status
 
-**Milestones 1 → 9E are complete and accepted; the latest completed milestone is
-Milestone 9E.** The explicitly authorized single final locked `ood_test` inference completed once,
+**Milestones 1 → 9F are complete and accepted; the latest completed milestone is
+Milestone 9F.** The explicitly authorized single final locked `ood_test` inference completed once,
 followed by the CSV-only final summary. Run start:
 **2026-07-16T17:16:25.455291+00:00**; inference complete:
 **2026-07-16T17:35:17.051997+00:00**; summary complete:
 **2026-07-16T17:35:20.395673+00:00**. Attempt count = **1**. `ood_test` is no longer unread, and no
 second access or inference attempt is authorized.
+
+Milestone 9F finalized approved coauthorship and availability metadata. Final author order is
+**Jishan Islam Maruf**, then **Ishtiak Al Mamoon**. Jishan remains first author, corresponding
+author, and principal contributor; Ishtiak's exact CRediT roles are Supervision, Validation, and
+Writing – review and editing. All ten authorship confirmations are approved. Public files contain
+the GitHub data/code address; blinded files withhold it and passed identity, metadata, comments,
+tracked-change, hidden-text, and custom-property audits. The 91-entry reviewer ZIP passed and was
+not rebuilt. Only affected documents were rebuilt; all nine protected hashes and the 99-file
+result-table and 64-file scientific-figure tree digests remained unchanged. No dataset, HF split,
+histopathology image, checkpoint, inference, training, calibration fitting, threshold tuning, or
+second `ood_test` attempt occurred. The manuscript has not been submitted.
 
 Milestone 9E sanitized, initialized, audited, and published the project to the public GitHub
 repository `https://github.com/MaruflRana/histopath-domain-shift-confidence` on branch `main`.
@@ -49,8 +60,8 @@ sentinel, and performed no inference, training, calibration fitting, threshold t
 post-test selection. Existing exp09 evidence remained unchanged.
 
 Milestone 9D formatted the accepted 9C manuscript for **Journal of Pathology Informatics** as an
-Original Research Article. Sole author and corresponding author: **Jishan Islam Maruf**
-(`jishanislammaruf62@gmail.com`). The complete package is under `submission/jpi/` and includes an
+Original Research Article. Its initial author metadata was superseded by the finalized Milestone
+9F two-author record. The complete package is under `submission/jpi/` and includes an
 identity-bearing title page, double-anonymized editable manuscript, 11-page PDF proof, five
 highlights, cover letter, declarations, five editable main tables, six lossless 300-dpi TIFF/PNG
 figure pairs, supplementary material, completed CLAIM 2024 checklist, and a sanitized local code

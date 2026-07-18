@@ -261,11 +261,11 @@ The study's main implication is that development OOD gains, calibration results,
 
 ## Data availability
 
-The source dataset is publicly available through the CAMELYON17-WILDS benchmark and the Hugging Face dataset mirror identified in the Methods. The study did not redistribute source histopathology images. Analysis code, configuration files, frozen protocol records, and non-image derived result tables are available from the corresponding author on reasonable request, subject to the original dataset terms and repository-size constraints.
+The source dataset is publicly available through the CAMELYON17-WILDS benchmark and the dataset mirror identified in the Methods. Source histopathology images were not redistributed. Aggregate result tables, non-image figures, protocol documentation, and reproducibility materials are available in a public repository. The identifying repository address is withheld from the blinded manuscript and is provided separately to the editorial office.
 
 ## Code availability
 
-The analysis code, configurations, evaluation guards, and manuscript-generation scripts are available from the corresponding author on reasonable request. A sanitized public archival release is planned, excluding source images, credentials, environment-specific cache files, and files restricted by source-dataset terms.
+Source code, configurations, guarded evaluation scripts, manuscript-generation scripts, and reproducibility documentation are available in a public repository. The identifying repository address is withheld from the blinded manuscript and is provided separately to the editorial office. Source images, trained checkpoints, raw patch-level predictions, authorization records, run sentinels, credentials, and environment-specific caches are excluded.
 
 ## Ethics approval and informed consent
 
@@ -281,11 +281,11 @@ This research did not receive any specific grant from funding agencies in the pu
 
 ## Declaration of competing interests
 
-The author declares that there are no competing financial or personal interests that could have influenced the work reported in this article.
+The authors declare that they have no known competing financial interests or personal relationships that could have influenced the work reported in this article.
 
 ## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
 
-During the preparation of this work, the author used OpenAI ChatGPT and Codex and Anthropic Claude Code to support code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. All experimental decisions, code execution, source verification, statistical results, scientific interpretation, and manuscript revisions were reviewed and validated by the author. The author edited the generated material as necessary and takes full responsibility for the content of the article. No generative AI or AI-assisted image-generation tool was used to create or alter scientific figures, images, data, or experimental results.
+During preparation of this work, the corresponding author used OpenAI ChatGPT and Codex and Anthropic Claude Code to support code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. All experimental decisions, code execution, source verification, statistical results, scientific interpretation, and manuscript revisions were reviewed and validated by the corresponding author. Both authors reviewed and approved the final manuscript and this disclosure. No generative AI or AI-assisted image-generation tool was used to create or alter scientific figures, images, data, or experimental results.
 
 ## References
 

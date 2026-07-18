@@ -65,7 +65,15 @@ This is the agent-onboarding entry point. Read this file, then `CLAUDE.md`,
 
 ## Current accepted state
 
-**Milestones 1 through 9E are complete; the latest completed milestone is Milestone 9E.**
+**Milestones 1 through 9F are complete; the latest completed milestone is Milestone 9F.**
+Milestone 9F finalized the approved two-author order (**Jishan Islam Maruf**, then **Ishtiak Al
+Mamoon**), retained Jishan Islam Maruf as first/corresponding author and principal contributor,
+updated public and blinded availability wording, rebuilt only affected JPI documents, and passed
+anonymization, reviewer-ZIP, scientific-integrity, and GitHub publication audits. The repository
+remains unlicensed. No dataset, HF split, image, checkpoint, inference, training, calibration
+fitting, threshold tuning, or second `ood_test` attempt occurred; all protected hashes and
+table/figure tree digests remained unchanged.
+
 Milestone 9E published the sanitized project to the public GitHub repository
 `https://github.com/MaruflRana/histopath-domain-shift-confidence` on branch `main`. The initial
 public commit is `9907d6efb546c529fa5226fd0182edac17878b86`. Security, privacy, portability,
@@ -75,9 +83,9 @@ redundant TIFF submission copies were excluded. Accepted exp09 evidence retained
 SHA256 hashes; no dataset, model, checkpoint, image, HF split, or inference path was accessed,
 and `ood_test` was not rerun.
 
-Milestone 9D created and audited the complete JPI Original Research submission package at
-`submission/jpi/` for sole author **Jishan Islam Maruf**
-(`jishanislammaruf62@gmail.com`). The title page, double-anonymized manuscript, PDF proof,
+Milestone 9D created and audited the original JPI Original Research submission package at
+`submission/jpi/`; its initial author metadata was superseded by the finalized Milestone 9F
+two-author record. The title page, double-anonymized manuscript, PDF proof,
 highlights, cover letter, declarations, editable tables, figure copies, supplement, CLAIM
 checklist, and sanitized code archive are complete. The abstract is 221 words; the keyword count
 is 7; all five highlights are at most 85 characters; anonymization and scientific-integrity audits

@@ -5,7 +5,10 @@
 - Journal: Journal of Pathology Informatics (Elsevier)
 - Article type: Original Research Article
 - Title: When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift
+- Authors: Jishan Islam Maruf; Ishtiak Al Mamoon
+- Author order: Jishan Islam Maruf first; Ishtiak Al Mamoon second
 - Corresponding author: Jishan Islam Maruf (jishanislammaruf62@gmail.com)
+- Public repository: https://github.com/MaruflRana/histopath-domain-shift-confidence
 - Abstract: 221 words
 - Main tables: 5
 - Main figures: 6
@@ -30,15 +33,10 @@
 
 ## Manual submission-system fields
 
-Enter the exact title, sole author identity, affiliation, corresponding-author address/email/telephone, seven keywords, funding declaration, competing-interest declaration, ethics/consent statements, data/code availability statements, and generative-AI disclosure from the prepared files. Select Original Research Article and double-anonymized review. No ORCID is supplied.
+Enter the exact title, two-author order, shared affiliation, corresponding-author address/email, seven keywords, funding declaration, competing-interest declaration, ethics/consent statements, data/code availability statements, CRediT roles, and generative-AI disclosure from the prepared files. Jishan Islam Maruf remains first and corresponding author; Ishtiak Al Mamoon is second author and is not a corresponding author. All ten coauthor confirmations are complete. Select Original Research Article and double-anonymized review. No ORCID is supplied.
 
 The current article-processing charge and any waiver eligibility must be re-verified on the official JPI/Elsevier pages immediately before submission because charges and policies may change. This package intentionally records no unverified APC amount.
 
 ## Final pre-upload inspection
 
 Open every DOCX and the PDF proof; inspect page breaks, tables, superscript citations, figure files, captions, and anonymization. Confirm that the submission portal has not exposed title-page identity to reviewers. Verify the current journal declarations, APC/waiver information, and required file designations. Do not rerun `ood_test` or reopen model development.
-
-Milestone 9D automated and visual QA passed. See `JPI_Anonymization_Audit.md` and
-`../../docs/JPI_FINAL_SUBMISSION_AUDIT.md`. Because Word/LibreOffice was unavailable in the build
-environment, the PDF proof used a document-only fallback renderer; open the DOCX in Microsoft Word
-and inspect the JPI portal-generated proof before submission.

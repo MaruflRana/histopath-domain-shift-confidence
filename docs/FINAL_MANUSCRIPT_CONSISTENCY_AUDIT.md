@@ -3,8 +3,27 @@
 **Milestone:** 9B
 **Date:** 2026-07-17
 **Mode:** saved-artifact-only manuscript/results integration
-**Verdict:** **PASS — internally consistent and ready for literature verification and
-journal-template formatting**
+**Verdict:** **PASS — scientific content internally consistent; authorship and availability
+metadata finalized for human submission review**
+
+## Milestone 9F addendum
+
+The final author order is Jishan Islam Maruf followed by Ishtiak Al Mamoon. Jishan Islam Maruf
+remains first author, corresponding author, and principal contributor. Ishtiak Al Mamoon's CRediT
+roles are limited to Supervision, Validation, and Writing – review and editing. All ten authorship
+confirmations are complete.
+
+Public source documents use the exact GitHub data/code availability wording. The anonymized
+manuscript, blinded supplement, and CLAIM checklist withhold the identifying repository address.
+Machine-readable comparison confirmed that the scientific body and all scientific numeric tokens
+in the rebuilt anonymized manuscript are unchanged. The GroupDRO-primary/ERM-control roles,
+unfavorable final reversal, calibration interpretation, and non-clinical operating-point caveat
+are unchanged.
+
+Milestone 9F loaded no dataset or HF split, read no image data, accessed no checkpoint, and ran no
+inference, training, calibration fitting, threshold tuning, or second `ood_test` attempt. The nine
+protected hashes, 99-file result-table tree digest, and 64-file scientific-figure tree digest all
+matched their pre-update baselines.
 
 ## Scope and non-execution statement
 
@@ -90,12 +109,7 @@ CORAL/DANN/model-based uncertainty methods.
 
 ## Remaining work
 
-The manuscript is not yet submission-final because external references and venue metadata were not
-invented in 9B. The next gated work is:
-
-1. verify citations listed in `docs/LITERATURE_CITATION_GAPS.md`;
-2. select a venue and apply its manuscript template;
-3. complete author, ethics, funding, conflict, contribution, and data/code-availability metadata;
-4. perform final language and submission-format QA.
-
-No additional `ood_test` inference or exploratory model development is required or authorized.
+The manuscript package is finalized for human review but has not been submitted. Open the affected
+DOCX files in Microsoft Word, verify the portal-generated proof and current APC/waiver and file
+designation requirements, then submit manually. No additional `ood_test` inference or exploratory
+model development is required or authorized.

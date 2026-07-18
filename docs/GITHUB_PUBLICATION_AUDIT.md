@@ -61,8 +61,11 @@ submission copies remain locally regenerable through the package builder.
 - JSON parse: 13 files passed
 - YAML/CFF parse: 9 files passed
 
-Two identity-bearing JPI documents containing a private telephone detail were excluded rather
-than modified. No credential value or private telephone number was printed or committed.
+Two identity-bearing JPI documents containing a private telephone detail were excluded from the
+initial commit. No credential or private telephone value was printed during the audit. A later
+Milestone 9F review found that a legacy telephone literal remained in the tracked package-builder
+source; it was removed from the current tree without rewriting existing commits, as required by
+the publication instructions.
 
 ## Large-file and remote-content audits
 
@@ -109,3 +112,16 @@ remains unlicensed pending a manual license decision.
 The next action remains human visual review in Microsoft Word, re-verification of current JPI
 APC/waiver and portal requirements, and manual JPI submission. Model development must not be
 reopened and `ood_test` must not be rerun.
+
+## Milestone 9F public metadata update
+
+The public metadata now lists Jishan Islam Maruf first and Ishtiak Al Mamoon second. Jishan Islam
+Maruf remains corresponding author and principal contributor. `README.md`, `CITATION.cff`, public
+manuscript source, availability documentation, audits, and safe anonymized submission materials
+were updated. Identity-bearing title-page and cover-letter DOCX files remain local and ignored.
+
+Staged and remote security scans for the 9F commit must allow only the two approved public author
+emails and must reject credentials, private contact details, absolute paths, governance files,
+checkpoints, predictions, datasets, caches, TIFF files, and reviewer correspondence. The final
+local/remote SHA and staged counts are recorded in the Milestone 9F closeout report rather than
+embedded self-referentially here.

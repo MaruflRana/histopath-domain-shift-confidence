@@ -148,7 +148,7 @@ def render_docx(path, output_dir):
         str(pdf_path), pagesize=letter, rightMargin=0.72 * inch, leftMargin=0.72 * inch,
         topMargin=0.72 * inch, bottomMargin=0.65 * inch,
         title=document.core_properties.title or path.stem,
-        author="Anonymous" if anonymous else "Jishan Islam Maruf",
+        author="Anonymous" if anonymous else "Jishan Islam Maruf; Ishtiak Al Mamoon",
         subject=document.core_properties.subject or "Journal submission document",
     )
     story = []
@@ -195,7 +195,7 @@ def render_docx(path, output_dir):
     return pdf_path, len(pdf_doc)
 
 
-def main():
+def main(only=None):
     if RENDER.exists():
         if RENDER.resolve().parent != (ROOT / "tmp").resolve():
             raise RuntimeError("Unexpected render directory")
@@ -203,7 +203,12 @@ def main():
     RENDER.mkdir(parents=True)
     register_fonts()
     report = []
-    for path in sorted(SOURCE.glob("*.docx")):
+    paths = sorted(SOURCE.glob("*.docx"))
+    if only:
+        paths = [path for path in paths if path.name == only]
+        if not paths:
+            raise FileNotFoundError(f"Requested DOCX not found: {only}")
+    for path in paths:
         output = RENDER / path.stem
         pdf_path, pages = render_docx(path, output)
         report.append(f"{path.name}\t{pages}\t{pdf_path.relative_to(ROOT).as_posix()}")
@@ -214,4 +219,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description="Render JPI DOCX files with the document-only fallback renderer.")
+    parser.add_argument("--only", help="Render only the named DOCX file.")
+    args = parser.parse_args()
+    main(only=args.only)

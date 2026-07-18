@@ -21,5 +21,8 @@
 | Figure resolution verified | PASS | Lossless, unchanged-pixel copies tagged 300 dpi; dimensions in manifest |
 | Supplementary material cited | PASS | Supplementary Table S3 cited in Results 3.5 |
 | Cover letter complete | PASS | `JPI_Cover_Letter.docx` |
+| Two-author approvals complete | PASS | Corresponding-author confirmation record and rebuilt declarations |
+| Public/blinded repository separation | PASS | Exact URL is absent from blinded files and present in identity-bearing/public statements |
+| Reviewer code package anonymous | PASS | Existing ZIP audit passed; rebuild was not required |
 
 Main-text word count: 3162. PDF rendering and final human visual inspection are recorded separately in the anonymization and final submission audits.
