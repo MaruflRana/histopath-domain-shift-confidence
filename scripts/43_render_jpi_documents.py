@@ -6,6 +6,7 @@ review PDFs with PDFium. It imports no dataset, model, training, or evaluation m
 """
 
 import os
+from io import BytesIO
 from pathlib import Path
 import re
 import shutil
@@ -17,6 +18,7 @@ from docx.table import Table as DocxTable
 from docx.text.paragraph import Paragraph as DocxParagraph
 from docx.oxml.table import CT_Tbl
 from docx.oxml.text.paragraph import CT_P
+from docx.oxml.ns import qn
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_LEFT
 from reportlab.lib.pagesizes import letter
@@ -24,7 +26,9 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
+from reportlab.platypus import Image as ReportLabImage
 from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from PIL import Image as PILImage
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,6 +78,22 @@ def paragraph_markup(paragraph):
             text = f"<super>{text}</super>"
         parts.append(text)
     return "".join(parts) or escape(paragraph.text)
+
+
+def paragraph_images(paragraph):
+    images = []
+    for blip in paragraph._p.xpath(".//a:blip"):
+        relationship_id = blip.get(qn("r:embed"))
+        if not relationship_id:
+            continue
+        part = paragraph.part.related_parts.get(relationship_id)
+        if part is None:
+            continue
+        blob = part.blob
+        with PILImage.open(BytesIO(blob)) as image:
+            width, height = image.size
+        images.append((blob, width, height))
+    return images
 
 
 def styles():
@@ -155,9 +175,19 @@ def render_docx(path, output_dir):
     for block in iter_blocks(document):
         if isinstance(block, DocxParagraph):
             text = paragraph_markup(block)
+            embedded_images = paragraph_images(block)
             has_page_break = 'w:type="page"' in block._p.xml
             if has_page_break:
                 story.append(PageBreak())
+            if embedded_images:
+                for blob, width, height in embedded_images:
+                    display_width = min(pdf.width, 6.35 * inch)
+                    display_height = display_width * height / width
+                    rendered_image = ReportLabImage(BytesIO(blob), width=display_width, height=display_height)
+                    rendered_image.hAlign = "CENTER"
+                    story.append(rendered_image)
+                if not text.strip():
+                    continue
             if not text.strip():
                 if has_page_break:
                     continue
@@ -187,12 +217,16 @@ def render_docx(path, output_dir):
             story.append(Spacer(1, 7))
     pdf.build(story, onFirstPage=add_page_number, onLaterPages=add_page_number)
     pdf_doc = pdfium.PdfDocument(str(pdf_path))
-    for index in range(len(pdf_doc)):
+    page_count = len(pdf_doc)
+    for index in range(page_count):
         page = pdf_doc[index]
         bitmap = page.render(scale=2.0, rotation=0)
         image = bitmap.to_pil()
         image.save(output_dir / f"page_{index + 1:03d}.png", dpi=(144, 144))
-    return pdf_path, len(pdf_doc)
+        bitmap.close()
+        page.close()
+    pdf_doc.close()
+    return pdf_path, page_count
 
 
 def main(only=None):

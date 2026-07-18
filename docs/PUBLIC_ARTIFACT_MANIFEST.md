@@ -9,11 +9,13 @@ This classification governs the GitHub publication. It does not delete or alter 
 - `src/`, the governed numbered `scripts/` pipeline, safe configs, verified references, and manuscript/source documentation.
 - Portable aggregate metric JSON files and aggregate, non-row-level CSV tables.
 - Accepted chart PNGs, including final exp09 and manuscript-facing figures.
+- Deterministic methodology-workflow source and review outputs:
+  `results/figures/figure_methodology_workflow.svg`, `.pdf`, and `.png`, plus its source script.
 - The anonymized JPI manuscript, PDF proof, highlights, declarations, captions, tables, supplement, CLAIM checklist, manifests, and audits that contain no private telephone detail.
 
 ## Public but regenerated
 
-- JPI TIFF submission copies are generated locally from accepted PNG/source figures by the package builder.
+- JPI TIFF submission copies for Figures 1-7 are generated locally from accepted PNG/source figures by the package builder.
 - The local JPI reproducibility ZIP is generated from the public code and manifests when needed; the ZIP itself is not versioned.
 - Machine-local logs can be regenerated during a new, separately governed development workflow and are not public evidence for the accepted run.
 
@@ -52,3 +54,13 @@ The committed exp09 artifacts are aggregate only. Raw per-patch predictions, log
 - The existing reviewer ZIP passed its identity/repository/security scan and was not rebuilt.
 - Scientific result tables, figures, exp09 evidence, model roles, and final interpretation were
   unchanged.
+
+## Milestone 9G title and figure policy
+
+- The exact revised manuscript title is public metadata.
+- Figure 1 is a deterministic schematic derived only from the locked protocol; no generative
+  image model, histopathology image, or external icon was used.
+- The six accepted scientific figures are public as Figures 2-7 and remain pixel-identical to
+  their accepted sources.
+- TIFF submission copies remain local and ignored; SVG/PDF/PNG workflow assets are committed.
+- Journal submission is intentionally on hold; no portal action is authorized.

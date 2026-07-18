@@ -1,5 +1,15 @@
 # GitHub Publication Audit
 
+## Milestone 9G public-metadata addendum
+
+The exact revised manuscript title, deterministic workflow SVG/PDF/PNG, updated public manuscript
+sources, seven-figure manifest/captions, and safe audit/context files are approved public changes.
+TIFF submission copies, identity-bearing local title/cover documents, the reviewer ZIP, datasets,
+checkpoints, raw predictions, authorization/run-state/sentinel files, and caches remain excluded.
+The staged security, identity, absolute-path, and size audits must pass before the Milestone 9G
+commit is pushed. The repository remains public and unlicensed. Journal submission remains on
+hold and no portal action is authorized.
+
 ## Publication record
 
 - Milestone: 9E

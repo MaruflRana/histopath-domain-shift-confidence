@@ -1,7 +1,7 @@
 # AGENTS.md
 
-**Project:** Confidence-Aware Tumor Detection Under Hospital Domain Shift in
-Histopathology: Calibration, Uncertainty, and Selective Prediction
+**Project/manuscript:** Hospital Domain Shift Can Reverse Development Gains in Histopathology
+Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
 
 This is the agent-onboarding entry point. Read this file, then `CLAUDE.md`,
 `docs/SESSION_STATE.md`, and `docs/NEXT_ACTIONS.md` before acting. Full chronological history is in
@@ -65,7 +65,14 @@ This is the agent-onboarding entry point. Read this file, then `CLAUDE.md`,
 
 ## Current accepted state
 
-**Milestones 1 through 9F are complete; the latest completed milestone is Milestone 9F.**
+**Milestones 1 through 9G are complete; the latest completed milestone is Milestone 9G.**
+Milestone 9G applied the exact revised manuscript title, added a deterministic locked-workflow
+schematic as Figure 1, and renumbered the six accepted scientific figures as Figures 2-7. Only
+affected JPI materials were rebuilt; anonymization and scientific-integrity audits passed.
+Existing figure pixels, numerical results, author order/roles, and protected exp09 evidence were
+unchanged. No dataset/model/test action or generative-image model was used. Journal submission is
+intentionally on hold; no portal action is currently authorized.
+
 Milestone 9F finalized the approved two-author order (**Jishan Islam Maruf**, then **Ishtiak Al
 Mamoon**), retained Jishan Islam Maruf as first/corresponding author and principal contributor,
 updated public and blinded availability wording, rebuilt only affected JPI documents, and passed
@@ -87,7 +94,7 @@ Milestone 9D created and audited the original JPI Original Research submission p
 `submission/jpi/`; its initial author metadata was superseded by the finalized Milestone 9F
 two-author record. The title page, double-anonymized manuscript, PDF proof,
 highlights, cover letter, declarations, editable tables, figure copies, supplement, CLAIM
-checklist, and sanitized code archive are complete. The abstract is 221 words; the keyword count
+checklist, seven-figure main package, and sanitized code archive are complete. The abstract is 221 words; the keyword count
 is 7; all five highlights are at most 85 characters; anonymization and scientific-integrity audits
 both pass. No dataset, model, checkpoint, inference, training, calibration fitting, threshold
 tuning, or exp09 modification occurred.
@@ -139,6 +146,7 @@ Primary package entry points:
 Recommended journal order: **Journal of Pathology Informatics**, **Journal of Medical Imaging**,
 then **PLOS ONE** as the safer fallback.
 
-**Next action:** human visual review in Microsoft Word, re-verification of current APC/waiver and
-portal requirements, and manual submission through the JPI submission system. Do not rerun
-`ood_test`, reopen model development, add exploratory methods, or alter the scientific result.
+**Next action:** Journal submission is intentionally on hold. No portal action is currently
+authorized. The next action is a future manual journal review when separately approved. Do not
+rerun `ood_test`, reopen model development, add exploratory methods, or alter the scientific
+result.

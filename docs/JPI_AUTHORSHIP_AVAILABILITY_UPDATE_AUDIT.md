@@ -1,7 +1,16 @@
 # JPI Authorship and Availability Update Audit
 
 **Milestone:** 9F
-**Status:** **FINALIZED — READY FOR FINAL HUMAN REVIEW**
+**Status:** **FINALIZED — AUTHORSHIP UNCHANGED IN MILESTONE 9G**
+
+## Milestone 9G addendum
+
+The manuscript title was revised to **Hospital Domain Shift Can Reverse Development Gains in
+Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point
+Transfer** and a deterministic methodology workflow was added as Figure 1. Author order,
+corresponding-author status, affiliation, emails, CRediT roles, competing-interest wording,
+availability wording, and AI-use disclosure were not changed. Blinded documents and the workflow
+figure remain free of author and repository identity. Submission is on hold.
 
 ## Metadata transition
 
@@ -110,7 +119,8 @@ predictions, authorization files, and sentinels were not changed.
 
 ## Final submission status
 
-**FINALIZED — READY FOR FINAL HUMAN REVIEW**
+**ON HOLD — READY FOR FUTURE HUMAN REVIEW**
 
-The manuscript has not been submitted. Final Microsoft Word inspection, portal/APC/waiver checks,
-portal proof review, and manual submission remain human actions.
+The manuscript has not been submitted. Journal submission is intentionally on hold; no portal
+action is currently authorized. Future Microsoft Word and journal review remain human actions
+requiring separate authorization.

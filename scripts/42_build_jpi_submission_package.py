@@ -32,7 +32,8 @@ OUT = ROOT / "submission" / "jpi"
 FIG_OUT = OUT / "figures"
 CODE_OUT = OUT / "code_release"
 
-TITLE = "When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift"
+OLD_TITLE = "When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift"
+TITLE = "Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer"
 ARTICLE_TYPE = "Original Research Article"
 AUTHOR_1 = "Jishan Islam Maruf"
 AUTHOR_1_EMAIL = "jishanislammaruf62@gmail.com"
@@ -86,13 +87,16 @@ HIGHLIGHTS = [
     "Development-selected operating points were unstable across hospitals.",
 ]
 
+METHODOLOGY_CAPTION = "Figure 1. Locked multi-hospital development and reserved-center evaluation workflow. CAMELYON17-WILDS centers 0, 3, and 4 supplied center-stratified training and in-distribution validation data. Center 1 was used for out-of-distribution development comparison and temperature fitting. Model checkpoints, roles, calibration temperatures, candidate operating thresholds, metrics, output schemas, and the one-run limit were frozen before center 2 was accessed. The reserved center-2 dataset was instantiated once and traversed once while the predeclared GroupDRO primary candidate and matched ERM control were evaluated in the same batch loop. Final analyses covered discrimination, calibration, operating-point transport, and high-confidence false negatives. No center-2 calibration refitting, threshold tuning, checkpoint replacement, post-test model selection, or repeat evaluation was permitted."
+
 FIGURES = [
-    (1, "exp09b_development_to_final_auroc_auprc.png", "Figure 1. Development and final held-out discrimination. AUROC and area under the precision-recall curve (AUPRC) are shown for the predeclared Group Distributionally Robust Optimization (GroupDRO) primary candidate and matched empirical risk minimization (ERM) control on development center 1 and the separately reserved final center 2. Development results informed model assessment; final results came from one authorized held-out run."),
-    (2, "exp09b_final_default_threshold_metrics.png", "Figure 2. Final held-out center-2 default-threshold performance. Accuracy, sensitivity, specificity, precision, and F1 are shown at the prespecified threshold of 0.5 for the predeclared GroupDRO primary candidate and matched ERM control. The threshold is a reporting default, not a clinically validated operating threshold."),
-    (3, "exp09b_development_test_reversal.png", "Figure 3. Development-to-final reversal in AUROC. GroupDRO minus ERM was positive on development center 1 and negative on final held-out center 2. GroupDRO remains the predeclared primary candidate and ERM the matched control; the final result does not imply universal ERM superiority."),
-    (4, "exp09b_final_calibration_raw_vs_calibrated.png", "Figure 4. Raw versus frozen-temperature calibrated reliability on final held-out center 2. Expected calibration error (ECE), Brier score, and negative log-likelihood (NLL) improved after applying temperatures frozen before test access. Calibration was not refit on center 2 and did not change hard predictions or total false negatives."),
-    (5, "exp09b_operating_point_transfer.png", "Figure 5. Transfer of candidate operating points to final held-out center 2. Nominal development sensitivity or specificity targets are compared with final achieved values for thresholds selected only on in-distribution validation data. All operating points are candidate/non-clinical; no threshold was selected or tuned on the final hospital."),
-    (6, "exp09b_high_confidence_fn_raw_vs_calibrated.png", "Figure 6. High-confidence false negatives on final held-out center 2. Counts at confidence thresholds 0.90, 0.95, and 0.99 are shown before and after frozen temperature scaling for GroupDRO and matched ERM. Calibration reduced confidently stated misses but did not change the underlying total false-negative count."),
+    (1, "figure_methodology_workflow.png", METHODOLOGY_CAPTION),
+    (2, "exp09b_development_to_final_auroc_auprc.png", "Figure 2. Development and final held-out discrimination. AUROC and area under the precision-recall curve (AUPRC) are shown for the predeclared Group Distributionally Robust Optimization (GroupDRO) primary candidate and matched empirical risk minimization (ERM) control on development center 1 and the separately reserved final center 2. Development results informed model assessment; final results came from one authorized held-out run."),
+    (3, "exp09b_final_default_threshold_metrics.png", "Figure 3. Final held-out center-2 default-threshold performance. Accuracy, sensitivity, specificity, precision, and F1 are shown at the prespecified threshold of 0.5 for the predeclared GroupDRO primary candidate and matched ERM control. The threshold is a reporting default, not a clinically validated operating threshold."),
+    (4, "exp09b_development_test_reversal.png", "Figure 4. Development-to-final reversal in AUROC. GroupDRO minus ERM was positive on development center 1 and negative on final held-out center 2. GroupDRO remains the predeclared primary candidate and ERM the matched control; the final result does not imply universal ERM superiority."),
+    (5, "exp09b_final_calibration_raw_vs_calibrated.png", "Figure 5. Raw versus frozen-temperature calibrated reliability on final held-out center 2. Expected calibration error (ECE), Brier score, and negative log-likelihood (NLL) improved after applying temperatures frozen before test access. Calibration was not refit on center 2 and did not change hard predictions or total false negatives."),
+    (6, "exp09b_operating_point_transfer.png", "Figure 6. Transfer of candidate operating points to final held-out center 2. Nominal development sensitivity or specificity targets are compared with final achieved values for thresholds selected only on in-distribution validation data. All operating points are candidate/non-clinical; no threshold was selected or tuned on the final hospital."),
+    (7, "exp09b_high_confidence_fn_raw_vs_calibrated.png", "Figure 7. High-confidence false negatives on final held-out center 2. Counts at confidence thresholds 0.90, 0.95, and 0.99 are shown before and after frozen temperature scaling for GroupDRO and matched ERM. Calibration reduced confidently stated misses but did not change the underlying total false-negative count."),
 ]
 
 CHECKPOINTS = [
@@ -418,12 +422,12 @@ def build_manuscript_sections(sections):
         ("2.10 High-confidence false-negative audit", sections["3.8 High-confidence false-negative audit"]),
         ("2.11 Metrics and reporting policy", sections["3.9 Statistical and reporting policy"]),
         ("3. Results", ""),
-        ("3.1 Full development evaluation", sections["4.1 Full-development evaluation favored GroupDRO"] + "\n\nDevelopment and final discrimination are summarized in Table 2 and Figure 1."),
-        ("3.2 Reserved-hospital final evaluation", result_center2 + "\n\nFinal default-threshold metrics are summarized in Table 3 and Figure 2."),
-        ("3.3 Development-to-test reversal", reversal + "\n\nThe predeclared AUROC reversal is displayed in Figure 3."),
-        ("3.4 Held-out calibration", sections["4.3 Frozen temperature scaling improved held-out reliability for both models"] + "\n\nRaw and calibrated reliability metrics are summarized in Table 4 and Figure 4."),
-        ("3.5 Operating-point transportability", sections["4.4 Development-selected operating targets were not reliably preserved"] + "\n\nTransfer of the 14 frozen candidate/non-clinical operating points is shown in Figure 5 and detailed in Supplementary Table S3."),
-        ("3.6 High-confidence false negatives", sections["4.5 Calibration sharply reduced high-confidence missed tumors without reducing total misses"] + "\n\nCounts are summarized in Table 5 and Figure 6."),
+        ("3.1 Full development evaluation", sections["4.1 Full-development evaluation favored GroupDRO"] + "\n\nDevelopment and final discrimination are summarized in Table 2 and Figure 2."),
+        ("3.2 Reserved-hospital final evaluation", result_center2 + "\n\nFinal default-threshold metrics are summarized in Table 3 and Figure 3."),
+        ("3.3 Development-to-test reversal", reversal + "\n\nThe predeclared AUROC reversal is displayed in Figure 4."),
+        ("3.4 Held-out calibration", sections["4.3 Frozen temperature scaling improved held-out reliability for both models"] + "\n\nRaw and calibrated reliability metrics are summarized in Table 4 and Figure 5."),
+        ("3.5 Operating-point transportability", sections["4.4 Development-selected operating targets were not reliably preserved"] + "\n\nTransfer of the 14 frozen candidate/non-clinical operating points is shown in Figure 6 and detailed in Supplementary Table S3."),
+        ("3.6 High-confidence false negatives", sections["4.5 Calibration sharply reduced high-confidence missed tumors without reducing total misses"] + "\n\nCounts are summarized in Table 5 and Figure 7."),
         ("4. Discussion", ""),
         ("4.1 Principal findings", sections["5.1 The negative model result is scientifically informative"]),
         ("4.2 Implications for domain-generalization evaluation", sections["5.2 Possible explanations remain hypotheses"] + "\n\n" + sections["5.5 The protocol contribution"]),
@@ -667,6 +671,23 @@ def insert_table(doc, number, payload):
     add_table_note(doc, note)
 
 
+def insert_methodology_figure(doc):
+    source = ROOT / "results" / "figures" / "figure_methodology_workflow.png"
+    if not source.exists():
+        fail(f"Missing deterministic methodology figure: {source}")
+    image_paragraph = doc.add_paragraph()
+    image_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    image_paragraph.paragraph_format.keep_with_next = True
+    image_paragraph.add_run().add_picture(str(source), width=Inches(6.35))
+    caption = doc.add_paragraph()
+    caption.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    caption.paragraph_format.keep_together = True
+    caption.paragraph_format.space_after = Pt(8)
+    label, text = METHODOLOGY_CAPTION.split(". ", 1)
+    caption.add_run(label + ". ").bold = True
+    caption.add_run(text)
+
+
 def make_manuscript(markdown_sections, references, table_payload):
     doc = Document()
     style_document(doc, anonymized=True)
@@ -690,6 +711,8 @@ def make_manuscript(markdown_sections, references, table_payload):
         add_text_blocks(doc, body)
         if heading == "2.1 Dataset and locked hospital split":
             insert_table(doc, 1, table_payload[1])
+            doc.add_page_break()
+            insert_methodology_figure(doc)
         elif heading == "3.1 Full development evaluation":
             doc.add_page_break()
             insert_table(doc, 2, table_payload[2])
@@ -726,6 +749,13 @@ def markdown_manuscript(markdown_sections, references, table_payload):
             for row in rows:
                 lines.append("| " + " | ".join(str(x) for x in row) + " |")
             lines.extend(["", f"*Note.* {note}", ""])
+            if table_number == 1:
+                lines.extend([
+                    "![Locked multi-hospital development and reserved-center evaluation workflow](figures/Figure_1.png)",
+                    "",
+                    f"**{METHODOLOGY_CAPTION.split('. ', 1)[0]}.** {METHODOLOGY_CAPTION.split('. ', 1)[1]}",
+                    "",
+                ])
     lines.extend(["## References", ""])
     for number, (_, reference_text) in enumerate(references, start=1):
         lines.extend([f"{number}. {reference_text}", ""])
@@ -767,7 +797,7 @@ def make_title_page(manuscript_word_count, abstract_words):
     add_label_value(doc, "Main-text word count", manuscript_word_count)
     add_label_value(doc, "Abstract word count", abstract_words)
     add_label_value(doc, "Tables", 5)
-    add_label_value(doc, "Figures", 6)
+    add_label_value(doc, "Figures", 7)
     add_label_value(doc, "Supplementary files", 2)
     for heading, text in [
         ("Funding", FUNDING), ("Declaration of competing interests", COMPETING),
@@ -944,6 +974,7 @@ def make_supplement(data):
     add_label_value(doc, "Code availability", BLINDED_CODE_AVAILABILITY)
     doc.add_heading("S9. Supplementary inventory", level=1)
     inventory = [
+        ["Main figure set", "Figure 1 methodology workflow; accepted scientific figures renumbered as Figures 2-7"],
         ["Table S1", "Locked hospital split mapping"], ["Table S2", "Checkpoint hashes and frozen temperatures"],
         ["Table S3", "All 14 frozen candidate operating points"], ["Table S4", "One-shot run provenance"],
         ["Table S5", "Complete high-confidence false-negative audit"], ["Checklist S1", "Reproducibility checklist summary"],
@@ -995,7 +1026,7 @@ def claim_rows():
         (36, "Demographic and clinical characteristics", "No", "4.5 Limitations", "Patient demographic and clinical characteristics were unavailable for this patch benchmark analysis."),
         (37, "Performance across data partitions", "Yes", "3.1-3.2; Tables 2-3", "Development and final results are separated and fully reported."),
         (38, "Diagnostic performance and precision", "No", "2.11; 4.5", "AUROC, AUPRC, calibration, and confusion counts are reported, but confidence intervals were not computed."),
-        (39, "Failure analysis", "Yes", "3.6; Table 5; Figure 6", "Confusion counts and high-confidence false-negative audit are reported; images were not re-opened post-test."),
+        (39, "Failure analysis", "Yes", "3.6; Table 5; Figure 7", "Confusion counts and high-confidence false-negative audit are reported; images were not re-opened post-test."),
         (40, "Study limitations", "Yes", "4.5", "Hospital, dataset, patch-level, model, cache, method, calibration, and threshold limitations are explicit."),
         (41, "Implications for practice and intended role", "Yes", "4.1-4.5; 5. Conclusion", "Protocol implications are discussed while clinical readiness and clinical thresholds are explicitly disclaimed."),
         (42, "Protocol or additional technical details", "Yes", "2.7; Supplementary material", "Frozen protocol, one-shot provenance, thresholds, and hashes are supplied."),
@@ -1063,20 +1094,26 @@ def make_figure_copies():
             mode = checked_tiff.mode
         if not (tiff_equal and png_equal):
             fail(f"Figure {number} pixels changed during copy conversion")
+        source_pixel_sha256 = hashlib.sha256(source_pixels.tobytes()).hexdigest().upper()
         rows.append({
-            "figure_number": number,
+            "old_figure_number": "" if number == 1 else number - 1,
+            "new_figure_number": number,
             "source_path": source.relative_to(ROOT).as_posix(),
             "submission_path_tiff": tiff.relative_to(ROOT).as_posix(),
             "review_path_png": png.relative_to(ROOT).as_posix(),
+            "source_sha256": sha256(source),
+            "source_pixel_sha256": source_pixel_sha256,
+            "submission_tiff_sha256": sha256(tiff),
+            "review_png_sha256": sha256(png),
             "width_pixels": width,
             "height_pixels": height,
             "dpi": round(float(dpi)),
             "color_mode": mode,
             "file_size_bytes": tiff.stat().st_size,
             "manuscript_citation": f"Figure {number}",
-            "scientific_content_unchanged": True,
+            "unchanged_content_status": "NEW_DETERMINISTIC_SCHEMATIC" if number == 1 else "PIXEL_IDENTICAL_TO_ACCEPTED_SOURCE",
             "visual_QA": "PASS",
-            "notes": "Lossless RGB copy; no resampling, axis change, or generative editing.",
+            "notes": "Programmatic schematic; no generative image model or source imagery." if number == 1 else "Lossless RGB copy; no resampling, axis change, or generative editing.",
         })
     pd.DataFrame(rows).to_csv(OUT / "JPI_Figure_Manifest.csv", index=False, quoting=csv.QUOTE_MINIMAL)
 
@@ -1232,7 +1269,7 @@ def write_package_docs(abstract_words, manuscript_words, references):
 | 1–7 keywords | PASS | Exactly 7 |
 | Highlights character limits | PASS | Five bullets; counts: {', '.join(str(len(x)) for x in HIGHLIGHTS)} |
 | All references resolved | PASS | {len(references)} cited references; no unresolved markers |
-| All figures cited | PASS | Figures 1–6 cited sequentially |
+| All figures cited | PASS | Figures 1–7 cited sequentially |
 | All tables cited | PASS | Tables 1–5 cited sequentially |
 | Declarations complete | PASS | Title page, manuscript, and declarations files |
 | Title-page/anonymized separation | PASS | Identity and acknowledgements are excluded from the anonymized manuscript |
@@ -1248,6 +1285,7 @@ def write_package_docs(abstract_words, manuscript_words, references):
 | Two-author approvals complete | PASS | Corresponding-author confirmation record and rebuilt declarations |
 | Public/blinded repository separation | PASS | Exact URL is absent from blinded files and present in identity-bearing/public statements |
 | Reviewer code package anonymous | PASS | Existing ZIP audit passed; rebuild was not required |
+| Submission status | PASS | ON HOLD; no portal action is authorized |
 
 Main-text word count: {manuscript_words}. PDF rendering and final human visual inspection are recorded separately in the anonymization and final submission audits.
 """
@@ -1265,7 +1303,7 @@ Main-text word count: {manuscript_words}. PDF rendering and final human visual i
 - Public repository: {REPOSITORY_URL}
 - Abstract: {abstract_words} words
 - Main tables: 5
-- Main figures: 6
+- Main figures: 7
 - Supplementary files: 2 (`JPI_Supplementary_Material.docx` and `JPI_CLAIM_Checklist.docx`)
 - Official author guide: https://www.sciencedirect.com/journal/journal-of-pathology-informatics/publish/guide-for-authors
 - CLAIM 2024 guideline: https://pubs.rsna.org/doi/10.1148/ryai.240300
@@ -1278,7 +1316,7 @@ Main-text word count: {manuscript_words}. PDF rendering and final human visual i
 4. `JPI_Highlights.docx` — five highlights, each ≤85 characters.
 5. `JPI_Cover_Letter.docx` — editor-facing cover letter.
 6. `JPI_Declaration_of_Interest.docx` and `JPI_Author_Declarations.docx` — declaration files.
-7. `figures/Figure_1.tiff` through `Figure_6.tiff` — figure submission files; PNG copies are for review.
+7. `figures/Figure_1.tiff` through `Figure_7.tiff` — figure submission files; PNG copies are for review.
 8. `JPI_Figure_Captions.docx` — editable captions.
 9. `JPI_Tables.docx` — separate editable tables if requested by the submission system; the same main tables are embedded in the manuscript.
 10. `JPI_Supplementary_Material.docx` — technical provenance, thresholds, reproducibility, and expanded limitations.
@@ -1287,13 +1325,19 @@ Main-text word count: {manuscript_words}. PDF rendering and final human visual i
 
 ## Manual submission-system fields
 
+Journal submission is intentionally on hold. No portal action is currently authorized. The
+following fields are retained for a future human review only.
+
 Enter the exact title, two-author order, shared affiliation, corresponding-author address/email, seven keywords, funding declaration, competing-interest declaration, ethics/consent statements, data/code availability statements, CRediT roles, and generative-AI disclosure from the prepared files. Jishan Islam Maruf remains first and corresponding author; Ishtiak Al Mamoon is second author and is not a corresponding author. All ten coauthor confirmations are complete. Select Original Research Article and double-anonymized review. No ORCID is supplied.
 
 The current article-processing charge and any waiver eligibility must be re-verified on the official JPI/Elsevier pages immediately before submission because charges and policies may change. This package intentionally records no unverified APC amount.
 
-## Final pre-upload inspection
+## Future human review
 
-Open every DOCX and the PDF proof; inspect page breaks, tables, superscript citations, figure files, captions, and anonymization. Confirm that the submission portal has not exposed title-page identity to reviewers. Verify the current journal declarations, APC/waiver information, and required file designations. Do not rerun `ood_test` or reopen model development.
+When separately authorized, open every DOCX and the PDF proof and inspect page breaks, tables,
+superscript citations, seven figure files, captions, and anonymization. Portal/API, APC/waiver,
+upload, proof, and submission actions are not authorized by Milestone 9G. Do not rerun `ood_test`
+or reopen model development.
 """
     (OUT / "JPI_Submission_Package_README.md").write_text(readme, encoding="utf-8")
 
@@ -1429,6 +1473,72 @@ def authorship_update_only():
     print(json.dumps(record, indent=2))
 
 
+def title_methodology_update_only():
+    if not OUT.exists() or not (OUT / "JPI_9D_Build_Record.json").exists():
+        fail(f"Completed Milestone 9D package is required for a targeted 9G update: {OUT}")
+    workflow_sources = [
+        ROOT / "results" / "figures" / "figure_methodology_workflow.svg",
+        ROOT / "results" / "figures" / "figure_methodology_workflow.pdf",
+        ROOT / "results" / "figures" / "figure_methodology_workflow.png",
+    ]
+    missing = [str(path) for path in workflow_sources if not path.exists()]
+    if missing:
+        fail(f"Missing deterministic methodology figure source/output: {missing}")
+    numbered_sections, references, data, payload, manuscript_words, abstract_words, _, _ = prepare_package_inputs()
+    make_manuscript(numbered_sections, references, payload)
+    markdown_manuscript(numbered_sections, references, payload)
+    make_title_page(manuscript_words, abstract_words)
+    make_cover_letter()
+    make_highlights()
+    make_interest()
+    make_author_declarations()
+    make_captions()
+    make_tables_doc(payload)
+    make_supplement(data)
+    make_claim_checklist()
+    make_figure_copies()
+    write_package_docs(abstract_words, manuscript_words, references)
+    affected = [
+        "JPI_Title_Page.docx", "JPI_Cover_Letter.docx", "JPI_Anonymized_Manuscript.docx",
+        "JPI_Highlights.docx", "JPI_Declaration_of_Interest.docx",
+        "JPI_Author_Declarations.docx", "JPI_Figure_Captions.docx",
+        "JPI_Tables.docx", "JPI_Supplementary_Material.docx", "JPI_CLAIM_Checklist.docx",
+    ]
+    blinded = {
+        "JPI_Anonymized_Manuscript.docx", "JPI_Figure_Captions.docx", "JPI_Tables.docx",
+        "JPI_Supplementary_Material.docx", "JPI_CLAIM_Checklist.docx",
+    }
+    for name in affected:
+        validate_docx_identity(OUT / name, anonymized=name in blinded)
+    record = {
+        "milestone": "9G",
+        "mode": "title_methodology_update_only",
+        "title": TITLE,
+        "figure_count": 7,
+        "methodology_figure_number": 1,
+        "accepted_scientific_figures_renumbered": "2-7",
+        "reviewer_code_zip_rebuilt": False,
+        "existing_scientific_figures_regenerated": False,
+        "deterministic_render": True,
+        "generative_image_model_used": False,
+        "dataset_loaded": False,
+        "hf_split_accessed": False,
+        "histopathology_image_read": False,
+        "checkpoint_accessed": False,
+        "model_inference": False,
+        "training": False,
+        "calibration_fitting": False,
+        "threshold_tuning": False,
+        "second_ood_test_attempt": False,
+        "affected_files": affected + [
+            "JPI_Anonymized_Manuscript.md", "JPI_Submission_Checklist.md",
+            "JPI_Submission_Package_README.md", "JPI_Figure_Manifest.csv",
+        ],
+    }
+    (OUT / "JPI_9G_Build_Record.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
+    print(json.dumps(record, indent=2))
+
+
 def main():
     if OUT.exists():
         if (OUT / "JPI_9D_Build_Record.json").exists():
@@ -1467,7 +1577,7 @@ def main():
         "highlight_character_counts": [len(x) for x in HIGHLIGHTS],
         "reference_count": len(references),
         "table_count": 5,
-        "figure_count": 6,
+        "figure_count": 7,
         "dataset_loaded": False,
         "hf_test_accessed": False,
         "image_data_read": False,
@@ -1489,8 +1599,13 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Build or selectively update the JPI submission package.")
     parser.add_argument("--authorship-update-only", action="store_true", help="Rebuild only Milestone 9F authorship and availability documents.")
+    parser.add_argument("--title-methodology-update-only", action="store_true", help="Rebuild only Milestone 9G title, methodology-figure, and renumbering documents.")
     args = parser.parse_args()
+    if args.authorship_update_only and args.title_methodology_update_only:
+        parser.error("Choose only one targeted update mode.")
     if args.authorship_update_only:
         authorship_update_only()
+    elif args.title_methodology_update_only:
+        title_methodology_update_only()
     else:
         main()

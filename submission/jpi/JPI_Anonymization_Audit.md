@@ -1,6 +1,6 @@
 # JPI Double-Anonymization Audit
 
-**Milestone:** 9F
+**Milestone:** 9G
 **Verdict:** **PASS**
 
 Audited blinded files:
@@ -26,6 +26,7 @@ Audited blinded files:
 | Personal Windows username and local paths absent | PASS |
 | Blinded data/code wording exact | PASS |
 | Identifying repository address explicitly withheld | PASS |
+| Methodology Figure 1 contains no author or repository identity | PASS |
 
 Bibliographic institution names remain permitted only when they form part of a cited source. No
 author identity appeared through that exception.
@@ -42,8 +43,9 @@ author identity appeared through that exception.
 | Tracked changes absent | PASS | No insertion, deletion, or move revision markup |
 | Hidden text absent | PASS | No `vanish` markup |
 | Personal paths absent | PASS | No local Windows path detected |
-| Anonymized manuscript page count | PASS | 11 pages |
-| Rendered page layout | PASS | All 11 pages inspected; no clipping, overlap, or blank unintended page |
+| Anonymized manuscript page count | PASS | 12 pages |
+| Rendered page layout | PASS | All 12 pages inspected; title, Figure 1, tables, and sequential references are unclipped and readable |
+| Figure metadata | PASS | SVG/PDF/PNG contain no author name, repository URL, username, or local path; PNG Author is blank |
 
 ## Reviewer code ZIP
 
@@ -54,6 +56,9 @@ authorization file, run sentinel/state file, checkpoint, or raw prediction. Its 
 `27FF9ED54AA4C4A1898216B8E098D6716DB0709FC81D6845E835FA6ABDE1ED2C`
 
 The ZIP therefore did not require rebuilding.
+
+The exact prior manuscript title is absent from all blinded submission files and the reviewer
+ZIP. The revised title is present without author or repository identity.
 
 ## Scope note
 

@@ -1,7 +1,7 @@
 # SESSION STATE
 
-**Project:** Confidence-Aware Tumor Detection Under Hospital Domain Shift in
-Histopathology: Calibration, Uncertainty, and Selective Prediction
+**Project/manuscript:** Hospital Domain Shift Can Reverse Development Gains in Histopathology
+Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
 
 _As of: 2026-07-18. This document captures the exact, current, accepted state of the
 project so a fresh session can resume with zero ambiguity._
@@ -10,13 +10,23 @@ project so a fresh session can resume with zero ambiguity._
 
 ## 1. One-line status
 
-**Milestones 1 → 9F are complete and accepted; the latest completed milestone is
-Milestone 9F.** The explicitly authorized single final locked `ood_test` inference completed once,
+**Milestones 1 → 9G are complete and accepted; the latest completed milestone is
+Milestone 9G.** The explicitly authorized single final locked `ood_test` inference completed once,
 followed by the CSV-only final summary. Run start:
 **2026-07-16T17:16:25.455291+00:00**; inference complete:
 **2026-07-16T17:35:17.051997+00:00**; summary complete:
 **2026-07-16T17:35:20.395673+00:00**. Attempt count = **1**. `ood_test` is no longer unread, and no
 second access or inference attempt is authorized.
+
+Milestone 9G revised the manuscript title exactly as approved and added a deterministic,
+programmatically rendered locked-workflow schematic as Figure 1. The six accepted scientific
+figures were renumbered as Figures 2-7 without pixel or content changes; the main figure count is
+now seven. Affected JPI documents, the PDF proof, captions, manifest, checklists, and audits were
+rebuilt. Author order, CRediT roles, numerical results, citations, model roles, and interpretation
+were unchanged. All protected exp09 hashes remained unchanged. No dataset, HF split,
+histopathology image, checkpoint, inference, training, calibration fitting, threshold tuning,
+second `ood_test` attempt, or generative-image model was used. Journal submission is intentionally
+on hold, and no portal action is currently authorized.
 
 Milestone 9F finalized approved coauthorship and availability metadata. Final author order is
 **Jishan Islam Maruf**, then **Ishtiak Al Mamoon**. Jishan remains first author, corresponding

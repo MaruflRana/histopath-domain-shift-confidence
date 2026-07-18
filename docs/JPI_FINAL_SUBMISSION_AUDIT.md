@@ -1,13 +1,14 @@
 # Journal of Pathology Informatics Final Submission Audit
 
-**Milestone:** 9F
+**Milestone:** 9G
 **Article type:** Original Research Article
 **Target:** Journal of Pathology Informatics
-**Overall verdict:** **FINALIZED — READY FOR FINAL HUMAN REVIEW**
+**Overall verdict:** **ON HOLD — READY FOR FUTURE HUMAN REVIEW**
 
-Milestone 9F finalized two-author metadata and public/blinded availability wording using saved
-manuscript and aggregate result artifacts only. No dataset, HF split, histopathology image,
-checkpoint, model, or inference path was accessed.
+Milestone 9G applied the exact approved title, added a deterministic methodology workflow as
+Figure 1, and renumbered the six accepted scientific figures as Figures 2-7. Only affected
+documents and figure copies were rebuilt. No dataset, HF split, histopathology image, checkpoint,
+model, inference, training, calibration fitting, or threshold-tuning path was accessed.
 
 ## Final authorship
 
@@ -31,13 +32,13 @@ checkpoint, model, or inference path was accessed.
 | 6 | No post-test model selection is implied | PASS | One-shot protocol and fixed roles stated explicitly |
 | 7 | Calibration is confidence correction, not error correction | PASS | Discussion and figure captions use this distinction |
 | 8 | Total false-negative counts are unchanged by calibration | PASS | GroupDRO 37,825; ERM 32,275 in text and tables |
-| 9 | Frozen operating points remain candidate/non-clinical | PASS | Methods, Results, Figure 5, captions, and supplement |
+| 9 | Frozen operating points remain candidate/non-clinical | PASS | Methods, Results, Figure 6, captions, and supplement |
 | 10 | No clinical-readiness claim appears | PASS | Clinical readiness is expressly disclaimed |
 | 11 | No universal model claim appears | PASS | Neither universal ERM superiority nor universal GroupDRO failure is claimed |
 | 12 | No WSI/patient-level effectiveness claim appears | PASS | Patch-level limitation is explicit |
 | 13 | Ethics statement is supported and bounded | PASS | Public, de-identified secondary analysis; no IUBAT exemption claimed |
 | 14 | AI assistance is disclosed and approved by both authors | PASS | Exact final declaration before References and in identity-bearing declarations |
-| 15 | No generative-AI figure creation occurred | PASS | Submission figures are pixel-identical copies of accepted exp09b figures |
+| 15 | No generative-AI figure creation occurred | PASS | Figure 1 was rendered deterministically with matplotlib; Figures 2-7 are pixel-identical copies of accepted exp09b figures |
 | 16 | Author order and contribution roles are exact | PASS | Jishan first/corresponding/principal; Ishtiak second with only the approved three CRediT roles |
 | 17 | Public and blinded availability statements are separated | PASS | Public URL appears only in public/identity-bearing files; blinded wording withholds the identifying address |
 | 18 | Competing-interest wording is final | PASS | Both authors declare no known competing interests or relevant personal relationships |
@@ -51,9 +52,9 @@ checkpoint, model, or inference path was accessed.
 | 21 | Keyword count is exactly seven | PASS | Seven binding English keywords |
 | 22 | Five highlights meet the 85-character limit | PASS | 68, 69, 63, 64, and 69 characters |
 | 23 | Double-anonymization audit passes | PASS | Manuscript, supplement, CLAIM checklist, and reviewer ZIP; see `submission/jpi/JPI_Anonymization_Audit.md` |
-| 24 | Affected DOCX files open successfully | PASS | Seven rebuilt DOCX files parsed and passed OOXML structure checks |
-| 25 | PDF proof renders without clipping | PASS | 11 pages rendered and visually inspected |
-| 26 | Scientific figures remain unchanged | PASS | 64-file scientific-figure tree digest matches the pre-9F baseline; no figure was regenerated or opened by the builder |
+| 24 | Affected DOCX files open successfully | PASS | Ten rebuilt DOCX files parsed and passed OOXML structure checks |
+| 25 | PDF proof renders without clipping | PASS | 12 pages rendered and visually inspected; Figure 1 is readable at manuscript width |
+| 26 | Existing scientific figures remain unchanged | PASS | The 52-file pre-9G figure tree excluding the three new workflow outputs retained digest `A141388875BE48C6B64465A98EAEE767F07491E3674BB803E1407781EF608EAB` |
 | 27 | All tables remain unchanged | PASS | 99-file result-table tree digest matches the pre-9F baseline |
 | 28 | No placeholders remain in final package metadata | PASS | No pending coauthor or availability marker detected |
 | 29 | No exp09 evidence artifact changed | PASS | All nine protected hashes match accepted baselines |
@@ -64,7 +65,7 @@ checkpoint, model, or inference path was accessed.
 
 - References: 30 manuscript-cited records, converted from verified BibTeX metadata into first-appearance AMA-style numbering. DOI links were retained where present.
 - Main tables: 5 editable tables embedded in the manuscript and duplicated in `JPI_Tables.docx` for portal flexibility.
-- Figures: 6 accepted exp09b scientific figures copied without resampling or pixel alteration. TIFF and PNG copies are tagged 300 dpi; dimensions and sizes are recorded in `JPI_Figure_Manifest.csv`.
+- Figures: 7. Figure 1 is the deterministic methodology workflow; Figures 2-7 are the six accepted exp09b scientific figures copied without resampling or pixel alteration. TIFF and PNG copies are tagged 300 dpi; dimensions, hashes, old/new numbering, and visual status are recorded in `JPI_Figure_Manifest.csv`.
 - Supplementary material: locked split mapping, checkpoint-hash/temperature provenance, all 14 frozen operating points, one-shot provenance, high-confidence false negatives, reproducibility summary, expanded limitations, and inventory.
 - CLAIM 2024 checklist: 44 items with explicit Yes, No, or Not applicable status; no patient-level or clinical item was fabricated as complete.
 
@@ -85,8 +86,7 @@ Microsoft Word, LibreOffice, and Pandoc were unavailable in the environment. The
 
 ## Final disposition
 
-The authorship and availability update is finalized. The package is scientifically and
-structurally complete, but it has not been submitted. The remaining action is a human visual
-review in Microsoft Word, re-verification of portal/APC/waiver requirements, and manual
-entry/upload through the JPI submission system. Do not rerun `ood_test` or reopen model
-development.
+The title and methodology-figure update is complete and the package has not been submitted.
+Journal submission is intentionally on hold. No portal action is currently authorized. A future
+human Microsoft Word and journal review requires separate authorization. Do not rerun `ood_test`
+or reopen model development.

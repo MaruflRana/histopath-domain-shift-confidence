@@ -1,6 +1,4 @@
-# When Development Gains Do Not Transfer
-
-## Confidence-Aware Tumor Detection Under Reserved-Hospital Shift
+# Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
 
 This repository contains the reproducible, submission-aligned code and public aggregate evidence for a patch-level Camelyon17-WILDS study of hospital domain shift, confidence calibration, uncertainty, and selective prediction. The protocol used source hospitals for training, a distinct development hospital for domain-shift decisions, and one reserved hospital for a single final evaluation. It is a research artifact, not a clinical product.
 
@@ -33,7 +31,7 @@ docs/                    Protocol, interpretation, manuscript, and audit documen
 references/              Verified bibliography
 results/metrics/         Portable aggregate metric JSON files
 results/tables/          Aggregate, non-row-level result tables
-results/figures/         Public chart figures in PNG format
+results/figures/         Public chart figures plus the workflow SVG/PDF/PNG
 submission/jpi/          Sanitized JPI manuscript and submission materials
 PROJECT_PROTOCOL.md      Locked data-use protocol
 REPRODUCIBILITY.md       Frozen provenance and permitted reproduction workflow
@@ -107,13 +105,13 @@ This work evaluates 96x96 histopathology patches on one benchmark with one reser
 
 ## Manuscript and submission status
 
-The manuscript package is prepared for the Journal of Pathology Informatics and has not yet been submitted. Portal requirements, APC or waiver terms, file designations, and the portal-generated proof require final human verification. This repository does not perform submission.
+The manuscript package is prepared for the Journal of Pathology Informatics and has not yet been submitted. Journal submission is intentionally on hold; no portal action is currently authorized. Portal requirements, APC or waiver terms, file designations, and the portal-generated proof require future human verification. This repository does not perform submission.
 
 ## Citation
 
 Software citation metadata are in [CITATION.cff](./CITATION.cff). The manuscript title is:
 
-> When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift
+> Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
 
 No DOI, journal publication metadata, release date, or software version has been assigned.
 
@@ -130,6 +128,8 @@ Corresponding author:
 
 Authorship metadata was updated after the initial public release. Scientific results, protected exp09 evidence, model roles, and final interpretations were unchanged.
 
+The manuscript title and figure numbering were updated in Milestone 9G. A deterministic, programmatically rendered methodology workflow is now Figure 1, and the six accepted scientific figures were renumbered as Figures 2-7 without changing their pixels or scientific content.
+
 ## License status
 
 No open-source license has yet been assigned. All rights are reserved until a license is added. License selection remains a manual decision.
@@ -137,6 +137,8 @@ No open-source license has yet been assigned. All rights are reserved until a li
 ## AI-use disclosure summary
 
 During preparation of this work, the corresponding author used OpenAI ChatGPT and Codex and Anthropic Claude Code to support code drafting, workflow documentation, literature-search assistance, citation verification, content organization, and language refinement. All experimental decisions, code execution, source verification, statistical results, scientific interpretation, and manuscript revisions were reviewed and validated by the corresponding author. Both authors reviewed and approved the final manuscript and this disclosure. No generative AI or AI-assisted image-generation tool was used to create or alter scientific figures, images, data, or experimental results.
+
+The methodology workflow diagram was rendered deterministically from the locked study protocol with standard vector-drawing code; it contains no generated imagery, source images, or inferred scientific results.
 
 ## Reproducibility limitations
 

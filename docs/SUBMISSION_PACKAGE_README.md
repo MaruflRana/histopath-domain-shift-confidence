@@ -2,12 +2,17 @@
 
 ## Current submission package
 
-Milestone 9F finalized the Journal of Pathology Informatics Original Research package at
+Milestone 9G revised the Journal of Pathology Informatics Original Research package at
 `submission/jpi/` for first and corresponding author Jishan Islam Maruf and second author Ishtiak
 Al Mamoon. The authoritative upload map is
 `submission/jpi/JPI_Submission_Package_README.md`. The double-anonymization audit and final
 scientific-integrity audit both pass. The abstract is 221 words, there are seven keywords and five
 compliant highlights, and all standard declarations—including AI-use disclosure—are complete.
+
+The exact manuscript title is **Hospital Domain Shift Can Reverse Development Gains in
+Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point
+Transfer**. A deterministic methodology workflow is Figure 1; the six accepted scientific
+figures are renumbered as Figures 2-7 without pixel changes. The submission remains on hold.
 
 All ten coauthor confirmations are recorded in `docs/COAUTHOR_CONFIRMATION_CHECKLIST.md`. Jishan
 Islam Maruf remains the principal contributor. Ishtiak Al Mamoon's CRediT roles are limited to
@@ -64,15 +69,16 @@ The positive contribution is the protocol discipline: the one-shot reserved-cent
 
 ## Main-paper figure candidates
 
+- `results/figures/figure_methodology_workflow.svg` / `.pdf` / `.png` — Figure 1
 - `results/figures/exp09b_development_test_reversal.png`
 - `results/figures/exp09b_development_to_final_auroc_auprc.png`
 - `results/figures/exp09b_final_default_threshold_metrics.png`
 - `results/figures/exp09b_final_calibration_raw_vs_calibrated.png`
+- `results/figures/exp09b_operating_point_transfer.png`
 - `results/figures/exp09b_high_confidence_fn_raw_vs_calibrated.png`
 
 ## Supplementary figure candidates
 
-- `results/figures/exp09b_operating_point_transfer.png`
 - `results/figures/exp09_final_ood_test_roc.png`
 - `results/figures/exp09_final_ood_test_precision_recall.png`
 - `results/figures/exp09_final_ood_test_calibration_reliability.png`
@@ -131,14 +137,11 @@ The positive contribution is the protocol discipline: the one-shot reserved-cent
 JPI formatting has been applied. See `docs/TARGET_JOURNAL_SHORTLIST.md` for the venue research and
 `docs/JPI_FINAL_SUBMISSION_AUDIT.md` for the completed package audit.
 
-## Remaining work before submission
+## Current hold
 
-1. Open the prepared DOCX files in Microsoft Word and perform a final human visual check.
-2. Re-verify current JPI APC/waiver and submission-system requirements.
-3. Upload the title page, anonymized manuscript, highlights, declarations, figures, captions,
-   supplementary material, and CLAIM checklist using the package README order.
-4. Enter the prepared metadata and declarations in the portal; no ORCID or repository DOI exists.
-5. Inspect the portal-generated proof before manual submission.
+Journal submission is intentionally on hold. No portal action is currently authorized. Preserve
+the package for a future human review; any portal, APC/waiver, upload, proof, or submission action
+requires separate authorization.
 
 ## Hard submission guardrails
 

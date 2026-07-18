@@ -1,4 +1,4 @@
-# When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift
+# Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
 
 *Original Research Article*
 
@@ -32,6 +32,8 @@ The split mapping was fixed before experimentation. Training used the Hugging Fa
 
 Center 1 was used for development comparison and calibration and was never treated as final performance. Center 2 remained unread until the model pair and all reporting policies were frozen. No random split, cap, sample, or silent truncation was applied to the full development or final evaluations.
 
+The complete locked development and reserved-center evaluation workflow is summarized in Figure 1.
+
 The locked split mapping is summarized in Table 1.
 
 **Table 1. Locked hospital split mapping**
@@ -44,6 +46,10 @@ The locked split mapping is summarized in Table 1.
 | ood_test | test | {2} | 85,054 | One reserved final run |
 
 *Note.* HF indicates Hugging Face. Center 1 was development-only; center 2 was accessed once after all policies were frozen.
+
+![Locked multi-hospital development and reserved-center evaluation workflow](figures/Figure_1.png)
+
+**Figure 1.** Locked multi-hospital development and reserved-center evaluation workflow. CAMELYON17-WILDS centers 0, 3, and 4 supplied center-stratified training and in-distribution validation data. Center 1 was used for out-of-distribution development comparison and temperature fitting. Model checkpoints, roles, calibration temperatures, candidate operating thresholds, metrics, output schemas, and the one-run limit were frozen before center 2 was accessed. The reserved center-2 dataset was instantiated once and traversed once while the predeclared GroupDRO primary candidate and matched ERM control were evaluated in the same batch loop. Final analyses covered discrimination, calibration, operating-point transport, and high-confidence false negatives. No center-2 calibration refitting, threshold tuning, checkpoint replacement, post-test model selection, or repeat evaluation was permitted.
 
 ### 2.2 Center-stratified cache construction
 
@@ -109,7 +115,7 @@ On the full id_val split, GroupDRO achieved accuracy 0.841567 and AUROC 0.932256
 
 Thus, the development AUROC advantage for GroupDRO was approximately 0.0283. GroupDRO also improved the worst source-validation center: on center 4, accuracy increased from 0.6901 for ERM to 0.8031 for GroupDRO, and AUROC increased from 0.8323 to 0.8980. These findings supported the predeclared selection of GroupDRO as the final primary candidate, but they remained development evidence.
 
-Development and final discrimination are summarized in Table 2 and Figure 1.
+Development and final discrimination are summarized in Table 2 and Figure 2.
 
 **Table 2. Development and final model comparison**
 
@@ -130,7 +136,7 @@ The final center-2 dataset contained 85,054 patches, evenly divided between 42,5
 
 The matched ERM control exceeded the predeclared GroupDRO primary by 0.0351 AUROC, 0.0192 AUPRC, 0.0374 accuracy, 0.1305 sensitivity, and 0.1682 F1, and produced 5,550 fewer false negatives. GroupDRO retained specificity higher by 0.0556 and precision higher by approximately 0.0100. The development GroupDRO advantage did not generalize to center 2.
 
-Final default-threshold metrics are summarized in Table 3 and Figure 2.
+Final default-threshold metrics are summarized in Table 3 and Figure 3.
 
 **Table 3. Final held-out center-2 performance at threshold 0.5**
 
@@ -145,7 +151,7 @@ Final default-threshold metrics are summarized in Table 3 and Figure 2.
 
 The reversal is visible in the GroupDRO-minus-ERM AUROC contrast: approximately +0.0283 on development center 1 and -0.0351 on final center 2. ERM remains the matched control rather than being relabeled as the primary after the result.
 
-The predeclared AUROC reversal is displayed in Figure 3.
+The predeclared AUROC reversal is displayed in Figure 4.
 
 ### 3.4 Held-out calibration
 
@@ -153,7 +159,7 @@ For GroupDRO, applying T=2.974907 reduced ECE from 0.4006439581474795 to 0.25833
 
 Calibrated ERM remained better calibrated than calibrated GroupDRO on all three metrics. Raw and calibrated AUROC, AUPRC, accuracy, sensitivity, specificity, precision, F1, and confusion counts were identical within each model. The final result therefore supports held-out improvement of these frozen temperatures on center 2, but not universal calibration validity.
 
-Raw and calibrated reliability metrics are summarized in Table 4 and Figure 4.
+Raw and calibrated reliability metrics are summarized in Table 4 and Figure 5.
 
 **Table 4. Final held-out raw and calibrated reliability**
 
@@ -174,7 +180,7 @@ Fixed-specificity targets were closer in some cases but also shifted. GroupDRO a
 
 These values are observations of transfer failure, not a basis for choosing a new threshold. All operating points remain candidate/non-clinical, and no threshold was tuned on the final hospital.
 
-Transfer of the 14 frozen candidate/non-clinical operating points is shown in Figure 5 and detailed in Supplementary Table S3.
+Transfer of the 14 frozen candidate/non-clinical operating points is shown in Figure 6 and detailed in Supplementary Table S3.
 
 ### 3.6 High-confidence false negatives
 
@@ -184,7 +190,7 @@ For ERM, high-confidence false negatives declined from 19,142 to 1,828 at >=0.90
 
 Calibration therefore corrected the confidence attached to many errors but did not recover missed tumors. This distinction is clinically important in principle but does not establish a safe triage workflow.
 
-Counts are summarized in Table 5 and Figure 6.
+Counts are summarized in Table 5 and Figure 7.
 
 **Table 5. High-confidence false negatives on final held-out center 2**
 

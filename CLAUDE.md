@@ -1,7 +1,7 @@
 # CLAUDE.md — Agent Operating Contract
 
-**Project:** Confidence-Aware Tumor Detection Under Hospital Domain Shift in
-Histopathology: Calibration, Uncertainty, and Selective Prediction
+**Project/manuscript:** Hospital Domain Shift Can Reverse Development Gains in Histopathology
+Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
 
 This file is the active operating contract for any AI agent working in this repository.
 Chronological history belongs in `docs/MILESTONE_LOG.md`; `PROJECT_PROTOCOL.md` is the locked
@@ -11,10 +11,15 @@ source of truth for data. When instructions disagree, follow the stricter rule.
 
 ## 0. TL;DR for a new agent
 
-- The pipeline is script-based (`scripts/00…43`), Windows-native, and uses Hugging Face.
+- The pipeline is script-based (`scripts/00…44`), Windows-native, and uses Hugging Face.
 - Data comes only from `wltjr1007/Camelyon17-WILDS`. Never use WILDS/CodaLab download.
 - The four logical splits in §4 are locked. Never invent random splits.
-- **Latest completed milestone = 9F.** Milestones 1 through 9F are complete and accepted.
+- **Latest completed milestone = 9G.** Milestones 1 through 9G are complete and accepted.
+- Milestone 9G applied the exact revised manuscript title, added a deterministic locked-workflow
+  schematic as Figure 1, renumbered the six accepted scientific figures as Figures 2-7, rebuilt
+  only affected submission documents, and repeated anonymization/scientific-integrity audits.
+  Existing scientific figure pixels and all accepted exp09 evidence remained unchanged. No
+  dataset/model/test action or generative-image model was used. JPI submission remains on hold.
 - Milestone 9F finalized author order Jishan Islam Maruf then Ishtiak Al Mamoon. Jishan remains
   first/corresponding author and principal contributor; Ishtiak's roles are limited to
   Supervision, Validation, and Writing – review and editing. Public/blinded availability wording
@@ -28,7 +33,7 @@ source of truth for data. When instructions disagree, follow the stricter rule.
 - Milestone 9D created the original Journal of Pathology Informatics (JPI) Original Research
   submission package under `submission/jpi/`; Milestone 9F superseded its initial author metadata
   with the finalized two-author record. It includes the title page, double-anonymized manuscript,
-  PDF proof, highlights, cover letter, declarations, editable tables, six figure pairs,
+  PDF proof, highlights, cover letter, declarations, editable tables, seven figure pairs,
   supplementary material, CLAIM checklist, sanitized code archive, and PASS audits.
 - The JPI abstract is **221 words**, there are exactly **7** keywords, and all five highlights
   pass the 85-character limit (68, 69, 63, 64, 69). The AI-use disclosure is included.
@@ -46,8 +51,9 @@ source of truth for data. When instructions disagree, follow the stricter rule.
 - Frozen temperature scaling improved ECE/Brier/NLL for both models without changing hard
   predictions or total false negatives. Candidate operating points transferred poorly and
   remain non-clinical.
-- **Next action = human visual review in Microsoft Word and manual submission through the JPI
-  submission system.** Do not reopen model development or add exploratory methods.
+- **Journal submission is intentionally on hold. No portal action is currently authorized.** The
+  next action is a future human journal review when separately authorized. Do not reopen model
+  development or add exploratory methods.
 - Model-based uncertainty, MC-dropout, ensembles, CORAL, and DANN remain deferred/optional.
 - Current package entry points:
   `submission/jpi/JPI_Submission_Package_README.md`,
@@ -87,7 +93,7 @@ docs/                                # state, manuscript, audit, and submission 
 references/final_references.bib      # verified Milestone 9C bibliography
 configs/                             # dataset and experiment configs
 src/{utils,data,models,training,calibration,evaluation}/
-scripts/00_check_env.py … 43_render_jpi_documents.py, _bootstrap.py
+scripts/00_check_env.py … 44_make_methodology_workflow_figure.py, _bootstrap.py
 results/{tables,figures,logs,cache,checkpoints,predictions,metrics}/
 ```
 
@@ -157,7 +163,14 @@ by `src/data/hf_camelyon17.py`.
 
 ## 8. Current accepted state
 
-**Milestones 1 through 9F are complete and accepted.**
+**Milestones 1 through 9G are complete and accepted.**
+
+Milestone 9G applied the exact approved title, added a deterministic methodology workflow as
+Figure 1, and renumbered the six accepted scientific figures as Figures 2-7. The affected JPI
+documents, PDF proof, captions, manifest, checklists, and audits were rebuilt. Existing scientific
+figure pixels and all accepted exp09 evidence remained unchanged; no dataset, HF split, image,
+checkpoint, inference, training, calibration fitting, threshold tuning, second `ood_test`
+attempt, or generative-image model was used. Journal submission remains on hold.
 
 Milestone 9F finalized the approved coauthorship and publication metadata. Final author order is
 Jishan Islam Maruf followed by Ishtiak Al Mamoon; Jishan remains first author, corresponding
@@ -251,10 +264,10 @@ run are allowed.
 
 ### Next action (gated)
 
-Open the generated DOCX files in Microsoft Word, inspect the portal-generated proof and file
-designations, re-verify current APC/waiver details, and submit manually through the JPI system.
-The target, author metadata, declarations, CLAIM mapping, references, tables, figures, and
-supplementary placement are already prepared.
+Journal submission is intentionally on hold. No portal action is currently authorized. When a
+future human journal review is separately authorized, open the generated DOCX files in Microsoft
+Word and inspect the seven figures, PDF proof, page breaks, and file designations. Portal/APC and
+waiver checks remain future human actions; submission must not be inferred from this milestone.
 
 Do not rerun `ood_test`, reopen model development, add exploratory methods, or rewrite the science
 in response to portal review. Model-based uncertainty remains deferred/optional and is not

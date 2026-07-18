@@ -2,7 +2,7 @@
 
 ## Title options
 
-1. **When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift**
+1. **Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer**
 2. **A Reserved-Hospital Evaluation of Calibration, Operating-Point Transfer, and Domain Generalization in Histopathology**
 3. **Development-to-Test Reversal Under Hospital Shift: A Confidence-Aware Histopathology Study**
 4. **Confidence Under Hospital Shift: A Single-Shot Reserved-Center Evaluation of Tumor Detection**
@@ -13,13 +13,13 @@
 
 ## Best three
 
-1. **When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift**
+1. **Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer**
 2. **Development-to-Test Reversal Under Hospital Shift: A Confidence-Aware Histopathology Study**
 3. **A Reserved-Hospital Evaluation of Calibration, Operating-Point Transfer, and Domain Generalization in Histopathology**
 
 ## Recommended title
 
-**When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift**
+**Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer**
 
 This title states the central result without claiming GroupDRO superiority, clinical readiness, or universal failure of a method.
 

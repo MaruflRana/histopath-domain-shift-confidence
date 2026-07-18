@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software or its public aggregate evidence, please cite it using this metadata."
-title: "When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift"
+title: "Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer"
 type: software
 authors:
   - given-names: "Jishan Islam"

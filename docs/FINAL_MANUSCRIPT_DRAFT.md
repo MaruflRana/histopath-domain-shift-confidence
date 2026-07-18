@@ -1,4 +1,4 @@
-# When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift
+# Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
 
 ## Abstract
 
@@ -58,6 +58,8 @@ The split mapping was fixed before experimentation. Training used the Hugging Fa
 | `ood_test` | `test` | {2} | 85,054 | Single reserved final evaluation |
 
 Center 1 was used for development comparison and calibration and was never treated as final performance. Center 2 remained unread until the model pair and all reporting policies were frozen. No random split, cap, sample, or silent truncation was applied to the full development or final evaluations.
+
+The complete locked development and reserved-center evaluation workflow is summarized in Figure 1.
 
 ### 3.2 Center-stratified cache construction
 

@@ -2241,3 +2241,37 @@ No threshold has been committed.
 - **Exact next recommendation:** open the affected DOCX files in Microsoft Word, re-check current
   JPI portal/APC/waiver and file-designation requirements, inspect the portal proof, and submit
   manually. Do not rerun `ood_test` or reopen model development.
+
+## Milestone 9G — Revised title and deterministic methodology workflow ✅ COMPLETE / ACCEPTED
+
+- **Date:** 2026-07-18.
+- **Scope:** title, documentation, conceptual figure, affected package rebuild, audits, and safe
+  GitHub update only. No dataset/HF split/histopathology image, checkpoint, model inference,
+  training, calibration fitting, threshold tuning, center-2 access, test-driven analysis, or
+  second `ood_test` attempt; scripts 38 and 39 were not run.
+- **Title:** historical prior title “When Development Gains Do Not Transfer: Confidence-Aware
+  Tumor Detection Under Reserved-Hospital Shift” was replaced in active files by “Hospital Domain
+  Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study
+  of Calibration and Operating-Point Transfer.”
+- **Methodology figure:** a deterministic matplotlib schematic derived only from locked protocol
+  facts was added as Figure 1 in SVG, PDF, 600-dpi PNG, and local 300-dpi TIFF/PNG submission
+  formats. No generative image model, stock icon, synthetic imagery, or histopathology image was
+  used.
+- **Renumbering:** the six accepted scientific figures became Figures 2-7. Their source tree and
+  submission-copy pixels were unchanged; the main figure count is seven and all citations are
+  sequential.
+- **Rebuild:** title page, cover letter, anonymized manuscript DOCX/Markdown/12-page PDF, author
+  declarations, interest statement, highlights, captions, tables, supplement, CLAIM checklist,
+  submission checklist/README, manifest, public sources, builders, audits, and context were
+  synchronized. Author order, roles, affiliation, and corresponding author remained unchanged.
+- **Audits:** blinded identity/metadata, reviewer ZIP, old-title, page-render, caption/reference,
+  figure pixel, result-table tree, protected-hash, security/privacy/path, size, staged-file, and
+  GitHub relationship checks passed. The 91-entry reviewer ZIP did not require rebuilding.
+- **Scientific immutability:** all nine protected hashes, the 99-file/256,850-byte result-table
+  digest, and the 52-file/8,210,666-byte pre-existing scientific-figure digest were unchanged.
+  GroupDRO remains the predeclared primary; ERM remains the matched control; the unfavorable
+  development-to-test reversal and calibration/operating-point caveats remain explicit.
+- **Status:** **ON HOLD — READY FOR FUTURE HUMAN REVIEW**. Nothing was submitted.
+- **Exact next recommendation:** Journal submission is intentionally on hold. No portal action is
+  currently authorized. Preserve the frozen package for a future human review; do not rerun
+  `ood_test` or reopen model development.

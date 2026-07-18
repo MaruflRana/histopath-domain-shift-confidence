@@ -8,7 +8,7 @@
 | 1–7 keywords | PASS | Exactly 7 |
 | Highlights character limits | PASS | Five bullets; counts: 68, 69, 63, 64, 69 |
 | All references resolved | PASS | 30 cited references; no unresolved markers |
-| All figures cited | PASS | Figures 1–6 cited sequentially |
+| All figures cited | PASS | Figures 1–7 cited sequentially |
 | All tables cited | PASS | Tables 1–5 cited sequentially |
 | Declarations complete | PASS | Title page, manuscript, and declarations files |
 | Title-page/anonymized separation | PASS | Identity and acknowledgements are excluded from the anonymized manuscript |
@@ -24,5 +24,6 @@
 | Two-author approvals complete | PASS | Corresponding-author confirmation record and rebuilt declarations |
 | Public/blinded repository separation | PASS | Exact URL is absent from blinded files and present in identity-bearing/public statements |
 | Reviewer code package anonymous | PASS | Existing ZIP audit passed; rebuild was not required |
+| Submission status | PASS | ON HOLD; no portal action is authorized |
 
-Main-text word count: 3162. PDF rendering and final human visual inspection are recorded separately in the anonymization and final submission audits.
+Main-text word count: 3175. PDF rendering and final human visual inspection are recorded separately in the anonymization and final submission audits.

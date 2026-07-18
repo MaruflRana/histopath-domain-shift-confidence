@@ -6,6 +6,16 @@
 **Verdict:** **PASS — scientific content internally consistent; authorship and availability
 metadata finalized for human submission review**
 
+## Milestone 9G addendum
+
+The exact approved title was applied consistently. A deterministic methodology workflow is now
+Figure 1, cited in Section 2.1; the six accepted scientific figures were renumbered as Figures 2-7
+without changing source or submission-copy pixels. All seven figures are cited sequentially.
+The 12-page anonymized proof, title page, captions, supplement, CLAIM checklist, tables, and
+related package files passed visual and structural review. Numerical manuscript tokens, citation
+ordering, author metadata, GroupDRO-primary/ERM-control roles, and the unfavorable reversal were
+unchanged. Journal submission is intentionally on hold.
+
 ## Milestone 9F addendum
 
 The final author order is Jishan Islam Maruf followed by Ishtiak Al Mamoon. Jishan Islam Maruf
@@ -109,7 +119,7 @@ CORAL/DANN/model-based uncertainty methods.
 
 ## Remaining work
 
-The manuscript package is finalized for human review but has not been submitted. Open the affected
-DOCX files in Microsoft Word, verify the portal-generated proof and current APC/waiver and file
-designation requirements, then submit manually. No additional `ood_test` inference or exploratory
-model development is required or authorized.
+The manuscript package is prepared but has not been submitted. Journal submission is
+intentionally on hold. No portal action is currently authorized. A future human Microsoft Word
+review requires separate authorization. No additional `ood_test` inference or exploratory model
+development is required or authorized.

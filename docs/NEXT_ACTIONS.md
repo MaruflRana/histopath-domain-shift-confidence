@@ -1,7 +1,7 @@
 # NEXT ACTIONS
 
-**Project:** Confidence-Aware Tumor Detection Under Hospital Domain Shift in
-Histopathology: Calibration, Uncertainty, and Selective Prediction
+**Project/manuscript:** Hospital Domain Shift Can Reverse Development Gains in Histopathology
+Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
 
 Nothing in this file is authorized to start until the user explicitly approves it.
 
@@ -9,8 +9,16 @@ Nothing in this file is authorized to start until the user explicitly approves i
 
 ## Immediate status
 
-**Milestones 1 through 9F are complete and accepted; the latest completed milestone is
-Milestone 9F.**
+**Milestones 1 through 9G are complete and accepted; the latest completed milestone is
+Milestone 9G.**
+
+Milestone 9G applied the exact revised title and added a deterministic methodology workflow as
+Figure 1. The six accepted scientific figures were renumbered as Figures 2-7 without changing
+their pixels or scientific content. Affected submission documents and audits were rebuilt; all
+protected exp09 evidence remained immutable. No dataset/model/test action or generative-image
+model was used.
+
+**Journal submission is intentionally on hold. No portal action is currently authorized.**
 
 Milestone 9F finalized the approved author order Jishan Islam Maruf then Ishtiak Al Mamoon.
 Jishan remains first/corresponding author and principal contributor; Ishtiak's roles are limited
@@ -87,17 +95,9 @@ Supporting verified manuscript sources:
 
 ## Exact next recommendation
 
-Proceed with **human review and manual JPI submission**:
-
-1. Open every DOCX in Microsoft Word and confirm page breaks, editable tables, superscript
-   citations, and absence of tracked changes/comments.
-2. Review the PDF, all six TIFF figures, captions, and supplementary material at 100% zoom.
-3. Re-verify current JPI APC/waiver, file-designation, and declaration fields on the official
-   submission portal.
-4. Enter the prepared author, affiliation, corresponding-author, funding, conflict, ethics,
-   consent, data/code, CRediT, and AI-use fields exactly.
-5. Upload in the order documented in `submission/jpi/JPI_Submission_Package_README.md`, inspect
-   the portal-generated proof, and submit manually.
+Take no portal action now. Preserve the frozen package and wait for separate authorization for a
+future human journal review. At that time, open every affected DOCX in Microsoft Word and inspect
+the seven figures, title wrapping, page breaks, tables, and PDF proof before any upload decision.
 
 ## Permanent guardrails
 

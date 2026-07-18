@@ -1,5 +1,7 @@
 # Final Novelty Statement
 
+**Current manuscript title:** Hospital Domain Shift Can Reverse Development Gains in Histopathology Tumor Detection: A Reserved-Center Study of Calibration and Operating-Point Transfer
+
 ## Recommended statement
 
 This study's novelty is methodological and empirical rather than architectural. It
