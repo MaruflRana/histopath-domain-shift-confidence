@@ -3,20 +3,32 @@
 **Project:** Confidence-Aware Tumor Detection Under Hospital Domain Shift in
 Histopathology: Calibration, Uncertainty, and Selective Prediction
 
-_As of: 2026-07-17. This document captures the exact, current, accepted state of the
+_As of: 2026-07-18. This document captures the exact, current, accepted state of the
 project so a fresh session can resume with zero ambiguity._
 
 ---
 
 ## 1. One-line status
 
-**Milestones 1 → 9D are complete and accepted; the latest completed milestone is
-Milestone 9D.** The explicitly authorized single final locked `ood_test` inference completed once,
+**Milestones 1 → 9E are complete and accepted; the latest completed milestone is
+Milestone 9E.** The explicitly authorized single final locked `ood_test` inference completed once,
 followed by the CSV-only final summary. Run start:
 **2026-07-16T17:16:25.455291+00:00**; inference complete:
 **2026-07-16T17:35:17.051997+00:00**; summary complete:
 **2026-07-16T17:35:20.395673+00:00**. Attempt count = **1**. `ood_test` is no longer unread, and no
 second access or inference attempt is authorized.
+
+Milestone 9E sanitized, initialized, audited, and published the project to the public GitHub
+repository `https://github.com/MaruflRana/histopath-domain-shift-confidence` on branch `main`.
+The initial public commit is `9907d6efb546c529fa5226fd0182edac17878b86`. Security, credential,
+privacy, portability, large-file, staged-file, and remote-content audits passed. The public tree
+contains reproducible source/configuration, documentation, aggregate results, PNG figures, and
+sanitized submission-aligned materials. Datasets, checkpoints, raw predictions, caches,
+authorization/run-state/sentinel files, certificates, local archives, redundant TIFF copies, and
+identity-bearing documents containing private telephone information were excluded. Accepted
+exp09 evidence retained all recorded SHA256 hashes. No dataset or HF split was loaded, no image
+was read, no model/checkpoint was loaded, no inference/training/calibration/threshold action ran,
+and no second `ood_test` attempt occurred.
 
 Milestone 9B used saved 8B/8C/9A artifacts only to create the final venue-neutral manuscript,
 title/abstract package, results interpretation, discussion/limitations, final claims map,

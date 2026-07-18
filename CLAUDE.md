@@ -14,7 +14,13 @@ source of truth for data. When instructions disagree, follow the stricter rule.
 - The pipeline is script-based (`scripts/00…43`), Windows-native, and uses Hugging Face.
 - Data comes only from `wltjr1007/Camelyon17-WILDS`. Never use WILDS/CodaLab download.
 - The four logical splits in §4 are locked. Never invent random splits.
-- **Latest completed milestone = 9D.** Milestones 1 through 9D are complete and accepted.
+- **Latest completed milestone = 9E.** Milestones 1 through 9E are complete and accepted.
+- Milestone 9E published the sanitized project to the public GitHub repository
+  `https://github.com/MaruflRana/histopath-domain-shift-confidence` on `main`. The initial public
+  commit is `9907d6efb546c529fa5226fd0182edac17878b86`. Publication audits passed; datasets,
+  checkpoints, raw predictions, authorization/run-state/sentinel files, caches, certificates,
+  local archives, and redundant TIFF copies were excluded. Accepted exp09 hashes remained
+  unchanged and no dataset/model/test action occurred.
 - Milestone 9D created the complete Journal of Pathology Informatics (JPI) Original Research
   submission package under `submission/jpi/` for sole author Jishan Islam Maruf
   (`jishanislammaruf62@gmail.com`). It includes the title page, double-anonymized manuscript,
@@ -147,7 +153,18 @@ by `src/data/hf_camelyon17.py`.
 
 ## 8. Current accepted state
 
-**Milestones 1 through 9D are complete and accepted.**
+**Milestones 1 through 9E are complete and accepted.**
+
+Milestone 9E sanitized, initialized, audited, and published the repository at
+`https://github.com/MaruflRana/histopath-domain-shift-confidence` as a public GitHub repository
+with default branch `main`. The initial publication commit is
+`9907d6efb546c529fa5226fd0182edac17878b86`. The repository contains reproducible code,
+documentation, submission-aligned materials, aggregate results, and PNG figures while excluding
+datasets, checkpoints, raw predictions, caches, private governance/run-state records,
+certificates, local archives, and redundant TIFF copies. Security, privacy, portability,
+large-file, staged-file, and remote audits passed. Accepted exp09 evidence remained immutable;
+no HF split, image, model, checkpoint, or inference path was accessed and `ood_test` was not
+rerun. Repository publication does not authorize reopening model development.
 
 Milestone 9D formatted the accepted 9C manuscript for JPI without changing scientific content.
 The package is at `submission/jpi/`; its title page and double-anonymized manuscript are complete,

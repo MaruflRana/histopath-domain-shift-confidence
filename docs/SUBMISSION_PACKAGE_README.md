@@ -8,6 +8,14 @@ Milestone 9D completed the Journal of Pathology Informatics Original Research pa
 scientific-integrity audit both pass. The abstract is 221 words, there are seven keywords and five
 compliant highlights, and all standard declarations—including AI-use disclosure—are complete.
 
+Milestone 9E published the sanitized, submission-aligned project to the public GitHub repository
+`https://github.com/MaruflRana/histopath-domain-shift-confidence` on branch `main`. The initial
+public commit is `9907d6efb546c529fa5226fd0182edac17878b86`. The public repository intentionally
+excludes datasets, checkpoints, raw predictions, private authorization/run-state/sentinel files,
+certificates, local archives, redundant TIFF copies, and identity-bearing documents containing
+private telephone information. Accepted exp09 evidence remained immutable, and no dataset,
+model, checkpoint, image, HF split, or inference path was accessed during publication.
+
 ## Recommended positioning
 
 The paper should be positioned as a methodological and empirical study of **reserved-hospital evaluation, confidence reliability, and operating-policy transportability under hospital domain shift**. Its central scientific result is not GroupDRO superiority. The main narrative is that a development-stage GroupDRO advantage reversed on the strictly reserved hospital, while frozen temperature scaling improved confidence reliability without correcting classification errors.

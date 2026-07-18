@@ -7,13 +7,13 @@ Chronological record of completed, accepted milestones. Each entry lists goal, w
 built, how it was verified, and the accepted outcome. Development milestones remain
 development evidence; Milestone 9A is the completed locked final center-2 evaluation.
 
-**Current state:** the latest completed milestone is **Milestone 9C**. The single explicitly
+**Current state:** the latest completed milestone is **Milestone 9E**. The single explicitly
 authorized `ood_test` inference and CSV-only summary completed with attempt count 1 in Milestone
-9A; Milestones 9B and 9C used saved artifacts and documentation/web research only. No second
-`ood_test` inference is authorized. Earlier entries preserve
+9A; Milestones 9B through 9E did not rerun `ood_test`. No second `ood_test` inference is
+authorized. Earlier entries preserve
 their then-current “latest milestone” and “next step” wording as historical record only; those
-statements are not active instructions. Current next action is journal-specific formatting and
-final submission QA after explicit target approval.
+statements are not active instructions. Current next action is final JPI portal review and manual
+submission; model development remains closed.
 
 ---
 
@@ -2185,3 +2185,32 @@ No threshold has been committed.
 - **Exact next recommendation:** human visual review in Microsoft Word, re-verification of current
   APC/waiver and portal fields, and manual submission through the JPI submission system. Do not
   rerun `ood_test`, reopen model development, or begin another experiment/manuscript rewrite.
+
+## Milestone 9E — Sanitized GitHub publication ✅ COMPLETE / ACCEPTED
+
+- **Date:** 2026-07-18.
+- **Scope:** repository sanitation, portability/documentation edits, Git initialization,
+  security/privacy/large-file audits, and GitHub publication only. No dataset/HF split/image,
+  model/checkpoint, inference, training, calibration fitting, threshold tuning, or final-test
+  action occurred; scripts 38 and 39 were not run.
+- **Repository:** `https://github.com/MaruflRana/histopath-domain-shift-confidence`, public,
+  default branch `main`. Initial publication commit:
+  `9907d6efb546c529fa5226fd0182edac17878b86`.
+- **Published content:** reproducible source, scripts, configurations, documentation, references,
+  tests, aggregate metrics/tables, PNG figures, manuscript source, and sanitized JPI materials.
+- **Excluded content:** datasets/source images, HF/local caches, Python environments, checkpoints,
+  raw predictions/logits, authorization and one-shot run-state/sentinel files, credentials and
+  certificates, local archives/code-package ZIP duplication, redundant TIFF copies, and
+  identity-bearing documents containing private telephone information.
+- **Audits:** staged security/credential, privacy/email, absolute-path, portability, file-size,
+  ignored-file, protected-hash, remote-tree, and rendered-README audits passed. The initial commit
+  contained 324 files; no committed file exceeded 10 MB, and the largest blob was 171,631 bytes.
+- **Immutability:** all nine protected exp09 evidence/governance files retained their recorded
+  SHA256 hashes. Authorization/run-state/sentinel files were not committed. Attempt count remains
+  1 and `ood_test` was not accessed or rerun.
+- **Git safety:** the target remote was empty before publication, no remote history was
+  overwritten, and no force push was used.
+- **Outcome:** PASS. Latest completed milestone = **9E**.
+- **Exact next recommendation:** complete the human Microsoft Word/JPI portal review, re-check
+  current APC/waiver and submission fields, and submit manually. Do not reopen model development,
+  rerun `ood_test`, or begin another experiment/manuscript rewrite.

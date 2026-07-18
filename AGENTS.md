@@ -65,7 +65,16 @@ This is the agent-onboarding entry point. Read this file, then `CLAUDE.md`,
 
 ## Current accepted state
 
-**Milestones 1 through 9D are complete; the latest completed milestone is Milestone 9D.**
+**Milestones 1 through 9E are complete; the latest completed milestone is Milestone 9E.**
+Milestone 9E published the sanitized project to the public GitHub repository
+`https://github.com/MaruflRana/histopath-domain-shift-confidence` on branch `main`. The initial
+public commit is `9907d6efb546c529fa5226fd0182edac17878b86`. Security, privacy, portability,
+large-file, staged-file, and remote-content audits passed. Datasets, checkpoints, raw
+predictions, caches, authorization/run-state/sentinel files, certificates, local archives, and
+redundant TIFF submission copies were excluded. Accepted exp09 evidence retained its recorded
+SHA256 hashes; no dataset, model, checkpoint, image, HF split, or inference path was accessed,
+and `ood_test` was not rerun.
+
 Milestone 9D created and audited the complete JPI Original Research submission package at
 `submission/jpi/` for sole author **Jishan Islam Maruf**
 (`jishanislammaruf62@gmail.com`). The title page, double-anonymized manuscript, PDF proof,

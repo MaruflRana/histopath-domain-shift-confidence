@@ -9,8 +9,15 @@ Nothing in this file is authorized to start until the user explicitly approves i
 
 ## Immediate status
 
-**Milestones 1 through 9D are complete and accepted; the latest completed milestone is
-Milestone 9D.**
+**Milestones 1 through 9E are complete and accepted; the latest completed milestone is
+Milestone 9E.**
+
+Milestone 9E published the sanitized project to the public repository
+`https://github.com/MaruflRana/histopath-domain-shift-confidence` on `main`; the initial public
+commit is `9907d6efb546c529fa5226fd0182edac17878b86`. Publication audits passed. Datasets,
+checkpoints, raw predictions, caches, authorization/run-state/sentinel files, certificates,
+local archives, and redundant TIFF copies were excluded. Accepted exp09 evidence remained
+immutable, no `ood_test` rerun occurred, and repository publication does not reopen development.
 
 Milestone 9D created the complete Journal of Pathology Informatics Original Research submission
 package under `submission/jpi/` for sole author Jishan Islam Maruf. The abstract is 221 words,
