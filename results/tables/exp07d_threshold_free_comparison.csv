@@ -1,0 +1,7 @@
+model,model_label,split,n,auroc,auprc
+plain,plain ERM (4A/5A),id_val,500,0.993264,0.994314468974054
+plain,plain ERM (4A/5A),ood_val,2000,0.769597,0.679304126132547
+stain7a,stain-aug 7A,id_val,500,0.99376,0.9940396510507716
+stain7a,stain-aug 7A,ood_val,2000,0.749203,0.6880698237551657
+stain7d,stain-aug v2 7D,id_val,500,0.9925120000000001,0.9931636870915638
+stain7d,stain-aug v2 7D,ood_val,2000,0.7396559999999999,0.6613778452525392

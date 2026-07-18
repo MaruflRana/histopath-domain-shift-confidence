@@ -1,0 +1,25 @@
+model,role,metric,value,delta_groupdro_minus_erm,winner_for_metric,interpretation
+groupdro,predeclared_primary,accuracy,0.5337197545089002,-0.037435041267900426,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+centerstrat_erm,matched_control,accuracy,0.5711547957768006,-0.037435041267900426,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+groupdro,predeclared_primary,balanced_accuracy,0.5337197545089002,-0.037435041267900426,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+centerstrat_erm,matched_control,balanced_accuracy,0.5711547957768006,-0.037435041267900426,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+groupdro,predeclared_primary,auroc,0.6633704256200204,-0.03506478657582235,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+centerstrat_erm,matched_control,auroc,0.6984352121958427,-0.03506478657582235,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+groupdro,predeclared_primary,auprc,0.63641261236421,-0.019215767744905632,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+centerstrat_erm,matched_control,auprc,0.6556283801091156,-0.019215767744905632,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+groupdro,predeclared_primary,sensitivity,0.1105650527899922,-0.13050532602817033,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+centerstrat_erm,matched_control,sensitivity,0.2410703788181625,-0.13050532602817033,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+groupdro,predeclared_primary,specificity,0.9568744562278082,0.05563524349236959,groupdro,Predeclared primary retained the favorable value for this metric.
+centerstrat_erm,matched_control,specificity,0.9012392127354386,0.05563524349236959,groupdro,Predeclared primary retained the favorable value for this metric.
+groupdro,predeclared_primary,precision,0.7194002447980417,0.010017460408337842,groupdro,Predeclared primary retained the favorable value for this metric.
+centerstrat_erm,matched_control,precision,0.7093827843897038,0.010017460408337842,groupdro,Predeclared primary retained the favorable value for this metric.
+groupdro,predeclared_primary,f1,0.1916719320057884,-0.16817994324649752,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+centerstrat_erm,matched_control,f1,0.3598518752522859,-0.16817994324649752,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+groupdro,predeclared_primary,tn,40693.0,2366.0,groupdro,Predeclared primary retained the favorable value for this metric.
+centerstrat_erm,matched_control,tn,38327.0,2366.0,groupdro,Predeclared primary retained the favorable value for this metric.
+groupdro,predeclared_primary,fp,1834.0,-2366.0,groupdro,Predeclared primary retained the favorable value for this metric.
+centerstrat_erm,matched_control,fp,4200.0,-2366.0,groupdro,Predeclared primary retained the favorable value for this metric.
+groupdro,predeclared_primary,fn,37825.0,5550.0,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+centerstrat_erm,matched_control,fn,32275.0,5550.0,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+groupdro,predeclared_primary,tp,4702.0,-5550.0,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.
+centerstrat_erm,matched_control,tp,10252.0,-5550.0,centerstrat_erm,Matched control outperformed the predeclared primary on the reserved center.

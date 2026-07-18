@@ -1,0 +1,6 @@
+method,grouping_field,train_has_field,train_distinct_groups,runnable_immediately,sound_immediately,feasible_immediately,requires,note
+GroupDRO,center,True,2,True,False,False,"training (gated, Milestone 7F)","runnable (2 center groups) but UNSOUND: center<->label confounded (single-class centers=[3]), missing source centers=[4]; stratified rebuild advised"
+CORAL,center,True,2,True,False,False,"training (gated, Milestone 7F)","runnable (2 center groups) but UNSOUND: center<->label confounded (single-class centers=[3]), missing source centers=[4]; stratified rebuild advised"
+DANN,center,True,2,True,False,False,"training (gated, Milestone 7F)","runnable (2 center groups) but UNSOUND: center<->label confounded (single-class centers=[3]), missing source centers=[4]; stratified rebuild advised"
+id_val source-domain validation,center,True,2,True,True,True,no training (metadata only),"id_val centers=[0, 3]"
+ood_val center identifiable,center,True,1,True,True,True,no training (metadata only),ood_val centers=[1]

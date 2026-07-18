@@ -1,0 +1,10 @@
+metric_family,required,input_needed,output_artifact,split,notes
+classification,yes,"predictions (label, prob_1) per model/split",results/metrics/exp08b_full_dev_eval/<model>/classification_metrics.json,id_val + ood_val,accuracy/balanced_acc/precision/f1; tumor=1 positive
+AUROC/AUPRC,yes,"predictions (label, prob_1)",classification_metrics.json + report,id_val + ood_val,threshold-free ranking; primary controlled comparison metric
+fixed-specificity candidate operating points,yes,id_val + ood_val predictions,results/tables/exp08b_operating_points.csv,id_val (select) -> ood_val (apply),spec 0.80/0.85/0.90/0.95; CANDIDATE only
+fixed-sensitivity candidate operating points,optional,id_val + ood_val predictions,results/tables/exp08b_operating_points.csv,id_val (select) -> ood_val (apply),sens 0.80/0.90/0.95; CANDIDATE only
+calibration,optional,ood_val logits (dev) OR reuse 7G temperatures,results/metrics/exp08b_full_dev_eval/<model>/calibration_metrics.json + exp08b_calibration_comparison.csv,ood_val,ECE/Brier/NLL raw vs cal; argmax-invariant; R7 open; NO independent-test claim
+high-confidence false negatives,yes,"ood_val predictions (label, pred, confidence)",results/tables/exp08b_high_confidence_fn.csv,ood_val,count label==1 & pred==0 & confidence>=t (0.90/0.95/0.99) raw vs cal
+uncertainty/error detection,optional,predictions (probs/logits),results/tables/exp08b_uncertainty_metrics.csv,id_val + ood_val,deterministic entropy/confidence/margin/energy; NO MC-dropout/ensemble
+risk-coverage,optional,predictions + uncertainty scores,results/tables/exp08b_risk_coverage.csv + exp08b_selective_prediction.csv,id_val + ood_val,descriptive selective-prediction; no committed threshold
+per-center id_val analysis,yes,id_val predictions + center metadata,results/tables/exp08b_id_val_per_center_metrics.csv,id_val (centers 0/3/4 + overall),worst-center behavior (e.g. GroupDRO up-weighted center 4)

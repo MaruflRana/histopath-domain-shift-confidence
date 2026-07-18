@@ -1,0 +1,13 @@
+split,center,label,available_scanned,collected_in_buckets,scan_completed_exact
+train,0,0,26686,300,False
+train,0,1,20584,300,False
+train,3,0,58436,300,False
+train,3,1,49253,300,False
+train,4,0,300,300,False
+train,4,1,66128,300,False
+id_val,0,0,3032,75,False
+id_val,0,1,2280,75,False
+id_val,3,0,6483,75,False
+id_val,3,1,5363,75,False
+id_val,4,0,75,75,False
+id_val,4,1,7233,75,False

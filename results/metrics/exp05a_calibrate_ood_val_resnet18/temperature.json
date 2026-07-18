@@ -1,0 +1,14 @@
+{
+  "run_name": "exp05a_calibrate_ood_val_resnet18",
+  "method": "temperature_scaling",
+  "temperature": 3.122415542602539,
+  "temperature_init": 1.0,
+  "min_temperature": 0.05,
+  "max_temperature": 10.0,
+  "nll_before": 0.9151584506034851,
+  "nll_after": 0.6088143587112427,
+  "n_iter": 200,
+  "converged": false,
+  "fit_on": "ood_val",
+  "n": 2000
+}

@@ -1,0 +1,67 @@
+# Locked dataset configuration for Camelyon17-WILDS via Hugging Face.
+# See PROJECT_PROTOCOL.md. Do NOT edit split logic without updating the protocol.
+
+dataset:
+  name: camelyon17_hf
+  hf_id: wltjr1007/Camelyon17-WILDS
+  # Streaming avoids the unreliable full-dataset download.
+  streaming_default: true
+
+  # label semantics
+  labels:
+    0: non_tumor
+    1: tumor
+
+  # Fields validated present in every example.
+  expected_fields:
+    - image
+    - label
+    - center
+    - image_id
+    - patient
+    - node
+    - x_coord
+    - y_coord
+    - slide
+
+  # Images may arrive as RGBA; always convert to RGB before model use.
+  image_mode: RGB
+
+# Locked logical-split mapping. Each logical split is (hf_split, center filter).
+# center_in: null means "no center filter" (accept all centers in that HF split).
+splits:
+  train:
+    hf_split: train
+    center_in: [0, 3, 4]
+    expected_total: 302436
+    expected_label_counts:
+      0: 151046   # non-tumor
+      1: 151390   # tumor
+  id_val:
+    hf_split: validation
+    center_in: [0, 3, 4]
+    expected_total: 33560
+  ood_val:
+    hf_split: validation
+    center_in: [1]
+    expected_total: 34904
+  ood_test:
+    hf_split: test
+    center_in: [2]
+    expected_total: 85054
+    expected_label_counts:
+      0: 42527    # non-tumor
+      1: 42527    # tumor
+
+# Expected center membership per HF split (used by verification script 01).
+hf_split_expected_centers:
+  train: [0, 3, 4]
+  validation: [0, 1, 3, 4]
+  test: [2]
+
+# Usage rules (enforced by convention + protocol; documented here for traceability).
+usage:
+  train: [training]
+  id_val: [id_model_selection]
+  ood_val: [calibration, threshold_selection, ood_model_selection]
+  ood_test: [final_reporting_only]

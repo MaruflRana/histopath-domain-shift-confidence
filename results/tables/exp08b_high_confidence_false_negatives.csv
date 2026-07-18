@@ -1,0 +1,13 @@
+model,model_label,split,confidence_threshold,n_high_confidence,high_confidence_errors,high_confidence_false_negatives,high_confidence_false_negative_rate,total_false_negatives
+groupdro,7F GroupDRO (primary candidate),id_val,0.9,24392,1972,1584,0.06493932436864545,4033
+groupdro,7F GroupDRO (primary candidate),id_val,0.95,21436,1350,1093,0.05098899048329912,4033
+groupdro,7F GroupDRO (primary candidate),id_val,0.99,14977,502,423,0.028243306403151498,4033
+groupdro,7F GroupDRO (primary candidate),ood_val,0.9,28316,4526,3922,0.13850826387907897,6271
+groupdro,7F GroupDRO (primary candidate),ood_val,0.95,25999,3606,3131,0.12042770875802916,6271
+groupdro,7F GroupDRO (primary candidate),ood_val,0.99,20296,1950,1679,0.08272566022861648,6271
+centerstrat_erm,7F center-stratified ERM (matched control),id_val,0.9,21370,1721,1463,0.06846045858680393,5280
+centerstrat_erm,7F center-stratified ERM (matched control),id_val,0.95,18244,1006,877,0.048070598552948915,5280
+centerstrat_erm,7F center-stratified ERM (matched control),id_val,0.99,12654,423,398,0.031452505136715665,5280
+centerstrat_erm,7F center-stratified ERM (matched control),ood_val,0.9,29380,5964,5447,0.18539823008849557,6852
+centerstrat_erm,7F center-stratified ERM (matched control),ood_val,0.95,27350,5367,4976,0.1819378427787934,6852
+centerstrat_erm,7F center-stratified ERM (matched control),ood_val,0.99,22810,3994,3794,0.16633055677334502,6852

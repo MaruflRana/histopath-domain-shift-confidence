@@ -1,0 +1,53 @@
+# Milestone 7E — Stain-space (OD/HED-style) augmentation ERM baseline (ResNet18).
+# A pathology-specific stain-robustness baseline for reviewer risk R3 (no *effective*
+# stain-robustness / DG baseline yet). Trains ResNet18 on the SAME cached balanced train
+# subset used by plain-ERM 4A / 7A / 7D, but with the validated 7E-0 optical-density
+# (HED-style) StainSpaceAugment applied to train only. Best by id_val_loss ONLY. ood_val is
+# NEVER used for training or model selection — read only afterwards (script 23) for
+# development-stage comparison. ood_test never touched. Uses the validated StainSpaceAugment
+# transform (7E-0); NO GroupDRO/CORAL/DANN, NO MC-dropout/ensemble, NO calibration in this
+# milestone. DEVELOPMENT baseline, NOT a paper result.
+
+model:
+  backbone_name: resnet18
+  pretrained: false
+  num_classes: 2
+
+data:
+  train_cache: results/cache/balanced_train_pc1000_seed1337_shuf.pt
+  id_val_cache: results/cache/balanced_id_val_pc250_seed1337_shuf.pt
+  ood_val_cache: results/cache/balanced_ood_val_pc1000_seed1337_noshuf.pt
+  batch_size: 32
+  num_workers: 0
+  seed: 1337
+
+augmentation:
+  name: stain_space_aug
+  od_scale_min: 0.90
+  od_scale_max: 1.10
+  od_bias_min: -0.03
+  od_bias_max: 0.03
+  horizontal_flip_p: 0.5
+  vertical_flip_p: 0.5
+  rotation_degrees: 15
+
+training:
+  epochs: 5
+  optimizer: adamw
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  seed: 1337
+
+selection:
+  metric: id_val_loss
+  mode: min
+
+output:
+  run_name: exp07e_stainspace_resnet18
+  log_csv: results/logs/exp07e_stainspace_resnet18_log.csv
+  train_report_txt: results/logs/exp07e_stainspace_resnet18_train_report.txt
+  eval_report_txt: results/logs/exp07e_stainspace_resnet18_eval_report.txt
+  checkpoint_dir: results/checkpoints/exp07e_stainspace_resnet18
+  prediction_dir: results/predictions/exp07e_stainspace_resnet18
+  metrics_json: results/metrics/exp07e_stainspace_resnet18/classification_metrics.json
+  metrics_csv: results/tables/exp07e_stainspace_resnet18_classification_metrics.csv

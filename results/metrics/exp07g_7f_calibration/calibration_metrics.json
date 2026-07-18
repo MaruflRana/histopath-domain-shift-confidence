@@ -1,0 +1,461 @@
+{
+  "milestone": "7G",
+  "description": "Calibration (temperature scaling on ood_val) + candidate operating-point audit of the two matched 7F center-stratified models. CSV/logit-only; no training/inference; ood_test never read.",
+  "positive_class": 1,
+  "n_ece_bins": 15,
+  "fair_comparison": "center-strat ERM (7F) vs GroupDRO (7F) - same 7F-1 cache",
+  "models": {
+    "centerstrat_erm": {
+      "name": "center-strat ERM (7F)",
+      "temperature": 3.9239485263824463,
+      "calibration": {
+        "raw": {
+          "n": 2000,
+          "ece": 0.4983580166727227,
+          "brier": 0.5059286765495025,
+          "nll": 3.4859335007515924,
+          "n_bins": 15
+        },
+        "calibrated": {
+          "n": 2000,
+          "ece": 0.36980630679533355,
+          "brier": 0.37591312708951174,
+          "nll": 1.0671910004680079,
+          "n_bins": 15
+        }
+      },
+      "classification": {
+        "raw": {
+          "accuracy": 0.4765,
+          "auroc": 0.6180269999999999,
+          "auprc": 0.521417092650106,
+          "sensitivity": 0.01,
+          "specificity": 0.943,
+          "fn": 990,
+          "fp": 57
+        },
+        "calibrated": {
+          "accuracy": 0.4765,
+          "auroc": 0.6180269999999999,
+          "auprc": 0.521417092650106,
+          "sensitivity": 0.01,
+          "specificity": 0.943,
+          "fn": 990,
+          "fp": 57
+        }
+      }
+    },
+    "groupdro": {
+      "name": "GroupDRO (7F)",
+      "temperature": 3.6570000648498535,
+      "calibration": {
+        "raw": {
+          "n": 2000,
+          "ece": 0.42583545411002,
+          "brier": 0.4277639962908632,
+          "nll": 1.9138636904406343,
+          "n_bins": 15
+        },
+        "calibrated": {
+          "n": 2000,
+          "ece": 0.2528521683225408,
+          "brier": 0.28964144228957467,
+          "nll": 0.7908201963939322,
+          "n_bins": 15
+        }
+      },
+      "classification": {
+        "raw": {
+          "accuracy": 0.5065,
+          "auroc": 0.7128789999999999,
+          "auprc": 0.6287492248988467,
+          "sensitivity": 0.07,
+          "specificity": 0.943,
+          "fn": 930,
+          "fp": 57
+        },
+        "calibrated": {
+          "accuracy": 0.5065,
+          "auroc": 0.7128789999999999,
+          "auprc": 0.6287492248988467,
+          "sensitivity": 0.07,
+          "specificity": 0.943,
+          "fn": 930,
+          "fp": 57
+        }
+      }
+    }
+  },
+  "high_confidence_false_negatives": [
+    {
+      "model": "center-strat ERM (7F)",
+      "variant": "raw",
+      "variant_key": "centerstrat_erm_raw",
+      "confidence_threshold": 0.9,
+      "n_total": 2000,
+      "n_high_conf": 1827,
+      "n_high_conf_false_negative": 950,
+      "high_conf_false_negative_rate": 0.5199781061850027,
+      "n_false_negative_total": 990,
+      "fraction_of_fn_in_high_conf": 0.9595959595959596
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "variant": "raw",
+      "variant_key": "centerstrat_erm_raw",
+      "confidence_threshold": 0.95,
+      "n_total": 2000,
+      "n_high_conf": 1756,
+      "n_high_conf_false_negative": 925,
+      "high_conf_false_negative_rate": 0.5267653758542141,
+      "n_false_negative_total": 990,
+      "fraction_of_fn_in_high_conf": 0.9343434343434344
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "variant": "raw",
+      "variant_key": "centerstrat_erm_raw",
+      "confidence_threshold": 0.99,
+      "n_total": 2000,
+      "n_high_conf": 1532,
+      "n_high_conf_false_negative": 784,
+      "high_conf_false_negative_rate": 0.5117493472584856,
+      "n_false_negative_total": 990,
+      "fraction_of_fn_in_high_conf": 0.7919191919191919
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "variant": "calibrated",
+      "variant_key": "centerstrat_erm_calibrated",
+      "confidence_threshold": 0.9,
+      "n_total": 2000,
+      "n_high_conf": 779,
+      "n_high_conf_false_negative": 249,
+      "high_conf_false_negative_rate": 0.3196405648267009,
+      "n_false_negative_total": 990,
+      "fraction_of_fn_in_high_conf": 0.2515151515151515
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "variant": "calibrated",
+      "variant_key": "centerstrat_erm_calibrated",
+      "confidence_threshold": 0.95,
+      "n_total": 2000,
+      "n_high_conf": 330,
+      "n_high_conf_false_negative": 40,
+      "high_conf_false_negative_rate": 0.12121212121212122,
+      "n_false_negative_total": 990,
+      "fraction_of_fn_in_high_conf": 0.04040404040404041
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "variant": "calibrated",
+      "variant_key": "centerstrat_erm_calibrated",
+      "confidence_threshold": 0.99,
+      "n_total": 2000,
+      "n_high_conf": 21,
+      "n_high_conf_false_negative": 0,
+      "high_conf_false_negative_rate": 0.0,
+      "n_false_negative_total": 990,
+      "fraction_of_fn_in_high_conf": 0.0
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "variant": "raw",
+      "variant_key": "groupdro_raw",
+      "confidence_threshold": 0.9,
+      "n_total": 2000,
+      "n_high_conf": 1572,
+      "n_high_conf_false_negative": 688,
+      "high_conf_false_negative_rate": 0.43765903307888043,
+      "n_false_negative_total": 930,
+      "fraction_of_fn_in_high_conf": 0.7397849462365591
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "variant": "raw",
+      "variant_key": "groupdro_raw",
+      "confidence_threshold": 0.95,
+      "n_total": 2000,
+      "n_high_conf": 1394,
+      "n_high_conf_false_negative": 571,
+      "high_conf_false_negative_rate": 0.4096126255380201,
+      "n_false_negative_total": 930,
+      "fraction_of_fn_in_high_conf": 0.613978494623656
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "variant": "raw",
+      "variant_key": "groupdro_raw",
+      "confidence_threshold": 0.99,
+      "n_total": 2000,
+      "n_high_conf": 985,
+      "n_high_conf_false_negative": 333,
+      "high_conf_false_negative_rate": 0.3380710659898477,
+      "n_false_negative_total": 930,
+      "fraction_of_fn_in_high_conf": 0.3580645161290323
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "variant": "calibrated",
+      "variant_key": "groupdro_calibrated",
+      "confidence_threshold": 0.9,
+      "n_total": 2000,
+      "n_high_conf": 276,
+      "n_high_conf_false_negative": 25,
+      "high_conf_false_negative_rate": 0.09057971014492754,
+      "n_false_negative_total": 930,
+      "fraction_of_fn_in_high_conf": 0.026881720430107527
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "variant": "calibrated",
+      "variant_key": "groupdro_calibrated",
+      "confidence_threshold": 0.95,
+      "n_total": 2000,
+      "n_high_conf": 44,
+      "n_high_conf_false_negative": 1,
+      "high_conf_false_negative_rate": 0.022727272727272728,
+      "n_false_negative_total": 930,
+      "fraction_of_fn_in_high_conf": 0.001075268817204301
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "variant": "calibrated",
+      "variant_key": "groupdro_calibrated",
+      "confidence_threshold": 0.99,
+      "n_total": 2000,
+      "n_high_conf": 0,
+      "n_high_conf_false_negative": 0,
+      "high_conf_false_negative_rate": null,
+      "n_false_negative_total": 930,
+      "fraction_of_fn_in_high_conf": 0.0
+    }
+  ],
+  "candidate_operating_points": [
+    {
+      "model": "center-strat ERM (7F)",
+      "criterion": "specificity",
+      "target": 0.8,
+      "threshold_selected_on_id_val": 0.2608628571033478,
+      "id_val_sensitivity": 0.9466666666666667,
+      "id_val_specificity": 0.8,
+      "id_val_fn": 12,
+      "id_val_fp": 45,
+      "ood_val_sensitivity": 0.021,
+      "ood_val_specificity": 0.904,
+      "ood_val_fn": 979,
+      "ood_val_fp": 96,
+      "ood_val_predicted_positive_rate": 0.0585
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "criterion": "specificity",
+      "target": 0.85,
+      "threshold_selected_on_id_val": 0.3063718378543854,
+      "id_val_sensitivity": 0.9377777777777778,
+      "id_val_specificity": 0.8533333333333334,
+      "id_val_fn": 14,
+      "id_val_fp": 33,
+      "ood_val_sensitivity": 0.015,
+      "ood_val_specificity": 0.913,
+      "ood_val_fn": 985,
+      "ood_val_fp": 87,
+      "ood_val_predicted_positive_rate": 0.051
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "criterion": "specificity",
+      "target": 0.9,
+      "threshold_selected_on_id_val": 0.4094011485576629,
+      "id_val_sensitivity": 0.9111111111111111,
+      "id_val_specificity": 0.9022222222222223,
+      "id_val_fn": 20,
+      "id_val_fp": 22,
+      "ood_val_sensitivity": 0.013,
+      "ood_val_specificity": 0.928,
+      "ood_val_fn": 987,
+      "ood_val_fp": 72,
+      "ood_val_predicted_positive_rate": 0.0425
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "criterion": "specificity",
+      "target": 0.95,
+      "threshold_selected_on_id_val": 0.5802605152130127,
+      "id_val_sensitivity": 0.88,
+      "id_val_specificity": 0.9511111111111111,
+      "id_val_fn": 27,
+      "id_val_fp": 11,
+      "ood_val_sensitivity": 0.008,
+      "ood_val_specificity": 0.95,
+      "ood_val_fn": 992,
+      "ood_val_fp": 50,
+      "ood_val_predicted_positive_rate": 0.029
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "criterion": "sensitivity",
+      "target": 0.8,
+      "threshold_selected_on_id_val": 0.8185970783233643,
+      "id_val_sensitivity": 0.8,
+      "id_val_specificity": 0.9822222222222222,
+      "id_val_fn": 45,
+      "id_val_fp": 4,
+      "ood_val_sensitivity": 0.005,
+      "ood_val_specificity": 0.966,
+      "ood_val_fn": 995,
+      "ood_val_fp": 34,
+      "ood_val_predicted_positive_rate": 0.0195
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "criterion": "sensitivity",
+      "target": 0.9,
+      "threshold_selected_on_id_val": 0.4657229781150818,
+      "id_val_sensitivity": 0.9022222222222223,
+      "id_val_specificity": 0.9155555555555556,
+      "id_val_fn": 22,
+      "id_val_fp": 19,
+      "ood_val_sensitivity": 0.01,
+      "ood_val_specificity": 0.94,
+      "ood_val_fn": 990,
+      "ood_val_fp": 60,
+      "ood_val_predicted_positive_rate": 0.035
+    },
+    {
+      "model": "center-strat ERM (7F)",
+      "criterion": "sensitivity",
+      "target": 0.95,
+      "threshold_selected_on_id_val": 0.2273232340812683,
+      "id_val_sensitivity": 0.9511111111111111,
+      "id_val_specificity": 0.7866666666666666,
+      "id_val_fn": 11,
+      "id_val_fp": 48,
+      "ood_val_sensitivity": 0.025,
+      "ood_val_specificity": 0.897,
+      "ood_val_fn": 975,
+      "ood_val_fp": 103,
+      "ood_val_predicted_positive_rate": 0.064
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "criterion": "specificity",
+      "target": 0.8,
+      "threshold_selected_on_id_val": 0.1023695915937423,
+      "id_val_sensitivity": 0.9422222222222222,
+      "id_val_specificity": 0.8,
+      "id_val_fn": 13,
+      "id_val_fp": 45,
+      "ood_val_sensitivity": 0.306,
+      "ood_val_specificity": 0.855,
+      "ood_val_fn": 694,
+      "ood_val_fp": 145,
+      "ood_val_predicted_positive_rate": 0.2255
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "criterion": "specificity",
+      "target": 0.85,
+      "threshold_selected_on_id_val": 0.1532502472400665,
+      "id_val_sensitivity": 0.9244444444444444,
+      "id_val_specificity": 0.8533333333333334,
+      "id_val_fn": 17,
+      "id_val_fp": 33,
+      "ood_val_sensitivity": 0.241,
+      "ood_val_specificity": 0.881,
+      "ood_val_fn": 759,
+      "ood_val_fp": 119,
+      "ood_val_predicted_positive_rate": 0.18
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "criterion": "specificity",
+      "target": 0.9,
+      "threshold_selected_on_id_val": 0.2890069484710693,
+      "id_val_sensitivity": 0.8933333333333333,
+      "id_val_specificity": 0.9022222222222223,
+      "id_val_fn": 24,
+      "id_val_fp": 22,
+      "ood_val_sensitivity": 0.148,
+      "ood_val_specificity": 0.908,
+      "ood_val_fn": 852,
+      "ood_val_fp": 92,
+      "ood_val_predicted_positive_rate": 0.12
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "criterion": "specificity",
+      "target": 0.95,
+      "threshold_selected_on_id_val": 0.5699014067649841,
+      "id_val_sensitivity": 0.84,
+      "id_val_specificity": 0.9511111111111111,
+      "id_val_fn": 36,
+      "id_val_fp": 11,
+      "ood_val_sensitivity": 0.057,
+      "ood_val_specificity": 0.947,
+      "ood_val_fn": 943,
+      "ood_val_fp": 53,
+      "ood_val_predicted_positive_rate": 0.055
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "criterion": "sensitivity",
+      "target": 0.8,
+      "threshold_selected_on_id_val": 0.7794908881187439,
+      "id_val_sensitivity": 0.8,
+      "id_val_specificity": 0.9733333333333334,
+      "id_val_fn": 45,
+      "id_val_fp": 6,
+      "ood_val_sensitivity": 0.024,
+      "ood_val_specificity": 0.963,
+      "ood_val_fn": 976,
+      "ood_val_fp": 37,
+      "ood_val_predicted_positive_rate": 0.0305
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "criterion": "sensitivity",
+      "target": 0.9,
+      "threshold_selected_on_id_val": 0.2454070150852203,
+      "id_val_sensitivity": 0.9022222222222223,
+      "id_val_specificity": 0.8977777777777778,
+      "id_val_fn": 22,
+      "id_val_fp": 23,
+      "ood_val_sensitivity": 0.169,
+      "ood_val_specificity": 0.9,
+      "ood_val_fn": 831,
+      "ood_val_fp": 100,
+      "ood_val_predicted_positive_rate": 0.1345
+    },
+    {
+      "model": "GroupDRO (7F)",
+      "criterion": "sensitivity",
+      "target": 0.95,
+      "threshold_selected_on_id_val": 0.0763114169239997,
+      "id_val_sensitivity": 0.9511111111111111,
+      "id_val_specificity": 0.7688888888888888,
+      "id_val_fn": 11,
+      "id_val_fp": 52,
+      "ood_val_sensitivity": 0.365,
+      "ood_val_specificity": 0.836,
+      "ood_val_fn": 635,
+      "ood_val_fp": 164,
+      "ood_val_predicted_positive_rate": 0.2645
+    }
+  ],
+  "interpretation": {
+    "calibration_helped_centerstrat_erm": true,
+    "calibration_helped_groupdro": true,
+    "calibration_helped_both": true,
+    "groupdro_ood_auroc": 0.7128789999999999,
+    "centerstrat_erm_ood_auroc": 0.6180269999999999,
+    "groupdro_ranking_better_than_erm": true,
+    "groupdro_wins_fixed_specificity_targets": "4/4",
+    "groupdro_ge_erm_all_fixed_specificity": true,
+    "groupdro_wins_fixed_sensitivity_targets": "0/3",
+    "groupdro_remains_better_after_candidate_audit": true,
+    "argmax_invariant": true
+  },
+  "note": "DEVELOPMENT analysis on capped balanced subsets - NOT final performance. Candidate id_val thresholds are NOT committed clinical operating points. Fair comparison = 7F ERM vs 7F GroupDRO; old plain/7A/7D/7E context-only. ood_val used for development-stage calibration/comparison only; ood_test never read."
+}

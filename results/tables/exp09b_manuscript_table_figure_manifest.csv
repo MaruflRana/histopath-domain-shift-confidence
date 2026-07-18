@@ -1,0 +1,27 @@
+item_id,type,artifact_path,manuscript_section,main_or_supplement,source_milestone,scope,caption_caveat,status
+T1,table,results/tables/exp09b_development_vs_final_comparison.csv,Results: development and final comparison,main,9B,Development centers 0/3/4 and 1 versus final held-out center 2,Do not merge development and final scope; one-shot final result.,created
+T2,table,results/tables/exp09b_final_model_comparison.csv,Results: final controlled comparison,main,9B,Final held-out center 2,GroupDRO remains the predeclared primary; ERM remains the matched control.,created
+T3,table,results/tables/exp09b_final_calibration_summary.csv,Results: held-out calibration,main,9B,Final held-out center 2; frozen temperatures,No refit; hard predictions and total FN unchanged.,created
+T4,table,results/tables/exp09b_operating_point_transfer.csv,Results: operating-point transfer,supplement,9B,Frozen id_val candidates applied to final center 2,Candidate/non-clinical; no test tuning.,created
+T5,table,results/tables/exp09b_high_confidence_fn_summary.csv,Results: high-confidence false negatives,main,9B,Final held-out center 2,Confidence correction is not error correction.,created
+T6,table,results/tables/exp09b_final_claims_audit.csv,Governance and supplement,supplement,9B,Post-test claims map,Allowed wording remains hospital- and patch-scoped.,created
+F1,figure,results/figures/exp09b_development_to_final_auroc_auprc.png,Results: development-to-final comparison,main,9B,Development center 1 versus final held-out center 2,Development and final stages must remain visibly distinct.,created
+F2,figure,results/figures/exp09b_final_default_threshold_metrics.png,Results: final default-threshold comparison,main,9B,Final center 2; threshold 0.5,Not a clinically validated operating threshold.,created
+F3,figure,results/figures/exp09b_final_calibration_raw_vs_calibrated.png,Results: calibration,main,9B,Final center 2; raw versus frozen-temperature calibrated,No calibration refit and no hard-prediction change.,created
+F4,figure,results/figures/exp09b_operating_point_transfer.png,Results: operating-point transfer,supplement,9B,Nominal id_val target versus achieved final metric,Candidate/non-clinical operating points.,created
+F5,figure,results/figures/exp09b_high_confidence_fn_raw_vs_calibrated.png,Results: high-confidence false negatives,main,9B,Final center 2,Total FN is unchanged by calibration.,created
+F6,figure,results/figures/exp09b_development_test_reversal.png,Discussion: development-to-test reversal,main,9B,Development center 1 versus final center 2,Do not imply universal ERM superiority or universal GroupDRO failure.,created
+S1,figure,results/figures/exp09_final_ood_test_roc.png,Supplement: final ROC,supplement,9A,Final held-out center 2,Raw/calibrated curves overlap because ranking is invariant.,existing
+S2,figure,results/figures/exp09_final_ood_test_precision_recall.png,Supplement: final precision-recall,supplement,9A,Final held-out center 2,Raw/calibrated curves overlap because ranking is invariant.,existing
+S3,figure,results/figures/exp09_final_ood_test_calibration_reliability.png,Supplement: reliability diagrams,supplement,9A,Final held-out center 2,Frozen temperatures; no refit.,existing
+S4,figure,results/figures/exp09_final_ood_test_operating_points.png,Supplement: candidate operating points,supplement,9A,Final held-out center 2,Candidate/non-clinical.,existing
+S5,figure,results/figures/exp09_final_ood_test_high_confidence_fn.png,Supplement: high-confidence FN,supplement,9A,Final held-out center 2,Total FN unchanged.,existing
+D1,document,docs/FINAL_MANUSCRIPT_DRAFT.md,Primary manuscript,main,9B,Complete venue-neutral manuscript,Citation markers require later literature verification.,created
+D2,document,docs/FINAL_TITLE_ABSTRACT_KEYWORDS.md,Front matter,main,9B,"Title, abstract, keywords",No title claims GroupDRO superiority.,created
+D3,document,docs/FINAL_RESULTS_INTERPRETATION.md,Interpretation,supplement,9B,Exact scientific narrative,Negative model result and positive protocol contribution separated.,created
+D4,document,docs/FINAL_DISCUSSION_AND_LIMITATIONS.md,Discussion and limitations,main,9B,Evidence-supported and hypothetical explanations,No clinical-readiness or all-hospital claim.,created
+D5,document,docs/FINAL_CLAIMS_AND_LIMITATIONS.md,Claims governance,supplement,9B,Post-test claims map,Machine-readable counterpart T6.,created
+D6,document,docs/LITERATURE_CITATION_GAPS.md,Citation checklist,supplement,9B,Unverified external literature needs,No invented bibliography.,created
+D7,document,docs/SUBMISSION_PACKAGE_README.md,Submission handoff,main,9B,Package inventory and remaining work,Not yet journal-formatted.,created
+D8,document,docs/FINAL_REPRODUCIBILITY_CHECKLIST.md,Reproducibility,supplement,9B,One-shot provenance,Second run prohibited.,created
+D9,document,docs/FINAL_MANUSCRIPT_CONSISTENCY_AUDIT.md,Final QA,supplement,9B,Source-to-claim audit,Must pass before handoff.,created

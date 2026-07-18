@@ -1,0 +1,13 @@
+split,center,label,count
+train,0,0,300
+train,0,1,300
+train,3,0,300
+train,3,1,300
+train,4,0,300
+train,4,1,300
+id_val,0,0,75
+id_val,0,1,75
+id_val,3,0,75
+id_val,3,1,75
+id_val,4,0,75
+id_val,4,1,75

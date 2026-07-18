@@ -1,0 +1,45 @@
+{
+  "run_name": "exp07f_centerstrat_erm_resnet18",
+  "checkpoint_epoch": 2,
+  "threshold": 0.5,
+  "positive_class": 1,
+  "splits": {
+    "id_val": {
+      "n": 450,
+      "accuracy": 0.9088888888888889,
+      "balanced_accuracy": 0.9088888888888889,
+      "auroc": 0.9662222222222223,
+      "auprc": 0.9717401269466615,
+      "sensitivity": 0.8933333333333333,
+      "specificity": 0.9244444444444444,
+      "precision": 0.9220183486238532,
+      "f1": 0.90744920993228,
+      "tn": 208,
+      "fp": 17,
+      "fn": 24,
+      "tp": 201,
+      "threshold": 0.5,
+      "positive_class": 1,
+      "warnings": []
+    },
+    "ood_val": {
+      "n": 2000,
+      "accuracy": 0.4765,
+      "balanced_accuracy": 0.4765,
+      "auroc": 0.6180269999999999,
+      "auprc": 0.521417092650106,
+      "sensitivity": 0.01,
+      "specificity": 0.943,
+      "precision": 0.14925373134328357,
+      "f1": 0.01874414245548266,
+      "tn": 943,
+      "fp": 57,
+      "fn": 990,
+      "tp": 10,
+      "threshold": 0.5,
+      "positive_class": 1,
+      "warnings": []
+    }
+  },
+  "note": "Milestone 7F matched center-stratified ERM baseline. DEVELOPMENT comparison on capped balanced subsets. ood_val used post-training for development comparison only. NOT final. ood_test never touched."
+}

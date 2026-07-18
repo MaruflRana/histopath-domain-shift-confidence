@@ -1,0 +1,45 @@
+{
+  "run_name": "exp07f_groupdro_resnet18",
+  "checkpoint_epoch": 3,
+  "threshold": 0.5,
+  "positive_class": 1,
+  "splits": {
+    "id_val": {
+      "n": 450,
+      "accuracy": 0.8977777777777778,
+      "balanced_accuracy": 0.8977777777777778,
+      "auroc": 0.9666370370370371,
+      "auprc": 0.9702772940656756,
+      "sensitivity": 0.8577777777777778,
+      "specificity": 0.9377777777777778,
+      "precision": 0.9323671497584541,
+      "f1": 0.8935185185185184,
+      "tn": 211,
+      "fp": 14,
+      "fn": 32,
+      "tp": 193,
+      "threshold": 0.5,
+      "positive_class": 1,
+      "warnings": []
+    },
+    "ood_val": {
+      "n": 2000,
+      "accuracy": 0.5065,
+      "balanced_accuracy": 0.5065,
+      "auroc": 0.7128789999999999,
+      "auprc": 0.6287492248988467,
+      "sensitivity": 0.07,
+      "specificity": 0.943,
+      "precision": 0.5511811023622047,
+      "f1": 0.12422360248447208,
+      "tn": 943,
+      "fp": 57,
+      "fn": 930,
+      "tp": 70,
+      "threshold": 0.5,
+      "positive_class": 1,
+      "warnings": []
+    }
+  },
+  "note": "Milestone 7F matched center-stratified GroupDRO baseline. DEVELOPMENT comparison on capped balanced subsets. ood_val used post-training for development comparison only. NOT final. ood_test never touched."
+}

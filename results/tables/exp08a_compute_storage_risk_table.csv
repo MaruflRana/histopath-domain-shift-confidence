@@ -1,0 +1,10 @@
+risk,severity,mitigation,stop_rule,owner_next_step
+full id_val prediction runtime,low,ResNet18 @96x96 is cheap on RTX 3060; ~10-30 min planning band per split/model; streaming-bound,S-4 (row-count guard),8B executor records actual timing
+full ood_val prediction runtime,low,Similar to id_val; batch_size 64 (up to 128-256 safe); shuffle=False,S-4 (row-count guard),8B executor records actual timing
+large prediction CSV size,low,"~4-7 MB per model/split; <~30 MB total for required models; cache predictions only, not images",S-9 (no overwrite),8B writes under exp08b_full_dev_eval/ (new names)
+HF streaming/network instability,medium,Transient disconnects auto-retried by datasets (expected per CLAUDE.md 6); re-run split cleanly on hard fail,S-4 (no partial/appended CSV),8B executor logs retries; atomic finalize
+GPU memory,low,12 GB ample for ResNet18 @96x96; reduce batch size if needed,(none; inference-only),8B executor sets batch size
+accidental ood_test access,high,ood_test LOCKED; no path/split/center-2 reference permitted; id_val first then ood_val only,S-1 (halt on any ood_test path),8B halts + escalates; separate auth required
+overwriting old artifacts,high,New run names only (exp08b_*); never overwrite 4A-7I checkpoints/predictions/caches/tables,S-9 (no overwrite without new run name),8B uses fresh run directory
+calibration leakage,high,"Calibration development-only, fit on ood_val or reuse 7G temps; NEVER on ood_test; R7 stays open",S-8 (halt if calibration touches ood_test),8B keeps calibration dev-only; no generalization claim
+metadata loss,medium,Preserve all 7 metadata fields + confidence in every prediction CSV,S-7 (halt on missing metadata/columns),8B reuses predict.py schema + confidence column

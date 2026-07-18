@@ -1,0 +1,9 @@
+target_specificity,model,threshold_selected_on_id_val,id_val_sensitivity,id_val_specificity,ood_val_sensitivity,ood_val_specificity,ood_val_FN,ood_val_FP,candidate_only_note
+0.8,center-strat ERM (7F),0.260863,0.946667,0.8,0.021,0.904,979,96,CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold.
+0.8,GroupDRO (7F),0.10237,0.942222,0.8,0.306,0.855,694,145,CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold.
+0.85,center-strat ERM (7F),0.306372,0.937778,0.853333,0.015,0.913,985,87,CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold.
+0.85,GroupDRO (7F),0.15325,0.924444,0.853333,0.241,0.881,759,119,CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold.
+0.9,center-strat ERM (7F),0.409401,0.911111,0.902222,0.013,0.928,987,72,CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold.
+0.9,GroupDRO (7F),0.289007,0.893333,0.902222,0.148,0.908,852,92,CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold.
+0.95,center-strat ERM (7F),0.580261,0.88,0.951111,0.008,0.95,992,50,CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold.
+0.95,GroupDRO (7F),0.569901,0.84,0.951111,0.057,0.947,943,53,CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold.

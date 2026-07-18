@@ -1,0 +1,155 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+credentials*
+secrets*
+token*
+config/certs/
+configs/certs/
+certs/
+combined_ca_bundle.pem
+
+# Local agent, IDE, and OS state
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+nul
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*
+tmp/
+temp/
+results/logs/
+!results/logs/.gitkeep
+
+# Local caches and downloaded data
+.cache/
+data/
+datasets/
+dataset/
+!src/data/
+!src/data/**
+!configs/dataset/
+!configs/dataset/**
+cache/
+caches/
+hf-cache/
+huggingface/
+.huggingface/
+artifacts/cache/
+results/cache/
+results/caches/
+*.arrow
+*.parquet
+*.npy
+*.npz
+*.pkl
+
+# Model artifacts
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+results/checkpoints/
+saved_models/
+checkpoints/
+
+# Raw predictions and large row-level outputs
+results/predictions/
+*prediction*.csv
+*predictions*.csv
+*logits*.csv
+
+# Small aggregate selective-prediction tables are public summaries, not row-level data
+!results/tables/exp05c_selective_prediction_all_scores.csv
+!results/tables/exp05c_selective_prediction_entropy_summary.csv
+!results/tables/report_table_selective_prediction.csv
+
+# Authorization, one-shot state, and private governance
+configs/experiments/exp09_final_ood_test_authorization.json
+configs/experiments/exp09_final_ood_test_frozen.yaml
+docs/OOD_TEST_AUTHORIZATION_TEMPLATE.md
+docs/FINAL_PRE_AUTHORIZATION_AUDIT.md
+docs/FINAL_TEST_EXECUTION_CHECKLIST.md
+results/tables/exp08f_pre_authorization_checklist.csv
+results/logs/exp09_final_ood_test_run_state.json
+results/logs/exp09_final_ood_test_completed_run.json
+results/logs/exp09_final_ood_test_summary_completed.json
+results/logs/*RUN_STARTED*
+results/logs/*sentinel*
+
+# Historical aggregate JSON files with embedded machine-local provenance paths
+results/metrics/exp04a_dev_train_resnet18/classification_metrics.json
+results/metrics/exp05a_calibrate_ood_val_resnet18/calibration_metrics.json
+results/metrics/exp05b_uncertainty/uncertainty_metrics.json
+results/metrics/exp05c_selective_prediction/selective_prediction_metrics.json
+results/metrics/exp07a_stainaug_resnet18/classification_metrics.json
+results/metrics/exp07b_operating_point_comparison/operating_point_metrics.json
+results/metrics/exp07d_stainaug_v2_resnet18/classification_metrics.json
+results/metrics/exp07d_stainaug_v2_resnet18/comparison_metrics.json
+results/metrics/exp07e_stainspace_resnet18/classification_metrics.json
+results/metrics/exp07e_stainspace_resnet18/comparison_metrics.json
+
+# Local/archive artifacts that should not be versioned twice
+submission/jpi/JPI_Reproducibility_Code_Package.zip
+submission/jpi/code_release/
+*.7z
+*.rar
+
+# Identity-bearing submission files with private telephone details
+submission/jpi/JPI_Title_Page.docx
+submission/jpi/JPI_Cover_Letter.docx
+
+# Dataset-derived patch previews are not redistributed
+results/figures/sample_patch_grid.png
+results/figures/exp07e0_stain_space_aug_preview.png
+
+# Large source-image formats and medical images
+*.svs
+*.ndpi
+*.mrxs
+*.tif
+*.tiff
+*.dcm
+
+# Obsolete local helper scripts outside the governed numbered pipeline
+check_hf_test_centers.py
+check_hf_train_centers.py
+check_hf_validation_centers.py
+download_and_verify_camelyon17.py
+scripts/35_make_final_eval_readiness_package.py
+scripts/37_make_final_pre_authorization_audit.py
+
+# Re-assert generated Python exclusions after public source-directory exceptions
+__pycache__/
+*.py[cod]

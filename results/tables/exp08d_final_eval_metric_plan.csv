@@ -1,0 +1,10 @@
+metric_family,include,raw_or_calibrated,selected_before_ood_test,uses_ood_test_for_selection,output_artifact_later,notes
+AUROC/AUPRC,yes,both,yes,no,final-test metrics JSON + table,Threshold-free; argmax-invariant across variants.
+default threshold metrics,yes,both,yes,no,final-test metrics JSON,acc/sens/spec/precision/F1 at threshold 0.5.
+confusion matrix,yes,both,yes,no,final-test metrics JSON,tn/fp/fn/tp at 0.5.
+fixed-specificity candidate operating points,yes,both,yes,no,final-test threshold table,Thresholds from id_val (spec 0.80/0.85/0.90/0.95); candidate-only.
+fixed-sensitivity candidate operating points,yes,both,yes,no,final-test threshold table,Thresholds from id_val (sens 0.80/0.90/0.95); candidate-only.
+calibration ECE/Brier/NLL,yes,both,yes,no,final-test calibration table,Frozen 8C temperatures applied; NEVER fit on ood_test.
+high-confidence FN audit,yes,both,yes,no,final-test high-conf FN table,conf t=0.90/0.95/0.99; raw and calibrated.
+per-center analysis if metadata available,optional,both,yes,no,final-test report,ood_test is single center 2; report metadata breakdown if useful.
+selective prediction optional,optional,both,yes,no,final-test selective tables,Reuse 5C/6A machinery; optional; no committed threshold.

@@ -1,0 +1,34 @@
+manuscript_section,paragraph_or_claim_id,manuscript_claim,citation_key,support_type,primary_or_secondary,relevance_note,overclaim_risk,status
+Introduction,INT-1,"Institution, scanner, stain, and workflow differences can create histopathology domain shift",Stacke2021HistopathologyDomainShift,empirical,primary,Directly measures histopathology domain shift,low,verified
+Introduction,INT-1,"Institution-specific digital histology signatures can affect accuracy and bias",Howard2021SiteSpecificHistology,empirical,primary,Directly studies site signatures,low,verified
+Introduction,INT-2,"In-distribution performance does not guarantee external performance",Steyerberg2016Validation,validation context,secondary,Distinguishes validation stages,low,verified
+Introduction,INT-3,"Calibration differs from discrimination",VanCalster2019Calibration,methods context,secondary,Direct calibration framework,low,verified
+Introduction,INT-3,"Operating characteristics may change across populations",Leeflang2013SensitivitySpecificity,empirical/methods,primary,Documents sensitivity and specificity variation,moderate,verified
+Introduction,INT-4,"Confidence displays can affect human reliance",Gaube2021ClinicalDecisionAids,human factors,primary,Supports narrowed reliance statement,low,verified
+Introduction,INT-5,"Domain generalization uses source-domain variation to target unseen domains",Zhou2023DomainGeneralizationSurvey,background,secondary,Survey definition and taxonomy,low,verified
+Introduction,INT-6,"GroupDRO emphasizes high-loss groups",Sagawa2020GroupDRO,methods,primary,Original method,low,verified
+Related work,RW-1,"Stain normalization and augmentation are established responses to stain variation",Tellez2019StainNormalization,empirical,primary,Direct comparative pathology study,low,verified
+Related work,RW-2,"CAMELYON17 is a multi-center lymph-node metastasis challenge",Bandi2019Camelyon17,dataset,primary,Original challenge paper,low,verified
+Related work,RW-3,"WILDS frames hospitals as distribution-shift domains",Koh2021WILDS,dataset,primary,Original benchmark paper,low,verified
+Related work,RW-3,"Official Camelyon17-WILDS patch and license description",WILDSCamelyon17Dataset,dataset,primary,Official project documentation,low,verified
+Related work,RW-4,"Known groups may not capture future shift",Piratla2022GroupRobustness,limitation,primary,Supports conditional group-robustness caveat,moderate,verified
+Related work,RW-5,"Temperature scaling is post-hoc and argmax preserving",Guo2017Calibration,methods,primary,Original modern-neural-network calibration study,low,verified
+Related work,RW-6,"Brier score evaluates probability forecasts",Brier1950ProbabilityForecasts,methods,primary,Original score,low,verified
+Related work,RW-7,"Selective classification formalizes abstention and coverage",ElYaniv2010SelectiveClassification,methods,primary,Foundational formulation,low,verified
+Related work,RW-8,"Uncertainty can degrade under shift",Ovadia2019UncertaintyShift,empirical,primary,Direct dataset-shift evaluation,low,verified
+Methods,MET-1,"Camelyon17-WILDS provides the study benchmark structure",Koh2021WILDS,dataset,primary,Supports benchmark description only,low,verified
+Methods,MET-2,"GroupDRO uses a worst-group weighted loss and exponentiated updates",Sagawa2020GroupDRO,methods,primary,Supports implemented objective,low,verified
+Methods,MET-3,"Positive scalar temperature scaling preserves argmax",Guo2017Calibration,methods,primary,Supports transformation property,low,verified
+Discussion,DIS-1,"Center-specific stain and acquisition factors are plausible shift mechanisms",Howard2021SiteSpecificHistology,discussion context,primary,Supports plausibility not causality for center 2,moderate,verified
+Discussion,DIS-2,"Repeated model selection can compromise DG evaluation",Gulrajani2021DomainBed,methods context,primary,Supports protocol concern,moderate,verified
+Discussion,DIS-3,"Calibration may degrade under distribution shift",Minderer2021Calibration,empirical,primary,Limits universal calibration claims,low,verified
+Discussion,DIS-4,"Operating thresholds require population-specific validation",VanCalster2016CalibrationHierarchy,methods context,primary,Supports transport caveat,moderate,verified
+Discussion,DIS-5,"Clinical threshold usefulness requires consequences and context",Vickers2006DecisionCurve,methods,primary,Prevents clinical-threshold overclaim,low,verified
+Discussion,DIS-6,"Medical-AI studies require transparent data and evaluation reporting",Tejani2024CLAIM,reporting guideline,secondary,Supports reporting discipline,low,verified
+Discussion,DIS-6,"Prediction-model reporting should state validation and evaluation methods",Collins2024TRIPODAI,reporting guideline,secondary,Supports protocol transparency,low,verified
+Limitations,LIM-1,"Patch metrics do not establish whole-slide workflow performance",Campanella2019ClinicalGradePathology,clinical translation,primary,Whole-slide clinical-grade study provides scale contrast,moderate,verified
+Limitations,LIM-1,"Whole-slide methods require slide-level aggregation",Lu2021WeaklySupervisedPathology,methods/translation,primary,Supports patch-to-slide distinction,low,verified
+Limitations,LIM-1,"Whole-slide diagnostic use requires technical validation",Pantanowitz2013WSIValidation,guideline,secondary,Supports validation scope,low,verified
+Conclusion,CON-1,"Responsible clinical ML requires evidence beyond retrospective model metrics",Wiens2019DoNoHarm,clinical context,secondary,Supports conservative translation claim,low,verified
+Conclusion,CON-1,"Clinical impact requires workflow and implementation evidence",Kelly2019ClinicalImpact,clinical context,secondary,Supports non-readiness caveat,low,verified
+Data availability,DATA-1,"Official WILDS Camelyon17 variant is documented as public domain/CC0",WILDSCamelyon17Dataset,dataset/license,primary,Official project source,low,verified

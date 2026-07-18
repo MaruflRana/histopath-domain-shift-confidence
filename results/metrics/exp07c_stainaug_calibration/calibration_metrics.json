@@ -1,0 +1,416 @@
+{
+  "milestone": "7C",
+  "description": "Stain-aug calibration (temperature scaling on ood_val) + candidate operating-point audit. CSV/logit-only; no training/inference; ood_test never read.",
+  "positive_class": 1,
+  "n_ece_bins": 15,
+  "stain_aug": {
+    "temperature": 3.2101738452911377,
+    "calibration": {
+      "raw": {
+        "n": 2000,
+        "ece": 0.35595948383205295,
+        "brier": 0.35705626176268807,
+        "nll": 1.106019053138406,
+        "n_bins": 15
+      },
+      "calibrated": {
+        "n": 2000,
+        "ece": 0.19083274307660758,
+        "brier": 0.2473965395472734,
+        "nll": 0.6802513995050525,
+        "n_bins": 15
+      }
+    },
+    "classification": {
+      "raw": {
+        "accuracy": 0.529,
+        "sensitivity": 0.096,
+        "specificity": 0.962,
+        "fn": 904,
+        "fp": 38
+      },
+      "calibrated": {
+        "accuracy": 0.529,
+        "sensitivity": 0.096,
+        "specificity": 0.962,
+        "fn": 904,
+        "fp": 38
+      }
+    }
+  },
+  "plain_erm_5a": {
+    "temperature": 3.122415542602539,
+    "calibration": {
+      "raw": {
+        "n": 2000,
+        "ece": 0.23296646773076515,
+        "brier": 0.2759439525995791,
+        "nll": 0.9151578960065593,
+        "n_bins": 15
+      },
+      "calibrated": {
+        "n": 2000,
+        "ece": 0.09182968122302555,
+        "brier": 0.21600512708514555,
+        "nll": 0.6088143147604885,
+        "n_bins": 15
+      }
+    }
+  },
+  "high_confidence_false_negatives": [
+    {
+      "model": "plain ERM",
+      "variant": "raw",
+      "confidence_threshold": 0.9,
+      "n_total": 2000,
+      "n_high_conf": 1049,
+      "n_high_conf_false_negative": 222,
+      "high_conf_false_negative_rate": 0.21163012392755004,
+      "n_false_negative_total": 595,
+      "fraction_of_fn_in_high_conf": 0.373109243697479
+    },
+    {
+      "model": "plain ERM",
+      "variant": "raw",
+      "confidence_threshold": 0.95,
+      "n_total": 2000,
+      "n_high_conf": 806,
+      "n_high_conf_false_negative": 133,
+      "high_conf_false_negative_rate": 0.16501240694789082,
+      "n_false_negative_total": 595,
+      "fraction_of_fn_in_high_conf": 0.2235294117647059
+    },
+    {
+      "model": "plain ERM",
+      "variant": "raw",
+      "confidence_threshold": 0.99,
+      "n_total": 2000,
+      "n_high_conf": 477,
+      "n_high_conf_false_negative": 33,
+      "high_conf_false_negative_rate": 0.06918238993710692,
+      "n_false_negative_total": 595,
+      "fraction_of_fn_in_high_conf": 0.05546218487394958
+    },
+    {
+      "model": "plain ERM",
+      "variant": "calibrated",
+      "confidence_threshold": 0.9,
+      "n_total": 2000,
+      "n_high_conf": 256,
+      "n_high_conf_false_negative": 0,
+      "high_conf_false_negative_rate": 0.0,
+      "n_false_negative_total": 595,
+      "fraction_of_fn_in_high_conf": 0.0
+    },
+    {
+      "model": "plain ERM",
+      "variant": "calibrated",
+      "confidence_threshold": 0.95,
+      "n_total": 2000,
+      "n_high_conf": 139,
+      "n_high_conf_false_negative": 0,
+      "high_conf_false_negative_rate": 0.0,
+      "n_false_negative_total": 595,
+      "fraction_of_fn_in_high_conf": 0.0
+    },
+    {
+      "model": "plain ERM",
+      "variant": "calibrated",
+      "confidence_threshold": 0.99,
+      "n_total": 2000,
+      "n_high_conf": 10,
+      "n_high_conf_false_negative": 0,
+      "high_conf_false_negative_rate": 0.0,
+      "n_false_negative_total": 595,
+      "fraction_of_fn_in_high_conf": 0.0
+    },
+    {
+      "model": "stain-aug ERM",
+      "variant": "raw",
+      "confidence_threshold": 0.9,
+      "n_total": 2000,
+      "n_high_conf": 1142,
+      "n_high_conf_false_negative": 399,
+      "high_conf_false_negative_rate": 0.34938704028021017,
+      "n_false_negative_total": 904,
+      "fraction_of_fn_in_high_conf": 0.4413716814159292
+    },
+    {
+      "model": "stain-aug ERM",
+      "variant": "raw",
+      "confidence_threshold": 0.95,
+      "n_total": 2000,
+      "n_high_conf": 763,
+      "n_high_conf_false_negative": 181,
+      "high_conf_false_negative_rate": 0.23722149410222804,
+      "n_false_negative_total": 904,
+      "fraction_of_fn_in_high_conf": 0.2002212389380531
+    },
+    {
+      "model": "stain-aug ERM",
+      "variant": "raw",
+      "confidence_threshold": 0.99,
+      "n_total": 2000,
+      "n_high_conf": 266,
+      "n_high_conf_false_negative": 4,
+      "high_conf_false_negative_rate": 0.015037593984962405,
+      "n_false_negative_total": 904,
+      "fraction_of_fn_in_high_conf": 0.004424778761061947
+    },
+    {
+      "model": "stain-aug ERM",
+      "variant": "calibrated",
+      "confidence_threshold": 0.9,
+      "n_total": 2000,
+      "n_high_conf": 77,
+      "n_high_conf_false_negative": 0,
+      "high_conf_false_negative_rate": 0.0,
+      "n_false_negative_total": 904,
+      "fraction_of_fn_in_high_conf": 0.0
+    },
+    {
+      "model": "stain-aug ERM",
+      "variant": "calibrated",
+      "confidence_threshold": 0.95,
+      "n_total": 2000,
+      "n_high_conf": 13,
+      "n_high_conf_false_negative": 0,
+      "high_conf_false_negative_rate": 0.0,
+      "n_false_negative_total": 904,
+      "fraction_of_fn_in_high_conf": 0.0
+    },
+    {
+      "model": "stain-aug ERM",
+      "variant": "calibrated",
+      "confidence_threshold": 0.99,
+      "n_total": 2000,
+      "n_high_conf": 0,
+      "n_high_conf_false_negative": 0,
+      "high_conf_false_negative_rate": null,
+      "n_false_negative_total": 904,
+      "fraction_of_fn_in_high_conf": 0.0
+    }
+  ],
+  "candidate_operating_points": [
+    {
+      "model": "plain ERM",
+      "criterion": "specificity",
+      "target": 0.8,
+      "threshold_selected_on_id_val": 0.0222498252987861,
+      "id_val_sensitivity": 0.988,
+      "id_val_specificity": 0.8,
+      "id_val_fn": 3,
+      "id_val_fp": 50,
+      "ood_val_sensitivity": 0.934,
+      "ood_val_specificity": 0.499,
+      "ood_val_fn": 66,
+      "ood_val_fp": 501,
+      "ood_val_predicted_positive_rate": 0.7175
+    },
+    {
+      "model": "plain ERM",
+      "criterion": "specificity",
+      "target": 0.85,
+      "threshold_selected_on_id_val": 0.0330665484070777,
+      "id_val_sensitivity": 0.988,
+      "id_val_specificity": 0.852,
+      "id_val_fn": 3,
+      "id_val_fp": 37,
+      "ood_val_sensitivity": 0.901,
+      "ood_val_specificity": 0.543,
+      "ood_val_fn": 99,
+      "ood_val_fp": 457,
+      "ood_val_predicted_positive_rate": 0.679
+    },
+    {
+      "model": "plain ERM",
+      "criterion": "specificity",
+      "target": 0.9,
+      "threshold_selected_on_id_val": 0.0674217715859413,
+      "id_val_sensitivity": 0.988,
+      "id_val_specificity": 0.9,
+      "id_val_fn": 3,
+      "id_val_fp": 25,
+      "ood_val_sensitivity": 0.833,
+      "ood_val_specificity": 0.608,
+      "ood_val_fn": 167,
+      "ood_val_fp": 392,
+      "ood_val_predicted_positive_rate": 0.6125
+    },
+    {
+      "model": "plain ERM",
+      "criterion": "specificity",
+      "target": 0.95,
+      "threshold_selected_on_id_val": 0.1219599395990371,
+      "id_val_sensitivity": 0.976,
+      "id_val_specificity": 0.952,
+      "id_val_fn": 6,
+      "id_val_fp": 12,
+      "ood_val_sensitivity": 0.757,
+      "ood_val_specificity": 0.672,
+      "ood_val_fn": 243,
+      "ood_val_fp": 328,
+      "ood_val_predicted_positive_rate": 0.5425
+    },
+    {
+      "model": "plain ERM",
+      "criterion": "sensitivity",
+      "target": 0.8,
+      "threshold_selected_on_id_val": 0.9990988969802856,
+      "id_val_sensitivity": 0.8,
+      "id_val_specificity": 1.0,
+      "id_val_fn": 50,
+      "id_val_fp": 0,
+      "ood_val_sensitivity": 0.0,
+      "ood_val_specificity": 0.994,
+      "ood_val_fn": 1000,
+      "ood_val_fp": 6,
+      "ood_val_predicted_positive_rate": 0.003
+    },
+    {
+      "model": "plain ERM",
+      "criterion": "sensitivity",
+      "target": 0.9,
+      "threshold_selected_on_id_val": 0.9792266488075256,
+      "id_val_sensitivity": 0.9,
+      "id_val_specificity": 0.996,
+      "id_val_fn": 25,
+      "id_val_fp": 1,
+      "ood_val_sensitivity": 0.017,
+      "ood_val_specificity": 0.978,
+      "ood_val_fn": 983,
+      "ood_val_fp": 22,
+      "ood_val_predicted_positive_rate": 0.0195
+    },
+    {
+      "model": "plain ERM",
+      "criterion": "sensitivity",
+      "target": 0.95,
+      "threshold_selected_on_id_val": 0.4496302008628845,
+      "id_val_sensitivity": 0.952,
+      "id_val_specificity": 0.98,
+      "id_val_fn": 12,
+      "id_val_fp": 5,
+      "ood_val_sensitivity": 0.433,
+      "ood_val_specificity": 0.823,
+      "ood_val_fn": 567,
+      "ood_val_fp": 177,
+      "ood_val_predicted_positive_rate": 0.305
+    },
+    {
+      "model": "stain-aug ERM",
+      "criterion": "specificity",
+      "target": 0.8,
+      "threshold_selected_on_id_val": 0.0818660631775856,
+      "id_val_sensitivity": 0.996,
+      "id_val_specificity": 0.8,
+      "id_val_fn": 1,
+      "id_val_fp": 50,
+      "ood_val_sensitivity": 0.677,
+      "ood_val_specificity": 0.674,
+      "ood_val_fn": 323,
+      "ood_val_fp": 326,
+      "ood_val_predicted_positive_rate": 0.5015
+    },
+    {
+      "model": "stain-aug ERM",
+      "criterion": "specificity",
+      "target": 0.85,
+      "threshold_selected_on_id_val": 0.1032623052597045,
+      "id_val_sensitivity": 0.996,
+      "id_val_specificity": 0.852,
+      "id_val_fn": 1,
+      "id_val_fp": 37,
+      "ood_val_sensitivity": 0.587,
+      "ood_val_specificity": 0.72,
+      "ood_val_fn": 413,
+      "ood_val_fp": 280,
+      "ood_val_predicted_positive_rate": 0.4335
+    },
+    {
+      "model": "stain-aug ERM",
+      "criterion": "specificity",
+      "target": 0.9,
+      "threshold_selected_on_id_val": 0.1383281946182251,
+      "id_val_sensitivity": 0.988,
+      "id_val_specificity": 0.9,
+      "id_val_fn": 3,
+      "id_val_fp": 25,
+      "ood_val_sensitivity": 0.457,
+      "ood_val_specificity": 0.796,
+      "ood_val_fn": 543,
+      "ood_val_fp": 204,
+      "ood_val_predicted_positive_rate": 0.3305
+    },
+    {
+      "model": "stain-aug ERM",
+      "criterion": "specificity",
+      "target": 0.95,
+      "threshold_selected_on_id_val": 0.2346847951412201,
+      "id_val_sensitivity": 0.956,
+      "id_val_specificity": 0.952,
+      "id_val_fn": 11,
+      "id_val_fp": 12,
+      "ood_val_sensitivity": 0.27,
+      "ood_val_specificity": 0.909,
+      "ood_val_fn": 730,
+      "ood_val_fp": 91,
+      "ood_val_predicted_positive_rate": 0.1805
+    },
+    {
+      "model": "stain-aug ERM",
+      "criterion": "sensitivity",
+      "target": 0.8,
+      "threshold_selected_on_id_val": 0.9426636099815368,
+      "id_val_sensitivity": 0.8,
+      "id_val_specificity": 1.0,
+      "id_val_fn": 50,
+      "id_val_fp": 0,
+      "ood_val_sensitivity": 0.015,
+      "ood_val_specificity": 0.994,
+      "ood_val_fn": 985,
+      "ood_val_fp": 6,
+      "ood_val_predicted_positive_rate": 0.0105
+    },
+    {
+      "model": "stain-aug ERM",
+      "criterion": "sensitivity",
+      "target": 0.9,
+      "threshold_selected_on_id_val": 0.5270541310310364,
+      "id_val_sensitivity": 0.9,
+      "id_val_specificity": 0.988,
+      "id_val_fn": 25,
+      "id_val_fp": 3,
+      "ood_val_sensitivity": 0.089,
+      "ood_val_specificity": 0.964,
+      "ood_val_fn": 911,
+      "ood_val_fp": 36,
+      "ood_val_predicted_positive_rate": 0.0625
+    },
+    {
+      "model": "stain-aug ERM",
+      "criterion": "sensitivity",
+      "target": 0.95,
+      "threshold_selected_on_id_val": 0.276974081993103,
+      "id_val_sensitivity": 0.952,
+      "id_val_specificity": 0.964,
+      "id_val_fn": 12,
+      "id_val_fp": 9,
+      "ood_val_sensitivity": 0.226,
+      "ood_val_specificity": 0.927,
+      "ood_val_fn": 774,
+      "ood_val_fp": 73,
+      "ood_val_predicted_positive_rate": 0.1495
+    }
+  ],
+  "interpretation": {
+    "calibration_helped_stain_aug": true,
+    "stain_aug_ece_raw": 0.35595948383205295,
+    "stain_aug_ece_calibrated": 0.19083274307660758,
+    "stain_aug_high_conf_fn_at_090_raw": 399,
+    "stain_aug_high_conf_fn_at_090_calibrated": 0,
+    "plain_erm_remains_stronger_fixed_spec": true,
+    "argmax_invariant": true
+  },
+  "note": "DEVELOPMENT analysis on capped balanced subsets - NOT final performance. Candidate id_val thresholds are NOT committed clinical operating points. ood_val used for development-stage calibration/comparison only; ood_test never read."
+}

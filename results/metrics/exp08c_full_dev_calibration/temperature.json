@@ -1,0 +1,32 @@
+{
+  "milestone": "8C",
+  "description": "Development-stage temperature scaling of the two frozen 7F models (GroupDRO primary candidate + center-stratified ERM matched control) on their FULL ood_val logits from Milestone 8B. Weights unchanged; checkpoints untouched; ood_test never read. Fit+evaluated on the same ood_val => development reliability audit, NOT an independent-test calibration claim. Development result, NOT final.",
+  "fit_on": "FULL ood_val logits (development-stage OOD calibration only)",
+  "argmax_invariant": true,
+  "models": {
+    "groupdro": {
+      "name": "7F GroupDRO (primary candidate)",
+      "temperature": 2.974907398223877,
+      "nll_before": 0.7591521739959717,
+      "nll_after": 0.4450571835041046,
+      "n_iter": 200,
+      "converged": false,
+      "n": 34904,
+      "calibrated_predictions_csv": "results/predictions/exp08c_full_dev_calibration/groupdro_ood_val_calibrated_predictions.csv"
+    },
+    "centerstrat_erm": {
+      "name": "7F center-stratified ERM (matched control)",
+      "temperature": 3.496293306350708,
+      "nll_before": 1.1910649538040161,
+      "nll_after": 0.5320650339126587,
+      "n_iter": 200,
+      "converged": false,
+      "n": 34904,
+      "calibrated_predictions_csv": "results/predictions/exp08c_full_dev_calibration/centerstrat_erm_ood_val_calibrated_predictions.csv"
+    }
+  },
+  "min_temperature": 0.05,
+  "max_temperature": 10.0,
+  "temperature_init": 1.0,
+  "note": "DEVELOPMENT temperature scaling on the FULL ood_val split - NOT final performance. ood_test never read; no committed operating point."
+}

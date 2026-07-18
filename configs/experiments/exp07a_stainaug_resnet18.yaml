@@ -1,0 +1,49 @@
+# Milestone 7A — Stain/color augmentation ERM baseline (ResNet18).
+# A stain-robustness / domain-generalization baseline for reviewer risk R3. Trains ResNet18
+# with moderate stain/color augmentation on the SAME cached balanced train subset used by
+# the plain-ERM 4A baseline, selecting best by id_val_loss ONLY. ood_val is NEVER used for
+# training or model selection — it is read only afterwards (script 16) for development-stage
+# comparison. ood_test is never touched. DEVELOPMENT baseline, NOT a paper result.
+
+model:
+  backbone_name: resnet18
+  pretrained: false
+  num_classes: 2
+
+data:
+  train_cache: results/cache/balanced_train_pc1000_seed1337_shuf.pt
+  id_val_cache: results/cache/balanced_id_val_pc250_seed1337_shuf.pt
+  ood_val_cache: results/cache/balanced_ood_val_pc1000_seed1337_noshuf.pt
+  batch_size: 32
+  num_workers: 0
+  seed: 1337
+
+augmentation:
+  name: stain_color_aug
+  horizontal_flip_p: 0.5
+  vertical_flip_p: 0.5
+  rotation_degrees: 15
+  brightness: 0.20
+  contrast: 0.20
+  saturation: 0.20
+  hue: 0.05
+
+training:
+  epochs: 5
+  optimizer: adamw
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  seed: 1337
+
+selection:
+  metric: id_val_loss
+  mode: min
+
+output:
+  run_name: exp07a_stainaug_resnet18
+  log_csv: results/logs/exp07a_stainaug_resnet18_log.csv
+  report_txt: results/logs/exp07a_stainaug_resnet18_report.txt
+  checkpoint_dir: results/checkpoints/exp07a_stainaug_resnet18
+  prediction_dir: results/predictions/exp07a_stainaug_resnet18
+  metrics_json: results/metrics/exp07a_stainaug_resnet18/classification_metrics.json
+  metrics_csv: results/tables/exp07a_stainaug_resnet18_classification_metrics.csv

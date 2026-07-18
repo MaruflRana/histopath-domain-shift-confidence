@@ -1,0 +1,17 @@
+{
+  "milestone": "7C",
+  "model": "stain-aug ERM (7A)",
+  "fit_on": "ood_val (stain-aug logits) - development-stage calibration only",
+  "temperature": 3.2101738452911377,
+  "nll_before": 1.106019139289856,
+  "nll_after": 0.68025141954422,
+  "n_iter": 200,
+  "converged": false,
+  "min_temperature": 0.05,
+  "max_temperature": 10.0,
+  "temperature_init": 1.0,
+  "n": 2000,
+  "argmax_invariant": true,
+  "plain_erm_temperature_5a": 3.122415542602539,
+  "note": "Temperature scaling on stain-aug ood_val logits; weights unchanged; ood_test never touched. Development result, NOT final performance."
+}

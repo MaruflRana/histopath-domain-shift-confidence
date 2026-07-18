@@ -1,0 +1,57 @@
+# Milestone 7F — Matched center-stratified ERM + GroupDRO baseline (ResNet18).
+#
+# Trains TWO ResNet18 models on the SAME new metadata-rich center-stratified train cache
+# from Milestone 7F-1 (per-(center,label) balanced across centers {0,3,4}):
+#   A. center-stratified ERM baseline (plain cross-entropy)  -> exp07f_centerstrat_erm_resnet18
+#   B. center-stratified GroupDRO by center group            -> exp07f_groupdro_resnet18
+#
+# This is required because the previous plain ERM (4A) was trained on the OLD confounded
+# balanced cache, so GroupDRO needs a MATCHED ERM control trained on the same new
+# center-stratified data. The fair comparison is 7F center-strat ERM vs 7F GroupDRO.
+#
+# Strict scope (Milestone 7F): train + id_val (center-stratified caches) ONLY for training
+# and model selection (best by id_val_loss). ood_val is NEVER used for training or model
+# selection — read only afterwards (script 27) for development-stage comparison. ood_test
+# never touched. NO stain augmentation in this milestone (normal train/eval transforms).
+# NO CORAL/DANN, NO MC-dropout/ensemble, NO calibration, NO committed operating threshold.
+# DEVELOPMENT baseline, NOT a paper result.
+
+model:
+  backbone_name: resnet18
+  pretrained: false
+  num_classes: 2
+
+data:
+  train_cache: results/cache/center_strat_train_c034_percell300_seed1337_shuf.pt
+  id_val_cache: results/cache/center_strat_id_val_c034_percell75_seed1337_shuf.pt
+  ood_val_cache: results/cache/balanced_ood_val_pc1000_seed1337_noshuf.pt
+  batch_size: 32
+  num_workers: 0
+  seed: 1337
+  group_field: center
+  group_ids: [0, 3, 4]
+
+training:
+  epochs: 5
+  optimizer: adamw
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  seed: 1337
+
+groupdro:
+  step_size: 0.01
+  normalize_group_weights: true
+
+selection:
+  metric: id_val_loss
+  mode: min
+
+output:
+  erm_run_name: exp07f_centerstrat_erm_resnet18
+  groupdro_run_name: exp07f_groupdro_resnet18
+  checkpoint_root: results/checkpoints
+  prediction_root: results/predictions
+  metrics_root: results/metrics
+  table_root: results/tables
+  figure_root: results/figures
+  log_root: results/logs

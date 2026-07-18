@@ -1,0 +1,3 @@
+variant,temperature,ece,brier,nll
+raw,3.122416,0.232966,0.275944,0.915158
+calibrated,3.122416,0.09183,0.216005,0.608814

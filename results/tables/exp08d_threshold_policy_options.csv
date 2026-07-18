@@ -1,0 +1,7 @@
+policy_option,status,rationale,leakage_risk,manuscript_use
+no single final clinical threshold,recommended,Report metric families; do not commit a deployable clinical threshold.,none,Primary policy — report AUROC/AUPRC + candidate operating families.
+report default 0.5,allowed,"Simple, pre-declared reference operating point.",none,Report as the default argmax operating point (context).
+report fixed-specificity family selected on id_val,allowed,Thresholds chosen on id_val only; applied to test.,"none (id_val-selected, not test-selected)",Report candidate operating points at spec 0.80/0.85/0.90/0.95.
+report fixed-sensitivity family selected on id_val,allowed,Thresholds chosen on id_val only; applied to test.,"none (id_val-selected, not test-selected)",Report candidate operating points at sens 0.80/0.90/0.95.
+choose one primary operating point before test,allowed,May pre-commit ONE id_val-selected point if the user wants a single deployable point.,none if fixed on id_val before the test is read,Only if user explicitly wants a single committed point; declare before test.
+choose after test,forbidden,Selecting/tuning a threshold using ood_test leaks the test set.,HIGH — test leakage / optimistic bias,Never; violates FT-6.

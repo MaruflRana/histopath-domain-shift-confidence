@@ -1,0 +1,15 @@
+metric,centerstrat_erm,groupdro,delta_groupdro_minus_erm,interpretation
+ood_val AUROC,0.618027,0.712879,0.094852,GroupDRO higher -> better OOD ranking (controlled).
+ood_val AUPRC,0.521417,0.628749,0.107332,GroupDRO higher -> better OOD precision-recall (controlled).
+default accuracy (0.5),0.4765,0.5065,0.03,GroupDRO higher; both low under shift (development).
+default sensitivity (0.5),0.01,0.07,0.06,GroupDRO higher; both very low at the fixed 0.5 argmax.
+default specificity (0.5),0.943,0.943,0.0,Equal specificity at 0.5 (both 0.943).
+default FN (0.5),990.0,930.0,-60.0,GroupDRO fewer missed tumors at 0.5 (lower is better).
+ECE raw,0.498358,0.425835,-0.072523,GroupDRO better-calibrated raw (lower ECE).
+ECE calibrated,0.369806,0.252852,-0.116954,GroupDRO better-calibrated after temperature scaling (lower ECE).
+Brier raw,0.505929,0.427764,-0.078165,GroupDRO lower Brier raw.
+Brier calibrated,0.375913,0.289641,-0.086272,GroupDRO lower Brier calibrated.
+NLL raw,3.485934,1.913864,-1.57207,GroupDRO much lower NLL raw.
+NLL calibrated,1.067191,0.79082,-0.276371,GroupDRO lower NLL calibrated.
+high-conf FN (conf>=0.90) raw,950.0,688.0,-262.0,GroupDRO fewer confidently-missed tumors raw (lower is better).
+high-conf FN (conf>=0.90) calibrated,249.0,25.0,-224.0,Calibration cuts confidently-missed tumors for both; GroupDRO fewer.

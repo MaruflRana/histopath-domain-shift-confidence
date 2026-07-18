@@ -1,0 +1,87 @@
+GITHUB INITIAL COMMIT MANIFEST
+==============================
+
+Scope
+-----
+Repository: https://github.com/MaruflRana/histopath-domain-shift-confidence
+Branch: main
+Purpose: sanitized, submission-aligned public repository initialization
+
+Staged inventory
+----------------
+Staged file count (including this manifest): 324
+Total staged working-tree size (bytes): 6527274
+Files over 10 MB: 0
+Files over 25 MB: 0
+Files over 50 MB: 0
+Files over 100 MB: 0
+
+Excluded major directories and categories
+-----------------------------------------
+- .venv and other Python environments
+- data, dataset, datasets, Hugging Face caches, and result caches
+- results/checkpoints and all model-weight extensions
+- results/predictions, raw prediction CSVs, and logits
+- results/logs, authorization JSON, frozen private-governance config, run state, and sentinels
+- configs/certs and all credential/private-key/certificate patterns
+- tmp, local agent/IDE state, and OS metadata
+- submission/jpi/code_release and JPI_Reproducibility_Code_Package.zip
+- JPI TIFF copies; accepted PNG chart copies are committed
+- JPI_Title_Page.docx and JPI_Cover_Letter.docx because they contain a private telephone number
+- dataset-derived sample_patch_grid.png and exp07e0_stain_space_aug_preview.png
+- historical aggregate JSON files with embedded machine-local provenance paths
+- private pre-authorization template/checklist/code and obsolete root-level data helpers
+
+Largest 20 staged files before adding this manifest
+---------------------------------------------------
+1.  submission/jpi/figures/Figure_5.png - 171631 bytes
+2.  results/figures/exp09b_operating_point_transfer.png - 170806 bytes
+3.  docs/MILESTONE_LOG.md - 159449 bytes
+4.  submission/jpi/figures/Figure_3.png - 145649 bytes
+5.  submission/jpi/figures/Figure_4.png - 145471 bytes
+6.  results/figures/exp09b_development_test_reversal.png - 142175 bytes
+7.  results/figures/exp09b_final_calibration_raw_vs_calibrated.png - 141950 bytes
+8.  docs/SESSION_STATE.md - 126545 bytes
+9.  results/figures/exp09_final_ood_test_operating_points.png - 125667 bytes
+10. submission/jpi/figures/Figure_6.png - 119504 bytes
+11. results/figures/exp09b_high_confidence_fn_raw_vs_calibrated.png - 117804 bytes
+12. results/figures/exp09_final_ood_test_calibration_reliability.png - 116619 bytes
+13. submission/jpi/figures/Figure_1.png - 97055 bytes
+14. results/figures/exp09b_development_to_final_auroc_auprc.png - 96562 bytes
+15. submission/jpi/JPI_Anonymized_Manuscript.pdf - 93881 bytes
+16. results/figures/exp09_final_ood_test_roc.png - 89820 bytes
+17. submission/jpi/figures/Figure_2.png - 89657 bytes
+18. results/figures/exp09b_final_default_threshold_metrics.png - 88862 bytes
+19. scripts/42_build_jpi_submission_package.py - 87156 bytes
+20. results/figures/exp07b_sensitivity_specificity_tradeoff_ood_val.png - 82274 bytes
+
+Audit results
+-------------
+Security scan: PASS - 0 GitHub/OpenAI/Anthropic/Hugging Face/AWS/private-key/password/API-key/bearer/database/certificate hits.
+Secret scan: PASS - no credential values, private keys, certificates, or environment-secret files staged.
+Email/privacy scan: PASS - 0 unexpected email addresses; intended author contact only.
+Absolute-path scan: PASS - 0 hardcoded absolute Windows paths in staged text candidates.
+Local username/home scan: PASS - 0 local username or home-directory hits.
+Office scan: PASS - 8 staged DOCX text/metadata XML packages scanned with 0 hits.
+PDF scan: PASS - anonymized 11-page manuscript text and metadata scanned with 0 hits.
+Authorization scan: PASS - no private authorization phrase or governance-state file staged.
+Large-file scan: PASS - 0 staged files over 10 MB; all 32 project files over 25 MB are ignored under .venv, results/cache, or results/checkpoints.
+Syntax/format parse: PASS - 75 Python files, 13 JSON files, and 9 YAML/CFF files parsed without errors.
+Raw-row-level scan: PASS - no checkpoint, dataset/cache, raw prediction, logit, medical-image, certificate, authorization, run-state, or sentinel path staged.
+exp09 immutability: PASS - all nine protected SHA256 hashes match the pre-edit baseline.
+
+Protected evidence baseline status
+----------------------------------
+- final_metrics.json: unchanged
+- final classification table: unchanged
+- final calibration table: unchanged
+- final frozen operating-point table: unchanged
+- final high-confidence false-negative table: unchanged
+- run-state JSON: unchanged and excluded
+- completed-run sentinel: unchanged and excluded
+- summary-completed sentinel: unchanged and excluded
+- final-test authorization JSON: unchanged and excluded
+
+Operational assertion
+---------------------
+No dataset, Hugging Face split, histopathology image, model, checkpoint, inference path, training path, calibration fit, threshold-tuning path, or ood_test path was executed during repository preparation.

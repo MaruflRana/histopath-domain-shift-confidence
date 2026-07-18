@@ -1,0 +1,38 @@
+# Milestone 5A — temperature-scaling calibration on ood_val (ResNet18).
+# FIRST authorized use of ood_val (HF validation, center == 1). ood_test remains
+# LOCKED. No training, no weight changes: this reuses the accepted Milestone 4A
+# checkpoint and fits a single temperature scalar on ood_val logits.
+# NOT a final result. See PROJECT_PROTOCOL.md section 4 for locked usage rules.
+
+model:
+  checkpoint_path: results/checkpoints/exp04a_dev_train_resnet18/best.pt
+  backbone_name: resnet18
+  num_classes: 2
+
+data:
+  split: ood_val
+  per_class: 1000            # 1000 label-0 + 1000 label-1 = 2000 ood_val examples
+  batch_size: 64
+  num_workers: 0
+  max_scan: 40000            # ood_val is center-1 of HF validation; bound the scan
+  progress_every: 5000
+  shuffle_collected: false
+  use_cache: true
+  seed: 1337
+
+calibration:
+  method: temperature_scaling
+  max_iter: 200
+  lr: 0.01
+  temperature_init: 1.0
+  min_temperature: 0.05
+  max_temperature: 10.0
+
+output:
+  run_name: exp05a_calibrate_ood_val_resnet18
+  raw_predictions_csv: results/predictions/exp05a_calibrate_ood_val_resnet18/ood_val_raw_predictions.csv
+  calibrated_predictions_csv: results/predictions/exp05a_calibrate_ood_val_resnet18/ood_val_calibrated_predictions.csv
+  metrics_json: results/metrics/exp05a_calibrate_ood_val_resnet18/calibration_metrics.json
+  metrics_csv: results/tables/exp05a_calibrate_ood_val_resnet18_calibration_metrics.csv
+  temperature_json: results/metrics/exp05a_calibrate_ood_val_resnet18/temperature.json
+  report_txt: results/logs/exp05a_calibrate_ood_val_report.txt

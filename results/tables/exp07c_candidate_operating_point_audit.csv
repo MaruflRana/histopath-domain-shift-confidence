@@ -1,0 +1,15 @@
+model,criterion,target,threshold_selected_on_id_val,id_val_sensitivity,id_val_specificity,id_val_fn,id_val_fp,ood_val_sensitivity,ood_val_specificity,ood_val_fn,ood_val_fp,ood_val_predicted_positive_rate
+plain ERM,specificity,0.8,0.0222498252987861,0.988,0.8,3,50,0.934,0.499,66,501,0.7175
+plain ERM,specificity,0.85,0.0330665484070777,0.988,0.852,3,37,0.901,0.543,99,457,0.679
+plain ERM,specificity,0.9,0.0674217715859413,0.988,0.9,3,25,0.833,0.608,167,392,0.6125
+plain ERM,specificity,0.95,0.1219599395990371,0.976,0.952,6,12,0.757,0.672,243,328,0.5425
+plain ERM,sensitivity,0.8,0.9990988969802856,0.8,1.0,50,0,0.0,0.994,1000,6,0.003
+plain ERM,sensitivity,0.9,0.9792266488075256,0.9,0.996,25,1,0.017,0.978,983,22,0.0195
+plain ERM,sensitivity,0.95,0.4496302008628845,0.952,0.98,12,5,0.433,0.823,567,177,0.305
+stain-aug ERM,specificity,0.8,0.0818660631775856,0.996,0.8,1,50,0.677,0.674,323,326,0.5015
+stain-aug ERM,specificity,0.85,0.1032623052597045,0.996,0.852,1,37,0.587,0.72,413,280,0.4335
+stain-aug ERM,specificity,0.9,0.1383281946182251,0.988,0.9,3,25,0.457,0.796,543,204,0.3305
+stain-aug ERM,specificity,0.95,0.2346847951412201,0.956,0.952,11,12,0.27,0.909,730,91,0.1805
+stain-aug ERM,sensitivity,0.8,0.9426636099815368,0.8,1.0,50,0,0.015,0.994,985,6,0.0105
+stain-aug ERM,sensitivity,0.9,0.5270541310310364,0.9,0.988,25,3,0.089,0.964,911,36,0.0625
+stain-aug ERM,sensitivity,0.95,0.276974081993103,0.952,0.964,12,9,0.226,0.927,774,73,0.1495

@@ -1,0 +1,6 @@
+calibration_policy,status,temperature_values,leakage_risk,claim_allowed,claim_forbidden
+raw probabilities only,allowed,n/a (T=1.0),none,Report raw reliability (ECE/Brier/NLL) on the test.,That raw confidence is well-calibrated without scaling.
+apply 8C ood_val-fitted T to ood_test,recommended,GroupDRO T=2.974907; ERM T=3.496293,"none (T pre-frozen on ood_val, applied not refit)",Report calibrated reliability with pre-frozen development temperatures (with scope tag).,"Independent-test calibration validity (T came from ood_val, not a separate split)."
+fit T on id_val only,allowed,to be fit on id_val (in-distribution),"none for the test (fit on id_val, not test)",Report an in-distribution-fit calibration variant as a sensitivity analysis.,That it proves OOD calibration generalization.
+fit T on ood_test,forbidden,n/a,HIGH — test leakage,Nothing — forbidden.,Any calibration number so obtained (violates FT-5).
+report raw and calibrated,recommended,raw (T=1.0) + frozen GroupDRO T=2.974907 / ERM T=3.496293,none,Report both variants side by side (the protocol default).,Independent-test calibration validity remains unproven until a separate calibration split (R7).

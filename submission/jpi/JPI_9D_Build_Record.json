@@ -1,0 +1,30 @@
+{
+  "milestone": "9D",
+  "target_journal": "Journal of Pathology Informatics",
+  "article_type": "Original Research Article",
+  "abstract_word_count": 221,
+  "manuscript_main_text_word_count": 3162,
+  "keyword_count": 7,
+  "highlight_character_counts": [
+    68,
+    69,
+    63,
+    64,
+    69
+  ],
+  "reference_count": 30,
+  "table_count": 5,
+  "figure_count": 6,
+  "dataset_loaded": false,
+  "hf_test_accessed": false,
+  "image_data_read": false,
+  "model_inference": false,
+  "training": false,
+  "calibration_fitting": false,
+  "threshold_tuning": false,
+  "checkpoint_access": false,
+  "second_ood_test_attempt": false,
+  "scientific_figure_generation": false,
+  "source_exp09_modified": false,
+  "build_source_policy": "accepted 9C manuscript/bibliography and exp09b tables/figures only"
+}

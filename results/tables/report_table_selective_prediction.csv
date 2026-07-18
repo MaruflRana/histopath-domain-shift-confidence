@@ -1,0 +1,9 @@
+variant,coverage,retained_risk,retained_false_negatives,abstained_false_negatives,fraction_of_fn_abstained
+id_val,1.0,0.036,14,0,0.0
+id_val,0.9,0.011111,3,11,0.785714
+id_val,0.7,0.002857,1,13,0.928571
+id_val,0.5,0.0,0,14,1.0
+ood_val_calibrated,1.0,0.3805,595,0,0.0
+ood_val_calibrated,0.9,0.363333,517,78,0.131092
+ood_val_calibrated,0.7,0.324286,356,239,0.401681
+ood_val_calibrated,0.5,0.25,198,397,0.667227

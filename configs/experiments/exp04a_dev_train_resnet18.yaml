@@ -1,0 +1,42 @@
+# Milestone 4A — checkpointed capped DEVELOPMENT training run (ResNet18).
+# Larger-but-still-capped balanced subsets of train (for training) and id_val (for
+# model selection / monitoring) ONLY. OOD splits (ood_val, ood_test) are never
+# touched. Adds checkpointing + best-model selection by id_val_loss.
+# NOT full training and NOT a paper result. See PROJECT_PROTOCOL.md for locked rules.
+
+model:
+  backbone_name: resnet18
+  pretrained: false
+  num_classes: 2
+
+data:
+  train_per_class: 1000     # 1000 label-0 + 1000 label-1 = 2000 train examples
+  id_val_per_class: 250     # 250 label-0 + 250 label-1  = 500 id_val examples
+  batch_size: 32
+  num_workers: 0
+  # The train label-0 (non-tumor) block begins ~128k-151k into the label-ordered HF
+  # stream, so the one-time balanced build must be allowed to scan past it; after the
+  # first run the subset is cached to results/cache/ and reused instantly (no re-scan).
+  max_scan_train: 200000
+  max_scan_id_val: 30000
+  progress_every: 10000
+  shuffle_collected: true
+  use_cache: true
+  seed: 1337
+
+training:
+  epochs: 5
+  optimizer: adamw
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  seed: 1337
+
+selection:
+  metric: id_val_loss
+  mode: min
+
+output:
+  run_name: exp04a_dev_train_resnet18
+  log_csv: results/logs/exp04a_dev_train_resnet18_log.csv
+  report_txt: results/logs/exp04a_dev_train_resnet18_report.txt
+  checkpoint_dir: results/checkpoints/exp04a_dev_train_resnet18

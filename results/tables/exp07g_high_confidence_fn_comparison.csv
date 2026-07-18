@@ -1,0 +1,13 @@
+model,variant,variant_key,confidence_threshold,n_total,n_high_conf,n_high_conf_false_negative,high_conf_false_negative_rate,n_false_negative_total,fraction_of_fn_in_high_conf
+center-strat ERM (7F),raw,centerstrat_erm_raw,0.9,2000,1827,950,0.5199781061850027,990,0.9595959595959596
+center-strat ERM (7F),raw,centerstrat_erm_raw,0.95,2000,1756,925,0.5267653758542141,990,0.9343434343434344
+center-strat ERM (7F),raw,centerstrat_erm_raw,0.99,2000,1532,784,0.5117493472584856,990,0.7919191919191919
+center-strat ERM (7F),calibrated,centerstrat_erm_calibrated,0.9,2000,779,249,0.3196405648267009,990,0.2515151515151515
+center-strat ERM (7F),calibrated,centerstrat_erm_calibrated,0.95,2000,330,40,0.12121212121212122,990,0.04040404040404041
+center-strat ERM (7F),calibrated,centerstrat_erm_calibrated,0.99,2000,21,0,0.0,990,0.0
+GroupDRO (7F),raw,groupdro_raw,0.9,2000,1572,688,0.43765903307888043,930,0.7397849462365591
+GroupDRO (7F),raw,groupdro_raw,0.95,2000,1394,571,0.4096126255380201,930,0.613978494623656
+GroupDRO (7F),raw,groupdro_raw,0.99,2000,985,333,0.3380710659898477,930,0.3580645161290323
+GroupDRO (7F),calibrated,groupdro_calibrated,0.9,2000,276,25,0.09057971014492754,930,0.026881720430107527
+GroupDRO (7F),calibrated,groupdro_calibrated,0.95,2000,44,1,0.022727272727272728,930,0.001075268817204301
+GroupDRO (7F),calibrated,groupdro_calibrated,0.99,2000,0,0,,930,0.0

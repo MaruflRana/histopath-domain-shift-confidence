@@ -1,0 +1,3 @@
+split,source_hf_split,centers_included,labels_included,preferred_per_cell,min_collected_per_cell,selected_per_cell,feasible,zero_cells,final_n,scanned,scan_completed_exact,cache_file,reload_ok,supports_dg_by_center
+train,train,0|3|4,0|1,300,300,300,True,(none),1800,221387,False,center_strat_train_c034_percell300_seed1337_shuf.pt,True,True
+id_val,validation,0|3|4,0|1,75,75,75,True,(none),450,24466,False,center_strat_id_val_c034_percell75_seed1337_shuf.pt,True,(validation)

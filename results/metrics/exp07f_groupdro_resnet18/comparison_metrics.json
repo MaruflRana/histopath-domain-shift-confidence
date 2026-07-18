@@ -1,0 +1,277 @@
+{
+  "milestone": "7F",
+  "description": "Matched center-stratified ERM vs GroupDRO (both trained on the new center-stratified train cache). id_val selects candidate thresholds; ood_val is development comparison only. Old plain/7A/7D/7E are reference-only (old confounded cache, not matched).",
+  "positive_class": 1,
+  "default_threshold": 0.5,
+  "target_specificities": [
+    0.8,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "checkpoint_epoch": {
+    "erm7f": 2,
+    "groupdro7f": 3
+  },
+  "groupdro_q_weights": {
+    "0": 0.31347987055778503,
+    "3": 0.3130931556224823,
+    "4": 0.37342700362205505
+  },
+  "overall_metrics": {
+    "erm7f_id_val": {
+      "n": 450,
+      "accuracy": 0.9088888888888889,
+      "balanced_accuracy": 0.9088888888888889,
+      "auroc": 0.9662222222222223,
+      "auprc": 0.9717401269466615,
+      "sensitivity": 0.8933333333333333,
+      "specificity": 0.9244444444444444,
+      "precision": 0.9220183486238532,
+      "f1": 0.90744920993228,
+      "tn": 208,
+      "fp": 17,
+      "fn": 24,
+      "tp": 201
+    },
+    "erm7f_ood_val": {
+      "n": 2000,
+      "accuracy": 0.4765,
+      "balanced_accuracy": 0.4765,
+      "auroc": 0.6180269999999999,
+      "auprc": 0.521417092650106,
+      "sensitivity": 0.01,
+      "specificity": 0.943,
+      "precision": 0.14925373134328357,
+      "f1": 0.01874414245548266,
+      "tn": 943,
+      "fp": 57,
+      "fn": 990,
+      "tp": 10
+    },
+    "groupdro7f_id_val": {
+      "n": 450,
+      "accuracy": 0.8977777777777778,
+      "balanced_accuracy": 0.8977777777777778,
+      "auroc": 0.9666370370370371,
+      "auprc": 0.9702772940656756,
+      "sensitivity": 0.8577777777777778,
+      "specificity": 0.9377777777777778,
+      "precision": 0.9323671497584541,
+      "f1": 0.8935185185185184,
+      "tn": 211,
+      "fp": 14,
+      "fn": 32,
+      "tp": 193
+    },
+    "groupdro7f_ood_val": {
+      "n": 2000,
+      "accuracy": 0.5065,
+      "balanced_accuracy": 0.5065,
+      "auroc": 0.7128789999999999,
+      "auprc": 0.6287492248988467,
+      "sensitivity": 0.07,
+      "specificity": 0.943,
+      "precision": 0.5511811023622047,
+      "f1": 0.12422360248447208,
+      "tn": 943,
+      "fp": 57,
+      "fn": 930,
+      "tp": 70
+    }
+  },
+  "ood_val_reference_metrics": {
+    "erm7f": {
+      "n": 2000,
+      "accuracy": 0.4765,
+      "balanced_accuracy": 0.4765,
+      "auroc": 0.6180269999999999,
+      "auprc": 0.521417092650106,
+      "sensitivity": 0.01,
+      "specificity": 0.943,
+      "precision": 0.14925373134328357,
+      "f1": 0.01874414245548266,
+      "tn": 943,
+      "fp": 57,
+      "fn": 990,
+      "tp": 10
+    },
+    "groupdro7f": {
+      "n": 2000,
+      "accuracy": 0.5065,
+      "balanced_accuracy": 0.5065,
+      "auroc": 0.7128789999999999,
+      "auprc": 0.6287492248988467,
+      "sensitivity": 0.07,
+      "specificity": 0.943,
+      "precision": 0.5511811023622047,
+      "f1": 0.12422360248447208,
+      "tn": 943,
+      "fp": 57,
+      "fn": 930,
+      "tp": 70
+    },
+    "plain_old": {
+      "n": 2000,
+      "accuracy": 0.6195,
+      "balanced_accuracy": 0.6194999999999999,
+      "auroc": 0.769597,
+      "auprc": 0.679304126132547,
+      "sensitivity": 0.405,
+      "specificity": 0.834,
+      "precision": 0.7092819614711033,
+      "f1": 0.5155951623169956,
+      "tn": 834,
+      "fp": 166,
+      "fn": 595,
+      "tp": 405
+    },
+    "stain7a_old": {
+      "n": 2000,
+      "accuracy": 0.529,
+      "balanced_accuracy": 0.529,
+      "auroc": 0.749203,
+      "auprc": 0.6880698237551657,
+      "sensitivity": 0.096,
+      "specificity": 0.962,
+      "precision": 0.7164179104477612,
+      "f1": 0.16931216931216933,
+      "tn": 962,
+      "fp": 38,
+      "fn": 904,
+      "tp": 96
+    },
+    "stain7d_old": {
+      "n": 2000,
+      "accuracy": 0.5135,
+      "balanced_accuracy": 0.5135,
+      "auroc": 0.7396559999999999,
+      "auprc": 0.6613778452525392,
+      "sensitivity": 0.065,
+      "specificity": 0.962,
+      "precision": 0.6310679611650486,
+      "f1": 0.11786038077969174,
+      "tn": 962,
+      "fp": 38,
+      "fn": 935,
+      "tp": 65
+    },
+    "stain7e_old": {
+      "n": 2000,
+      "accuracy": 0.5055,
+      "balanced_accuracy": 0.5055000000000001,
+      "auroc": 0.731698,
+      "auprc": 0.6244157739941932,
+      "sensitivity": 0.084,
+      "specificity": 0.927,
+      "precision": 0.535031847133758,
+      "f1": 0.14520311149524634,
+      "tn": 927,
+      "fp": 73,
+      "fn": 916,
+      "tp": 84
+    }
+  },
+  "per_center_id_val": {
+    "erm7f": [
+      {
+        "center": 0,
+        "n": 150,
+        "label0": 75,
+        "label1": 75,
+        "accuracy": 0.9066666666666666,
+        "sensitivity": 0.92,
+        "specificity": 0.8933333333333333,
+        "loss": 0.21318760204133633
+      },
+      {
+        "center": 3,
+        "n": 150,
+        "label0": 75,
+        "label1": 75,
+        "accuracy": 0.9333333333333333,
+        "sensitivity": 0.88,
+        "specificity": 0.9866666666666667,
+        "loss": 0.26806724969534135
+      },
+      {
+        "center": 4,
+        "n": 150,
+        "label0": 75,
+        "label1": 75,
+        "accuracy": 0.8866666666666667,
+        "sensitivity": 0.88,
+        "specificity": 0.8933333333333333,
+        "loss": 0.26323174247035314
+      }
+    ],
+    "groupdro7f": [
+      {
+        "center": 0,
+        "n": 150,
+        "label0": 75,
+        "label1": 75,
+        "accuracy": 0.9133333333333333,
+        "sensitivity": 0.8933333333333333,
+        "specificity": 0.9333333333333333,
+        "loss": 0.21789864142430573
+      },
+      {
+        "center": 3,
+        "n": 150,
+        "label0": 75,
+        "label1": 75,
+        "accuracy": 0.92,
+        "sensitivity": 0.8533333333333334,
+        "specificity": 0.9866666666666667,
+        "loss": 0.22441675543911382
+      },
+      {
+        "center": 4,
+        "n": 150,
+        "label0": 75,
+        "label1": 75,
+        "accuracy": 0.86,
+        "sensitivity": 0.8266666666666667,
+        "specificity": 0.8933333333333333,
+        "loss": 0.3368084291397508
+      }
+    ]
+  },
+  "fair_comparison": {
+    "delta_ood_auroc_gdro_minus_erm": 0.09485200000000005,
+    "delta_ood_auprc_gdro_minus_erm": 0.10733213224874061,
+    "delta_ood_default_sensitivity_gdro_minus_erm": 0.060000000000000005,
+    "erm_worst_center": {
+      "center": 3,
+      "n": 150,
+      "label0": 75,
+      "label1": 75,
+      "accuracy": 0.9333333333333333,
+      "sensitivity": 0.88,
+      "specificity": 0.9866666666666667,
+      "loss": 0.26806724969534135
+    },
+    "groupdro_worst_center": {
+      "center": 4,
+      "n": 150,
+      "label0": 75,
+      "label1": 75,
+      "accuracy": 0.86,
+      "sensitivity": 0.8266666666666667,
+      "specificity": 0.8933333333333333,
+      "loss": 0.3368084291397508
+    },
+    "delta_worst_center_loss_gdro_minus_erm": 0.06874117944440944,
+    "delta_worst_center_acc_gdro_minus_erm": -0.07333333333333336,
+    "fixedspec_gdro_ge_erm": "4/4",
+    "worst_center_improved": false,
+    "ood_ranking_improved": true,
+    "ood_auprc_improved": true,
+    "default_sensitivity_improved": true,
+    "fixedspec_improved": true,
+    "verdict": "retain",
+    "recommendation": "RETAIN GroupDRO (development): on the matched center-stratified data GroupDRO improved ood_val ranking over the matched ERM and also improved worst-center and/or matched fixed-specificity behavior. Next: calibration + candidate operating-point audit (still development-stage), gated."
+  },
+  "note": "DEVELOPMENT comparison on capped balanced subsets - NOT final performance. ood_val used for development-stage comparison only after id_val threshold selection. No calibration, no committed operating point. ood_test never read. Old plain/7A/7D/7E are reference-only (old confounded cache, not matched)."
+}

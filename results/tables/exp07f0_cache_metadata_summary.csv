@@ -1,0 +1,4 @@
+split,cache_file,exists,object_type,n_examples,expected_n,n_matches_expected,label_0_count,label_1_count,labels_finite_binary,images_present,has_center,has_patient,has_slide,has_node,has_image_id,has_x_coord,has_y_coord,distinct_center,distinct_patient,distinct_slide,load_error
+train,results/cache/balanced_train_pc1000_seed1337_shuf.pt,True,dict,2000,2000,True,1000,1000,True,True,True,True,True,True,True,True,True,2,8,11,
+id_val,results/cache/balanced_id_val_pc250_seed1337_shuf.pt,True,dict,500,500,True,250,250,True,True,True,True,True,True,True,True,True,2,8,11,
+ood_val,results/cache/balanced_ood_val_pc1000_seed1337_noshuf.pt,True,dict,2000,2000,True,1000,1000,True,True,True,True,True,True,True,True,True,1,8,10,

@@ -1,0 +1,135 @@
+{
+  "milestone": "authorized final evaluation prepared by 8I",
+  "ood_test_locked_until_authorized": true,
+  "authorization_confirmed": true,
+  "positive_class": 1,
+  "logical_split": "ood_test",
+  "hf_split": "test",
+  "required_center": 2,
+  "expected_rows": 85054,
+  "inference_attempt_counter": 1,
+  "raw_and_calibrated_reporting": true,
+  "ranking_score": "logit_1_minus_logit_0 (common monotonic score)",
+  "calibration_refit": false,
+  "threshold_selection_on_test": false,
+  "models": {
+    "groupdro": {
+      "name": "7F GroupDRO (authorized final primary)",
+      "checkpoint_sha256": "CE0DC65DC6106648F2ABB77C603746A1DB2B856F9672B01C2E8F540BEEAD8502",
+      "temperature": 2.974907,
+      "classification": {
+        "raw": {
+          "n": 85054,
+          "accuracy": 0.5337197545089002,
+          "balanced_accuracy": 0.5337197545089002,
+          "auroc": 0.6633704256200204,
+          "auprc": 0.63641261236421,
+          "sensitivity": 0.11056505278999224,
+          "specificity": 0.9568744562278082,
+          "precision": 0.7194002447980417,
+          "f1": 0.19167193200578847,
+          "tn": 40693,
+          "fp": 1834,
+          "fn": 37825,
+          "tp": 4702,
+          "threshold": 0.5,
+          "positive_class": 1,
+          "warnings": []
+        },
+        "calibrated": {
+          "n": 85054,
+          "accuracy": 0.5337197545089002,
+          "balanced_accuracy": 0.5337197545089002,
+          "auroc": 0.6633704256200204,
+          "auprc": 0.63641261236421,
+          "sensitivity": 0.11056505278999224,
+          "specificity": 0.9568744562278082,
+          "precision": 0.7194002447980417,
+          "f1": 0.19167193200578847,
+          "tn": 40693,
+          "fp": 1834,
+          "fn": 37825,
+          "tp": 4702,
+          "threshold": 0.5,
+          "positive_class": 1,
+          "warnings": []
+        }
+      },
+      "calibration": {
+        "raw": {
+          "n": 85054,
+          "ece": 0.4006439581474795,
+          "brier": 0.41233859378344173,
+          "nll": 1.9441627836686814,
+          "n_bins": 15
+        },
+        "calibrated": {
+          "n": 85054,
+          "ece": 0.2583399203510463,
+          "brier": 0.3096680541395694,
+          "nll": 0.8743126064429281,
+          "n_bins": 15
+        }
+      }
+    },
+    "centerstrat_erm": {
+      "name": "7F center-stratified ERM (authorized matched control)",
+      "checkpoint_sha256": "8BF990BE517A41AA74D111E0A4F4111A05A9FE416919261D979F2FD65AE974FF",
+      "temperature": 3.496293,
+      "classification": {
+        "raw": {
+          "n": 85054,
+          "accuracy": 0.5711547957768006,
+          "balanced_accuracy": 0.5711547957768006,
+          "auroc": 0.6984352121958427,
+          "auprc": 0.6556283801091156,
+          "sensitivity": 0.24107037881816257,
+          "specificity": 0.9012392127354386,
+          "precision": 0.7093827843897038,
+          "f1": 0.3598518752522859,
+          "tn": 38327,
+          "fp": 4200,
+          "fn": 32275,
+          "tp": 10252,
+          "threshold": 0.5,
+          "positive_class": 1,
+          "warnings": []
+        },
+        "calibrated": {
+          "n": 85054,
+          "accuracy": 0.5711547957768006,
+          "balanced_accuracy": 0.5711547957768006,
+          "auroc": 0.6984352121958427,
+          "auprc": 0.6556283801091156,
+          "sensitivity": 0.24107037881816257,
+          "specificity": 0.9012392127354386,
+          "precision": 0.7093827843897038,
+          "f1": 0.3598518752522859,
+          "tn": 38327,
+          "fp": 4200,
+          "fn": 32275,
+          "tp": 10252,
+          "threshold": 0.5,
+          "positive_class": 1,
+          "warnings": []
+        }
+      },
+      "calibration": {
+        "raw": {
+          "n": 85054,
+          "ece": 0.3084182197890404,
+          "brier": 0.3446598909605201,
+          "nll": 1.4183276475805955,
+          "n_bins": 15
+        },
+        "calibrated": {
+          "n": 85054,
+          "ece": 0.1489841758680231,
+          "brier": 0.2555235818479269,
+          "nll": 0.7130964662716416,
+          "n_bins": 15
+        }
+      }
+    }
+  }
+}

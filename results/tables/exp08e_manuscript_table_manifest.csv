@@ -1,0 +1,22 @@
+manuscript_item,artifact_path,source_milestone,recommended_location,main_or_supplement,status,caveat
+ID->OOD degradation table,results/tables/report_table_classification_shift.csv,6A,Results R1 (motivating degradation),Main,available,Development-stage capped-subset (id_val n=500 / ood_val n=2000); ood_test locked.
+Controlled overall metrics (GroupDRO vs matched ERM),results/tables/exp08b_overall_metrics.csv,8B,Results R2 (controlled DG),Main,available,Development-stage full dev splits; not final performance; ood_test unread.
+Per-center id_val metrics,results/tables/exp08b_id_val_per_center_metrics.csv,8B,Results R3 (per-center / worst-center),Main,available,Development-stage; worst center = center 4; ood_test unread.
+Candidate operating points (fixed spec / fixed sens),results/tables/exp08b_candidate_operating_points.csv,8B,Results R4 (candidate operating points),Supplement,available,CANDIDATE id_val-selected points; NOT committed clinical thresholds.
+Calibration comparison (raw vs calibrated),results/tables/exp08c_calibration_comparison.csv,8C,Results R5 (calibration),Main,available,Development-stage; temperature fit+eval on same ood_val (R7); argmax-invariant.
+Reliability summary (argmax-invariant),results/tables/exp08c_reliability_summary.csv,8C,Results R5 (calibration),Supplement,available,Development-stage; ranking metrics unchanged raw vs calibrated; ood_test locked.
+High-confidence FN comparison,results/tables/exp08c_high_confidence_fn_comparison.csv,8C,Results R6 (high-confidence FN),Main,available,Development-stage; total FN unchanged by calibration; patch-level only.
+Consolidated model comparison (6 models),results/tables/exp07h_consolidated_model_comparison.csv,7H,Results R2 (landscape),Main,available,Controlled 7F pair vs context-only baselines; capped subset; ood_test locked.
+Controlled DG comparison (7F ERM vs GroupDRO),results/tables/exp07h_controlled_dg_comparison.csv,7H,Results R2 (controlled DG),Main,available,Capped-subset controlled comparison; development-stage; ood_test locked.
+Context-vs-controlled warning table,results/tables/exp07h_context_vs_controlled_warning_table.csv,7H,Methods/Results (comparison-validity guard),Supplement,available,Old plain ERM / 7A / 7D / 7E are context-only; not controlled comparators.
+GroupDRO calibration summary (capped),results/tables/exp07h_groupdro_calibration_summary.csv,7H,Results R5 (calibration context),Supplement,available,Capped-subset calibration; superseded at full scale by 8C; ood_test locked.
+Reviewer risk update,results/tables/exp07h_reviewer_risk_update.csv,7H,Limitations / reviewer response,Supplement,available,R1/R4/R7 open; R3 reduced; development-stage.
+Claims-unlock table,results/tables/exp08d_claims_unlock_table.csv,8D,Discussion D8 / Limitations,Supplement,available,Defines what ood_test can and cannot unlock; ood_test still locked.
+ID->OOD degradation figure,results/figures/report_fig_domain_shift_bar.png,6A,Results R1 (Fig),Main,available,Development-stage capped-subset; ood_test locked.
+Calibration metrics figure,results/figures/report_fig_calibration_metrics.png,6A,Results R5 (Fig),Main,available,Development-stage; fit+eval same ood_val (R7).
+OOD AUROC/AUPRC model comparison figure,results/figures/exp07h_ood_auroc_auprc_model_comparison.png,7H,Results R2 (Fig),Main,available,Controlled 7F bars marked; context-only bars context; ood_test locked.
+Controlled GroupDRO gain figure,results/figures/exp07h_controlled_groupdro_gain.png,7H,Results R2 (Fig),Main,available,Capped-subset controlled gain; development-stage.
+Calibration ECE/Brier/NLL figure,results/figures/exp07h_calibration_ece_brier_nll.png,7H,Results R5 (Fig),Main,available,Development-stage; argmax-invariant.
+High-confidence FN reduction figure,results/figures/exp08c_high_confidence_fn_reduction.png,8C,Results R6 (Fig),Supplement,available,Development-stage; total FN unchanged by calibration.
+Risk-coverage (entropy) figure,results/figures/report_fig_risk_coverage_entropy.png,6A,Results (selective prediction),Main,available,Development-stage; abstention ceiling under shift; ood_test locked.
+Reserved final-test table/figure,LOCKED - not produced,reserved,Results R7 (placeholder),reserved,LOCKED / NOT RUN,No ood_test artifact exists; produced only after authorized single-shot run.

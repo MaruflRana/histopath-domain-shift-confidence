@@ -1,0 +1,32 @@
+{
+  "milestone": "7G",
+  "description": "Temperature scaling of the two matched 7F center-stratified models (center-strat ERM + GroupDRO) on their ood_val logits. Weights unchanged; ood_test never touched. Development result, NOT final.",
+  "fit_on": "ood_val logits (development-stage OOD calibration only)",
+  "argmax_invariant": true,
+  "models": {
+    "centerstrat_erm": {
+      "name": "center-strat ERM (7F)",
+      "temperature": 3.9239485263824463,
+      "nll_before": 3.485933303833008,
+      "nll_after": 1.0671908855438232,
+      "n_iter": 200,
+      "converged": false,
+      "n": 2000,
+      "calibrated_predictions_csv": "results/predictions/exp07g_7f_calibration/centerstrat_erm_ood_val_calibrated_predictions.csv"
+    },
+    "groupdro": {
+      "name": "GroupDRO (7F)",
+      "temperature": 3.6570000648498535,
+      "nll_before": 1.913863182067871,
+      "nll_after": 0.7908201217651367,
+      "n_iter": 200,
+      "converged": false,
+      "n": 2000,
+      "calibrated_predictions_csv": "results/predictions/exp07g_7f_calibration/groupdro_ood_val_calibrated_predictions.csv"
+    }
+  },
+  "min_temperature": 0.05,
+  "max_temperature": 10.0,
+  "temperature_init": 1.0,
+  "note": "DEVELOPMENT temperature scaling on capped balanced ood_val subset - NOT final performance. ood_test never read; no committed operating point."
+}

@@ -1,0 +1,15 @@
+# Core (versions validated in the project environment)
+# PyTorch is installed separately with the CUDA 12.8 wheel index:
+#   pip install torch==2.9.0+cu128 --index-url https://download.pytorch.org/whl/cu128
+torch==2.9.0+cu128
+
+# Hugging Face datasets (streaming loader for Camelyon17-WILDS)
+datasets==5.0.0
+
+# Data / numerics / plotting
+numpy>=1.26
+pandas>=2.0
+Pillow>=10.0
+matplotlib>=3.8
+pyyaml>=6.0
+tqdm>=4.66

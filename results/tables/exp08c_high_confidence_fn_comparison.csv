@@ -1,0 +1,13 @@
+model,model_key,variant,variant_key,confidence_threshold,n_high_confidence,high_confidence_errors,high_confidence_false_negatives,high_confidence_false_negative_rate,total_false_negatives,fraction_of_all_false_negatives_high_confidence
+7F GroupDRO (primary candidate),groupdro,raw,groupdro_raw,0.9,28316,4526,3922,0.13850826387907897,6271,0.6254185935257535
+7F GroupDRO (primary candidate),groupdro,raw,groupdro_raw,0.95,25999,3606,3131,0.12042770875802916,6271,0.49928241109870836
+7F GroupDRO (primary candidate),groupdro,raw,groupdro_raw,0.99,20296,1950,1679,0.08272566022861648,6271,0.2677403922819327
+7F GroupDRO (primary candidate),groupdro,calibrated,groupdro_calibrated,0.9,13353,684,533,0.03991612371751666,6271,0.08499441875298995
+7F GroupDRO (primary candidate),groupdro,calibrated,groupdro_calibrated,0.95,6517,153,82,0.01258247659966242,6271,0.013076064423536916
+7F GroupDRO (primary candidate),groupdro,calibrated,groupdro_calibrated,0.99,214,3,0,0.0,6271,0.0
+7F center-stratified ERM (matched control),centerstrat_erm,raw,centerstrat_erm_raw,0.9,29380,5964,5447,0.18539823008849557,6852,0.7949503794512551
+7F center-stratified ERM (matched control),centerstrat_erm,raw,centerstrat_erm_raw,0.95,27350,5367,4976,0.1819378427787934,6852,0.7262113251605371
+7F center-stratified ERM (matched control),centerstrat_erm,raw,centerstrat_erm_raw,0.99,22810,3994,3794,0.16633055677334502,6852,0.5537069468768243
+7F center-stratified ERM (matched control),centerstrat_erm,calibrated,centerstrat_erm_calibrated,0.9,14210,1736,1693,0.1191414496833216,6852,0.24708114419147695
+7F center-stratified ERM (matched control),centerstrat_erm,calibrated,centerstrat_erm_calibrated,0.95,7908,542,539,0.06815882650480526,6852,0.07866316403969643
+7F center-stratified ERM (matched control),centerstrat_erm,calibrated,centerstrat_erm_calibrated,0.99,896,5,5,0.005580357142857143,6852,0.0007297139521307647

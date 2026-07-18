@@ -1,0 +1,347 @@
+{
+  "milestone": "8C",
+  "description": "Full-development calibration + reliability audit of the two frozen 7F models (GroupDRO primary candidate + center-stratified ERM matched control) on the FULL ood_val from Milestone 8B. CSV/logit-only; no training/inference/weight-update; ood_test never read. Calibration fit+evaluated on the same ood_val => development reliability audit, NOT an independent-test calibration claim (R7 open).",
+  "positive_class": 1,
+  "n_ece_bins": 15,
+  "fair_comparison": "7F center-stratified ERM vs 7F GroupDRO - same sound 7F-1 cache",
+  "ood_val_n": 34904,
+  "models": {
+    "groupdro": {
+      "name": "7F GroupDRO (primary candidate)",
+      "temperature": 2.974907398223877,
+      "calibration": {
+        "raw": {
+          "n": 34904,
+          "ece": 0.15602302988441474,
+          "brier": 0.17820783706024299,
+          "nll": 0.7591490964497031,
+          "n_bins": 15
+        },
+        "calibrated": {
+          "n": 34904,
+          "ece": 0.03942447816695845,
+          "brier": 0.14582043238204634,
+          "nll": 0.44505721947326793,
+          "n_bins": 15
+        }
+      },
+      "classification": {
+        "raw": {
+          "n": 34904,
+          "accuracy": 0.7847238138895255,
+          "auroc": 0.8956091243936612,
+          "auprc": 0.8957947783716276,
+          "sensitivity": 0.6406715562686225,
+          "specificity": 0.9287760715104286,
+          "fn": 6271,
+          "fp": 1243,
+          "tn": 16209,
+          "tp": 11181
+        },
+        "calibrated": {
+          "n": 34904,
+          "accuracy": 0.7847238138895255,
+          "auroc": 0.8956090948440276,
+          "auprc": 0.8957921003897702,
+          "sensitivity": 0.6406715562686225,
+          "specificity": 0.9287760715104286,
+          "fn": 6271,
+          "fp": 1243,
+          "tn": 16209,
+          "tp": 11181
+        }
+      }
+    },
+    "centerstrat_erm": {
+      "name": "7F center-stratified ERM (matched control)",
+      "temperature": 3.496293306350708,
+      "calibration": {
+        "raw": {
+          "n": 34904,
+          "ece": 0.1829087550427397,
+          "brier": 0.20704918373595985,
+          "nll": 1.1910650056630852,
+          "n_bins": 15
+        },
+        "calibrated": {
+          "n": 34904,
+          "ece": 0.06953214379659593,
+          "brier": 0.17272121867576712,
+          "nll": 0.5320650774900768,
+          "n_bins": 15
+        }
+      },
+      "classification": {
+        "raw": {
+          "n": 34904,
+          "accuracy": 0.7674765069906028,
+          "auroc": 0.8672713836120831,
+          "auprc": 0.8757234698151578,
+          "sensitivity": 0.6073802429520971,
+          "specificity": 0.9275727710291084,
+          "fn": 6852,
+          "fp": 1264,
+          "tn": 16188,
+          "tp": 10600
+        },
+        "calibrated": {
+          "n": 34904,
+          "accuracy": 0.7674765069906028,
+          "auroc": 0.8672713934619609,
+          "auprc": 0.8757235066632654,
+          "sensitivity": 0.6073802429520971,
+          "specificity": 0.9275727710291084,
+          "fn": 6852,
+          "fp": 1264,
+          "tn": 16188,
+          "tp": 10600
+        }
+      }
+    }
+  },
+  "high_confidence_false_negatives": [
+    {
+      "model": "7F GroupDRO (primary candidate)",
+      "model_key": "groupdro",
+      "variant": "raw",
+      "variant_key": "groupdro_raw",
+      "confidence_threshold": 0.9,
+      "n_high_confidence": 28316,
+      "high_confidence_errors": 4526,
+      "high_confidence_false_negatives": 3922,
+      "high_confidence_false_negative_rate": 0.13850826387907897,
+      "total_false_negatives": 6271,
+      "fraction_of_all_false_negatives_high_confidence": 0.6254185935257535
+    },
+    {
+      "model": "7F GroupDRO (primary candidate)",
+      "model_key": "groupdro",
+      "variant": "raw",
+      "variant_key": "groupdro_raw",
+      "confidence_threshold": 0.95,
+      "n_high_confidence": 25999,
+      "high_confidence_errors": 3606,
+      "high_confidence_false_negatives": 3131,
+      "high_confidence_false_negative_rate": 0.12042770875802916,
+      "total_false_negatives": 6271,
+      "fraction_of_all_false_negatives_high_confidence": 0.49928241109870836
+    },
+    {
+      "model": "7F GroupDRO (primary candidate)",
+      "model_key": "groupdro",
+      "variant": "raw",
+      "variant_key": "groupdro_raw",
+      "confidence_threshold": 0.99,
+      "n_high_confidence": 20296,
+      "high_confidence_errors": 1950,
+      "high_confidence_false_negatives": 1679,
+      "high_confidence_false_negative_rate": 0.08272566022861648,
+      "total_false_negatives": 6271,
+      "fraction_of_all_false_negatives_high_confidence": 0.2677403922819327
+    },
+    {
+      "model": "7F GroupDRO (primary candidate)",
+      "model_key": "groupdro",
+      "variant": "calibrated",
+      "variant_key": "groupdro_calibrated",
+      "confidence_threshold": 0.9,
+      "n_high_confidence": 13353,
+      "high_confidence_errors": 684,
+      "high_confidence_false_negatives": 533,
+      "high_confidence_false_negative_rate": 0.03991612371751666,
+      "total_false_negatives": 6271,
+      "fraction_of_all_false_negatives_high_confidence": 0.08499441875298995
+    },
+    {
+      "model": "7F GroupDRO (primary candidate)",
+      "model_key": "groupdro",
+      "variant": "calibrated",
+      "variant_key": "groupdro_calibrated",
+      "confidence_threshold": 0.95,
+      "n_high_confidence": 6517,
+      "high_confidence_errors": 153,
+      "high_confidence_false_negatives": 82,
+      "high_confidence_false_negative_rate": 0.01258247659966242,
+      "total_false_negatives": 6271,
+      "fraction_of_all_false_negatives_high_confidence": 0.013076064423536916
+    },
+    {
+      "model": "7F GroupDRO (primary candidate)",
+      "model_key": "groupdro",
+      "variant": "calibrated",
+      "variant_key": "groupdro_calibrated",
+      "confidence_threshold": 0.99,
+      "n_high_confidence": 214,
+      "high_confidence_errors": 3,
+      "high_confidence_false_negatives": 0,
+      "high_confidence_false_negative_rate": 0.0,
+      "total_false_negatives": 6271,
+      "fraction_of_all_false_negatives_high_confidence": 0.0
+    },
+    {
+      "model": "7F center-stratified ERM (matched control)",
+      "model_key": "centerstrat_erm",
+      "variant": "raw",
+      "variant_key": "centerstrat_erm_raw",
+      "confidence_threshold": 0.9,
+      "n_high_confidence": 29380,
+      "high_confidence_errors": 5964,
+      "high_confidence_false_negatives": 5447,
+      "high_confidence_false_negative_rate": 0.18539823008849557,
+      "total_false_negatives": 6852,
+      "fraction_of_all_false_negatives_high_confidence": 0.7949503794512551
+    },
+    {
+      "model": "7F center-stratified ERM (matched control)",
+      "model_key": "centerstrat_erm",
+      "variant": "raw",
+      "variant_key": "centerstrat_erm_raw",
+      "confidence_threshold": 0.95,
+      "n_high_confidence": 27350,
+      "high_confidence_errors": 5367,
+      "high_confidence_false_negatives": 4976,
+      "high_confidence_false_negative_rate": 0.1819378427787934,
+      "total_false_negatives": 6852,
+      "fraction_of_all_false_negatives_high_confidence": 0.7262113251605371
+    },
+    {
+      "model": "7F center-stratified ERM (matched control)",
+      "model_key": "centerstrat_erm",
+      "variant": "raw",
+      "variant_key": "centerstrat_erm_raw",
+      "confidence_threshold": 0.99,
+      "n_high_confidence": 22810,
+      "high_confidence_errors": 3994,
+      "high_confidence_false_negatives": 3794,
+      "high_confidence_false_negative_rate": 0.16633055677334502,
+      "total_false_negatives": 6852,
+      "fraction_of_all_false_negatives_high_confidence": 0.5537069468768243
+    },
+    {
+      "model": "7F center-stratified ERM (matched control)",
+      "model_key": "centerstrat_erm",
+      "variant": "calibrated",
+      "variant_key": "centerstrat_erm_calibrated",
+      "confidence_threshold": 0.9,
+      "n_high_confidence": 14210,
+      "high_confidence_errors": 1736,
+      "high_confidence_false_negatives": 1693,
+      "high_confidence_false_negative_rate": 0.1191414496833216,
+      "total_false_negatives": 6852,
+      "fraction_of_all_false_negatives_high_confidence": 0.24708114419147695
+    },
+    {
+      "model": "7F center-stratified ERM (matched control)",
+      "model_key": "centerstrat_erm",
+      "variant": "calibrated",
+      "variant_key": "centerstrat_erm_calibrated",
+      "confidence_threshold": 0.95,
+      "n_high_confidence": 7908,
+      "high_confidence_errors": 542,
+      "high_confidence_false_negatives": 539,
+      "high_confidence_false_negative_rate": 0.06815882650480526,
+      "total_false_negatives": 6852,
+      "fraction_of_all_false_negatives_high_confidence": 0.07866316403969643
+    },
+    {
+      "model": "7F center-stratified ERM (matched control)",
+      "model_key": "centerstrat_erm",
+      "variant": "calibrated",
+      "variant_key": "centerstrat_erm_calibrated",
+      "confidence_threshold": 0.99,
+      "n_high_confidence": 896,
+      "high_confidence_errors": 5,
+      "high_confidence_false_negatives": 5,
+      "high_confidence_false_negative_rate": 0.005580357142857143,
+      "total_false_negatives": 6852,
+      "fraction_of_all_false_negatives_high_confidence": 0.0007297139521307647
+    }
+  ],
+  "reliability_summary": [
+    {
+      "model": "7F GroupDRO (primary candidate)",
+      "variant": "raw",
+      "ood_val_n": 34904,
+      "accuracy": 0.7847238138895255,
+      "AUROC": 0.8956091243936612,
+      "AUPRC": 0.8957947783716276,
+      "sensitivity": 0.6406715562686225,
+      "specificity": 0.9287760715104286,
+      "false_negatives": 6271,
+      "ECE": 0.15602302988441474,
+      "Brier": 0.17820783706024299,
+      "NLL": 0.7591490964497031,
+      "high_conf_FN_ge_0p90": 3922,
+      "high_conf_FN_ge_0p95": 3131,
+      "high_conf_FN_ge_0p99": 1679,
+      "interpretation_note": "Ranking/argmax metrics (accuracy/AUROC/AUPRC/sensitivity/specificity/FN) are unchanged by temperature scaling; calibration mainly improves ECE/Brier/NLL and reduces high-confidence missed tumors. Development-stage; ood_test locked."
+    },
+    {
+      "model": "7F GroupDRO (primary candidate)",
+      "variant": "calibrated",
+      "ood_val_n": 34904,
+      "accuracy": 0.7847238138895255,
+      "AUROC": 0.8956090948440276,
+      "AUPRC": 0.8957921003897702,
+      "sensitivity": 0.6406715562686225,
+      "specificity": 0.9287760715104286,
+      "false_negatives": 6271,
+      "ECE": 0.03942447816695845,
+      "Brier": 0.14582043238204634,
+      "NLL": 0.44505721947326793,
+      "high_conf_FN_ge_0p90": 533,
+      "high_conf_FN_ge_0p95": 82,
+      "high_conf_FN_ge_0p99": 0,
+      "interpretation_note": "Ranking/argmax metrics (accuracy/AUROC/AUPRC/sensitivity/specificity/FN) are unchanged by temperature scaling; calibration mainly improves ECE/Brier/NLL and reduces high-confidence missed tumors. Development-stage; ood_test locked."
+    },
+    {
+      "model": "7F center-stratified ERM (matched control)",
+      "variant": "raw",
+      "ood_val_n": 34904,
+      "accuracy": 0.7674765069906028,
+      "AUROC": 0.8672713836120831,
+      "AUPRC": 0.8757234698151578,
+      "sensitivity": 0.6073802429520971,
+      "specificity": 0.9275727710291084,
+      "false_negatives": 6852,
+      "ECE": 0.1829087550427397,
+      "Brier": 0.20704918373595985,
+      "NLL": 1.1910650056630852,
+      "high_conf_FN_ge_0p90": 5447,
+      "high_conf_FN_ge_0p95": 4976,
+      "high_conf_FN_ge_0p99": 3794,
+      "interpretation_note": "Ranking/argmax metrics (accuracy/AUROC/AUPRC/sensitivity/specificity/FN) are unchanged by temperature scaling; calibration mainly improves ECE/Brier/NLL and reduces high-confidence missed tumors. Development-stage; ood_test locked."
+    },
+    {
+      "model": "7F center-stratified ERM (matched control)",
+      "variant": "calibrated",
+      "ood_val_n": 34904,
+      "accuracy": 0.7674765069906028,
+      "AUROC": 0.8672713934619609,
+      "AUPRC": 0.8757235066632654,
+      "sensitivity": 0.6073802429520971,
+      "specificity": 0.9275727710291084,
+      "false_negatives": 6852,
+      "ECE": 0.06953214379659593,
+      "Brier": 0.17272121867576712,
+      "NLL": 0.5320650774900768,
+      "high_conf_FN_ge_0p90": 1693,
+      "high_conf_FN_ge_0p95": 539,
+      "high_conf_FN_ge_0p99": 5,
+      "interpretation_note": "Ranking/argmax metrics (accuracy/AUROC/AUPRC/sensitivity/specificity/FN) are unchanged by temperature scaling; calibration mainly improves ECE/Brier/NLL and reduces high-confidence missed tumors. Development-stage; ood_test locked."
+    }
+  ],
+  "interpretation": {
+    "calibration_helped_groupdro": true,
+    "calibration_helped_centerstrat_erm": true,
+    "calibration_helped_both": true,
+    "groupdro_ood_auroc": 0.8956091243936612,
+    "centerstrat_erm_ood_auroc": 0.8672713836120831,
+    "groupdro_ranking_better_than_erm": true,
+    "groupdro_le_erm_high_confidence_fn_all": true,
+    "groupdro_better_calibrated": true,
+    "groupdro_remains_better_after_8c": true,
+    "argmax_invariant": true
+  },
+  "note": "DEVELOPMENT analysis on the FULL ood_val split - NOT final performance. Calibration is development-stage (fit+evaluated on the same ood_val); NOT an independent-test calibration claim. No committed clinical/paper threshold. Fair comparison = 7F ERM vs 7F GroupDRO; old plain/7A/7D/7E context-only (not read here). ood_test never read."
+}

@@ -1,0 +1,13 @@
+model,variant,confidence_threshold,high_confidence_fn,total_fn,fraction_of_total_fn_high_confidence,delta_after_calibration,interpretation
+groupdro,raw,0.9,29775,37825,0.7871777924653007,,Raw-confidence baseline; total FN is fixed by hard predictions.
+groupdro,raw,0.95,25620,37825,0.6773298083278255,,Raw-confidence baseline; total FN is fixed by hard predictions.
+groupdro,raw,0.99,15485,37825,0.4093853271645737,,Raw-confidence baseline; total FN is fixed by hard predictions.
+groupdro,calibrated,0.9,5479,37825,0.14485128883013879,-24296.0,Calibration reduced confidently stated misses but total FN was unchanged.
+groupdro,calibrated,0.95,755,37825,0.01996034368803701,-24865.0,Calibration reduced confidently stated misses but total FN was unchanged.
+groupdro,calibrated,0.99,1,37825,2.6437541308658295e-05,-15484.0,Calibration reduced confidently stated misses but total FN was unchanged.
+centerstrat_erm,raw,0.9,19142,32275,0.5930906274206041,,Raw-confidence baseline; total FN is fixed by hard predictions.
+centerstrat_erm,raw,0.95,14626,32275,0.4531680867544539,,Raw-confidence baseline; total FN is fixed by hard predictions.
+centerstrat_erm,raw,0.99,7354,32275,0.2278543764523625,,Raw-confidence baseline; total FN is fixed by hard predictions.
+centerstrat_erm,calibrated,0.9,1828,32275,0.05663826491092177,-17314.0,Calibration reduced confidently stated misses but total FN was unchanged.
+centerstrat_erm,calibrated,0.95,513,32275,0.01589465530596437,-14113.0,Calibration reduced confidently stated misses but total FN was unchanged.
+centerstrat_erm,calibrated,0.99,0,32275,0.0,-7354.0,Calibration reduced confidently stated misses but total FN was unchanged.

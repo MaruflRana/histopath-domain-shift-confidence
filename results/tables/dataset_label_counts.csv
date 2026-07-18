@@ -1,0 +1,9 @@
+logical_split,label,label_name,count
+train,0,non_tumor,151046
+train,1,tumor,151390
+id_val,0,non_tumor,16952
+id_val,1,tumor,16608
+ood_val,0,non_tumor,17452
+ood_val,1,tumor,17452
+ood_test,0,non_tumor,42527
+ood_test,1,tumor,42527

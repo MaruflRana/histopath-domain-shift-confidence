@@ -1,0 +1,3 @@
+model,role,checkpoint_path,file_size_bytes,sha256,temperature,proposed_for_final_test,committed_after_authorization,notes
+groupdro,proposed_primary,results/checkpoints/exp07f_groupdro_resnet18/best.pt,134250665,CE0DC65DC6106648F2ABB77C603746A1DB2B856F9672B01C2E8F540BEEAD8502,2.974907,true,false,Frozen checkpoint artifact and path; proposed primary until explicit authorization.
+centerstrat_erm,proposed_matched_control,results/checkpoints/exp07f_centerstrat_erm_resnet18/best.pt,134250601,8BF990BE517A41AA74D111E0A4F4111A05A9FE416919261D979F2FD65AE974FF,3.496293,true,false,Frozen checkpoint artifact and path; proposed matched control until explicit authorization.

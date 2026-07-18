@@ -1,0 +1,4 @@
+variant,error_detection_auroc,aurc,n_error,fn
+id_val,0.926694,0.003558,18,14
+ood_val_raw,0.688263,0.219861,761,595
+ood_val_calibrated,0.688263,0.219861,761,595

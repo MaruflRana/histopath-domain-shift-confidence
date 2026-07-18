@@ -1,0 +1,546 @@
+{
+  "milestone": "8B",
+  "description": "Full/larger development-scale evaluation of the two frozen 7F models (primary GroupDRO candidate + matched center-stratified ERM control) on id_val {0,3,4} and ood_val {1}. Inference-only; CSV summary. Candidate operating points only (id_val-selected); no committed threshold.",
+  "positive_class": 1,
+  "default_threshold": 0.5,
+  "splits": {
+    "id_val": {
+      "expected_n": 33560,
+      "n": 33560,
+      "centers": [
+        0,
+        3,
+        4
+      ]
+    },
+    "ood_val": {
+      "expected_n": 34904,
+      "n": 34904,
+      "centers": [
+        1
+      ]
+    }
+  },
+  "overall_metrics": {
+    "groupdro_id_val": {
+      "n": 33560,
+      "accuracy": 0.8415673420738975,
+      "balanced_accuracy": 0.8407109732250917,
+      "auroc": 0.9322560765475407,
+      "auprc": 0.9321793201142423,
+      "sensitivity": 0.7571652215799615,
+      "specificity": 0.9242567248702218,
+      "precision": 0.907352622844361,
+      "f1": 0.8254833098106148,
+      "tn": 15668,
+      "fp": 1284,
+      "fn": 4033,
+      "tp": 12575
+    },
+    "groupdro_ood_val": {
+      "n": 34904,
+      "accuracy": 0.7847238138895255,
+      "balanced_accuracy": 0.7847238138895256,
+      "auroc": 0.8956091243936612,
+      "auprc": 0.8957947783716276,
+      "sensitivity": 0.6406715562686225,
+      "specificity": 0.9287760715104286,
+      "precision": 0.8999517063747585,
+      "f1": 0.7484937742669702,
+      "tn": 16209,
+      "fp": 1243,
+      "fn": 6271,
+      "tp": 11181
+    },
+    "centerstrat_erm_id_val": {
+      "n": 33560,
+      "accuracy": 0.7986591179976162,
+      "balanced_accuracy": 0.7974762812101902,
+      "auroc": 0.9085377911087047,
+      "auprc": 0.9130669693422481,
+      "sensitivity": 0.6820809248554913,
+      "specificity": 0.9128716375648891,
+      "precision": 0.8846544318625537,
+      "f1": 0.7702716485907593,
+      "tn": 15475,
+      "fp": 1477,
+      "fn": 5280,
+      "tp": 11328
+    },
+    "centerstrat_erm_ood_val": {
+      "n": 34904,
+      "accuracy": 0.7674765069906028,
+      "balanced_accuracy": 0.7674765069906028,
+      "auroc": 0.8672713836120831,
+      "auprc": 0.8757234698151578,
+      "sensitivity": 0.6073802429520971,
+      "specificity": 0.9275727710291084,
+      "precision": 0.8934592043155766,
+      "f1": 0.7231545913494338,
+      "tn": 16188,
+      "fp": 1264,
+      "fn": 6852,
+      "tp": 10600
+    }
+  },
+  "per_center_id_val": {
+    "groupdro": [
+      {
+        "center": 0,
+        "n": 6011,
+        "label0": 3032,
+        "label1": 2979,
+        "accuracy": 0.8552653468640825,
+        "auroc": 0.9338450729424352,
+        "auprc": 0.9449719577390954,
+        "sensitivity": 0.7667002349781806,
+        "specificity": 0.9422823218997362,
+        "loss": 0.4340651839623544
+      },
+      {
+        "center": 3,
+        "n": 12879,
+        "label0": 6483,
+        "label1": 6396,
+        "accuracy": 0.8790278748350027,
+        "auroc": 0.9603449687097163,
+        "auprc": 0.9651338878243699,
+        "sensitivity": 0.7851782363977486,
+        "specificity": 0.9716180780502853,
+        "loss": 0.3629179993848652
+      },
+      {
+        "center": 4,
+        "n": 14670,
+        "label0": 7437,
+        "label1": 7233,
+        "accuracy": 0.8030674846625767,
+        "auroc": 0.8979748240908222,
+        "auprc": 0.8748575457887731,
+        "sensitivity": 0.7284667496197982,
+        "specificity": 0.8756218905472637,
+        "loss": 0.4812249442600702
+      }
+    ],
+    "centerstrat_erm": [
+      {
+        "center": 0,
+        "n": 6011,
+        "label0": 3032,
+        "label1": 2979,
+        "accuracy": 0.8486108800532357,
+        "auroc": 0.9148666877465035,
+        "auprc": 0.9315822601838708,
+        "sensitivity": 0.7807989258140315,
+        "specificity": 0.9152374670184696,
+        "loss": 0.4645460095194956
+      },
+      {
+        "center": 3,
+        "n": 12879,
+        "label0": 6483,
+        "label1": 6396,
+        "accuracy": 0.8989828402826306,
+        "auroc": 0.9610872646476081,
+        "auprc": 0.9676863682020718,
+        "sensitivity": 0.8384928080050031,
+        "specificity": 0.9586611136819374,
+        "loss": 0.34565789226801585
+      },
+      {
+        "center": 4,
+        "n": 14670,
+        "label0": 7437,
+        "label1": 7233,
+        "accuracy": 0.6901158827539196,
+        "auroc": 0.8322561249599636,
+        "auprc": 0.8013575726653663,
+        "sensitivity": 0.5031107424305268,
+        "specificity": 0.871991394379454,
+        "loss": 0.6120940915738998
+      }
+    ]
+  },
+  "candidate_operating_points": [
+    {
+      "model": "groupdro",
+      "model_label": "7F GroupDRO (primary candidate)",
+      "target_type": "specificity",
+      "target_value": 0.8,
+      "threshold_selected_on_id_val": 0.1013885140419006,
+      "id_val_sensitivity": 0.9039017341040463,
+      "id_val_specificity": 0.8000235960358659,
+      "id_val_FN": 1596,
+      "id_val_FP": 3390,
+      "ood_val_sensitivity": 0.7742952097180839,
+      "ood_val_specificity": 0.8484987393994957,
+      "ood_val_FN": 3939,
+      "ood_val_FP": 2644,
+      "ood_val_predicted_positive_rate": 0.46289823515929407,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "groupdro",
+      "model_label": "7F GroupDRO (primary candidate)",
+      "target_type": "specificity",
+      "target_value": 0.85,
+      "threshold_selected_on_id_val": 0.1835944801568985,
+      "id_val_sensitivity": 0.8684971098265896,
+      "id_val_specificity": 0.850047192071732,
+      "id_val_FN": 2184,
+      "id_val_FP": 2542,
+      "ood_val_sensitivity": 0.7334975933990373,
+      "ood_val_specificity": 0.8817900527160211,
+      "ood_val_FN": 4651,
+      "ood_val_FP": 2063,
+      "ood_val_predicted_positive_rate": 0.4258537703415081,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "groupdro",
+      "model_label": "7F GroupDRO (primary candidate)",
+      "target_type": "specificity",
+      "target_value": 0.9,
+      "threshold_selected_on_id_val": 0.3583780527114868,
+      "id_val_sensitivity": 0.8049132947976878,
+      "id_val_specificity": 0.900011798017933,
+      "id_val_FN": 3240,
+      "id_val_FP": 1695,
+      "ood_val_sensitivity": 0.6753380701352281,
+      "ood_val_specificity": 0.912445564978226,
+      "ood_val_FN": 5666,
+      "ood_val_FP": 1528,
+      "ood_val_predicted_positive_rate": 0.381446252578501,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "groupdro",
+      "model_label": "7F GroupDRO (primary candidate)",
+      "target_type": "specificity",
+      "target_value": 0.95,
+      "threshold_selected_on_id_val": 0.6946145296096802,
+      "id_val_sensitivity": 0.6794918111753372,
+      "id_val_specificity": 0.950035394053799,
+      "id_val_FN": 5323,
+      "id_val_FP": 847,
+      "ood_val_sensitivity": 0.593570937428375,
+      "ood_val_specificity": 0.9452784781113912,
+      "ood_val_FN": 7093,
+      "ood_val_FP": 955,
+      "ood_val_predicted_positive_rate": 0.3241462296584919,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "groupdro",
+      "model_label": "7F GroupDRO (primary candidate)",
+      "target_type": "sensitivity",
+      "target_value": 0.8,
+      "threshold_selected_on_id_val": 0.3734750747680664,
+      "id_val_sensitivity": 0.8000361271676301,
+      "id_val_specificity": 0.9034922133081642,
+      "id_val_FN": 3321,
+      "id_val_FP": 1636,
+      "ood_val_sensitivity": 0.6712697685079074,
+      "ood_val_specificity": 0.9139926655970663,
+      "ood_val_FN": 5737,
+      "ood_val_FP": 1501,
+      "ood_val_predicted_positive_rate": 0.3786385514554206,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "groupdro",
+      "model_label": "7F GroupDRO (primary candidate)",
+      "target_type": "sensitivity",
+      "target_value": 0.9,
+      "threshold_selected_on_id_val": 0.1095319464802742,
+      "id_val_sensitivity": 0.9000481695568401,
+      "id_val_specificity": 0.8070434167059934,
+      "id_val_FN": 1660,
+      "id_val_FP": 3271,
+      "ood_val_sensitivity": 0.7693674077469631,
+      "ood_val_specificity": 0.8525097410038964,
+      "ood_val_FN": 4025,
+      "ood_val_FP": 2574,
+      "ood_val_predicted_positive_rate": 0.45842883337153334,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "groupdro",
+      "model_label": "7F GroupDRO (primary candidate)",
+      "target_type": "sensitivity",
+      "target_value": 0.95,
+      "threshold_selected_on_id_val": 0.0295121539384126,
+      "id_val_sensitivity": 0.95002408477842,
+      "id_val_specificity": 0.6778551203397829,
+      "id_val_FN": 830,
+      "id_val_FP": 5461,
+      "ood_val_sensitivity": 0.8513637405454962,
+      "ood_val_specificity": 0.7643823057529223,
+      "ood_val_FN": 2594,
+      "ood_val_FP": 4112,
+      "ood_val_predicted_positive_rate": 0.543490717396287,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "centerstrat_erm",
+      "model_label": "7F center-stratified ERM (matched control)",
+      "target_type": "specificity",
+      "target_value": 0.8,
+      "threshold_selected_on_id_val": 0.2029989957809448,
+      "id_val_sensitivity": 0.8501324662813102,
+      "id_val_specificity": 0.8000235960358659,
+      "id_val_FN": 2489,
+      "id_val_FP": 3390,
+      "ood_val_sensitivity": 0.6582053632821453,
+      "ood_val_specificity": 0.8790396516158606,
+      "ood_val_FN": 5965,
+      "ood_val_FP": 2111,
+      "ood_val_predicted_positive_rate": 0.38958285583314234,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "centerstrat_erm",
+      "model_label": "7F center-stratified ERM (matched control)",
+      "target_type": "specificity",
+      "target_value": 0.85,
+      "threshold_selected_on_id_val": 0.2972504794597626,
+      "id_val_sensitivity": 0.796242774566474,
+      "id_val_specificity": 0.850047192071732,
+      "id_val_FN": 3384,
+      "id_val_FP": 2542,
+      "ood_val_sensitivity": 0.6394109557643823,
+      "ood_val_specificity": 0.8993238597295439,
+      "ood_val_FN": 6293,
+      "ood_val_FP": 1757,
+      "ood_val_predicted_positive_rate": 0.37004354801741923,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "centerstrat_erm",
+      "model_label": "7F center-stratified ERM (matched control)",
+      "target_type": "specificity",
+      "target_value": 0.9,
+      "threshold_selected_on_id_val": 0.4505151808261871,
+      "id_val_sensitivity": 0.7089956647398844,
+      "id_val_specificity": 0.900011798017933,
+      "id_val_FN": 4833,
+      "id_val_FP": 1695,
+      "ood_val_sensitivity": 0.6142562457024983,
+      "ood_val_specificity": 0.9214989685995875,
+      "ood_val_FN": 6732,
+      "ood_val_FP": 1370,
+      "ood_val_predicted_positive_rate": 0.3463786385514554,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "centerstrat_erm",
+      "model_label": "7F center-stratified ERM (matched control)",
+      "target_type": "specificity",
+      "target_value": 0.95,
+      "threshold_selected_on_id_val": 0.6825078725814819,
+      "id_val_sensitivity": 0.5871868978805395,
+      "id_val_specificity": 0.950035394053799,
+      "id_val_FN": 6856,
+      "id_val_FP": 847,
+      "ood_val_sensitivity": 0.5744900297960119,
+      "ood_val_specificity": 0.9457941783176713,
+      "ood_val_FN": 7426,
+      "ood_val_FP": 946,
+      "ood_val_predicted_positive_rate": 0.3143479257391703,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "centerstrat_erm",
+      "model_label": "7F center-stratified ERM (matched control)",
+      "target_type": "sensitivity",
+      "target_value": 0.8,
+      "threshold_selected_on_id_val": 0.2905814945697784,
+      "id_val_sensitivity": 0.8000361271676301,
+      "id_val_specificity": 0.8463308164228409,
+      "id_val_FN": 3321,
+      "id_val_FP": 2605,
+      "ood_val_sensitivity": 0.6407288562915425,
+      "ood_val_specificity": 0.8977767591107036,
+      "ood_val_FN": 6270,
+      "ood_val_FP": 1784,
+      "ood_val_predicted_positive_rate": 0.37147604859041944,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "centerstrat_erm",
+      "model_label": "7F center-stratified ERM (matched control)",
+      "target_type": "sensitivity",
+      "target_value": 0.9,
+      "threshold_selected_on_id_val": 0.1177357584238052,
+      "id_val_sensitivity": 0.9000481695568401,
+      "id_val_specificity": 0.7278787163756489,
+      "id_val_FN": 1660,
+      "id_val_FP": 4613,
+      "ood_val_sensitivity": 0.681583772633509,
+      "ood_val_specificity": 0.8523951409580564,
+      "ood_val_FN": 5557,
+      "ood_val_FP": 2576,
+      "ood_val_predicted_positive_rate": 0.4145943158377263,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    },
+    {
+      "model": "centerstrat_erm",
+      "model_label": "7F center-stratified ERM (matched control)",
+      "target_type": "sensitivity",
+      "target_value": 0.95,
+      "threshold_selected_on_id_val": 0.0456100143492221,
+      "id_val_sensitivity": 0.95002408477842,
+      "id_val_specificity": 0.6031146767343086,
+      "id_val_FN": 830,
+      "id_val_FP": 6728,
+      "ood_val_sensitivity": 0.718771487508595,
+      "ood_val_specificity": 0.8039766215906486,
+      "ood_val_FN": 4908,
+      "ood_val_FP": 3421,
+      "ood_val_predicted_positive_rate": 0.45739743295897317,
+      "candidate_only_note": "CANDIDATE development operating point (id_val-selected); NOT a committed clinical threshold."
+    }
+  ],
+  "high_confidence_false_negatives": {
+    "groupdro_id_val": [
+      {
+        "confidence_threshold": 0.9,
+        "n_high_confidence": 24392,
+        "high_confidence_errors": 1972,
+        "high_confidence_false_negatives": 1584,
+        "high_confidence_false_negative_rate": 0.06493932436864545,
+        "total_false_negatives": 4033
+      },
+      {
+        "confidence_threshold": 0.95,
+        "n_high_confidence": 21436,
+        "high_confidence_errors": 1350,
+        "high_confidence_false_negatives": 1093,
+        "high_confidence_false_negative_rate": 0.05098899048329912,
+        "total_false_negatives": 4033
+      },
+      {
+        "confidence_threshold": 0.99,
+        "n_high_confidence": 14977,
+        "high_confidence_errors": 502,
+        "high_confidence_false_negatives": 423,
+        "high_confidence_false_negative_rate": 0.028243306403151498,
+        "total_false_negatives": 4033
+      }
+    ],
+    "groupdro_ood_val": [
+      {
+        "confidence_threshold": 0.9,
+        "n_high_confidence": 28316,
+        "high_confidence_errors": 4526,
+        "high_confidence_false_negatives": 3922,
+        "high_confidence_false_negative_rate": 0.13850826387907897,
+        "total_false_negatives": 6271
+      },
+      {
+        "confidence_threshold": 0.95,
+        "n_high_confidence": 25999,
+        "high_confidence_errors": 3606,
+        "high_confidence_false_negatives": 3131,
+        "high_confidence_false_negative_rate": 0.12042770875802916,
+        "total_false_negatives": 6271
+      },
+      {
+        "confidence_threshold": 0.99,
+        "n_high_confidence": 20296,
+        "high_confidence_errors": 1950,
+        "high_confidence_false_negatives": 1679,
+        "high_confidence_false_negative_rate": 0.08272566022861648,
+        "total_false_negatives": 6271
+      }
+    ],
+    "centerstrat_erm_id_val": [
+      {
+        "confidence_threshold": 0.9,
+        "n_high_confidence": 21370,
+        "high_confidence_errors": 1721,
+        "high_confidence_false_negatives": 1463,
+        "high_confidence_false_negative_rate": 0.06846045858680393,
+        "total_false_negatives": 5280
+      },
+      {
+        "confidence_threshold": 0.95,
+        "n_high_confidence": 18244,
+        "high_confidence_errors": 1006,
+        "high_confidence_false_negatives": 877,
+        "high_confidence_false_negative_rate": 0.048070598552948915,
+        "total_false_negatives": 5280
+      },
+      {
+        "confidence_threshold": 0.99,
+        "n_high_confidence": 12654,
+        "high_confidence_errors": 423,
+        "high_confidence_false_negatives": 398,
+        "high_confidence_false_negative_rate": 0.031452505136715665,
+        "total_false_negatives": 5280
+      }
+    ],
+    "centerstrat_erm_ood_val": [
+      {
+        "confidence_threshold": 0.9,
+        "n_high_confidence": 29380,
+        "high_confidence_errors": 5964,
+        "high_confidence_false_negatives": 5447,
+        "high_confidence_false_negative_rate": 0.18539823008849557,
+        "total_false_negatives": 6852
+      },
+      {
+        "confidence_threshold": 0.95,
+        "n_high_confidence": 27350,
+        "high_confidence_errors": 5367,
+        "high_confidence_false_negatives": 4976,
+        "high_confidence_false_negative_rate": 0.1819378427787934,
+        "total_false_negatives": 6852
+      },
+      {
+        "confidence_threshold": 0.99,
+        "n_high_confidence": 22810,
+        "high_confidence_errors": 3994,
+        "high_confidence_false_negatives": 3794,
+        "high_confidence_false_negative_rate": 0.16633055677334502,
+        "total_false_negatives": 6852
+      }
+    ]
+  },
+  "controlled_comparison": {
+    "delta_ood_auroc_gdro_minus_erm": 0.028337740781578136,
+    "delta_ood_auprc_gdro_minus_erm": 0.02007130855646977,
+    "delta_ood_default_sensitivity_gdro_minus_erm": 0.03329131331652535,
+    "fixedspec_gdro_ge_erm": "4/4",
+    "ood_ranking_better": true,
+    "fixedspec_better": true,
+    "groupdro_beats_matched_erm_full_scale": true,
+    "worst_center_id_val": {
+      "groupdro": {
+        "center": 4,
+        "n": 14670,
+        "label0": 7437,
+        "label1": 7233,
+        "accuracy": 0.8030674846625767,
+        "auroc": 0.8979748240908222,
+        "auprc": 0.8748575457887731,
+        "sensitivity": 0.7284667496197982,
+        "specificity": 0.8756218905472637,
+        "loss": 0.4812249442600702
+      },
+      "centerstrat_erm": {
+        "center": 4,
+        "n": 14670,
+        "label0": 7437,
+        "label1": 7233,
+        "accuracy": 0.6901158827539196,
+        "auroc": 0.8322561249599636,
+        "auprc": 0.8013575726653663,
+        "sensitivity": 0.5031107424305268,
+        "specificity": 0.871991394379454,
+        "loss": 0.6120940915738998
+      }
+    }
+  },
+  "note": "DEVELOPMENT-stage evaluation on full/larger development splits - NOT final performance. ood_val used for development-stage OOD analysis only. No calibration fitted, no MC-dropout/ensemble/CORAL/DANN, no committed operating point. ood_test never read."
+}

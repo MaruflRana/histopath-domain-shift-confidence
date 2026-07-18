@@ -1,0 +1,3 @@
+split,n,accuracy,balanced_accuracy,auroc,auprc,sensitivity,specificity,precision,f1,tn,fp,fn,tp,threshold,positive_class
+train,2000,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1000,0,0,1000,0.5,1
+id_val,500,0.964,0.964,0.993264,0.994314468974054,0.944,0.984,0.9833333333333333,0.9632653061224489,246,4,14,236,0.5,1

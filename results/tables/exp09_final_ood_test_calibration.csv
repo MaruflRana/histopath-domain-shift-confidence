@@ -1,0 +1,5 @@
+model,model_key,model_label,variant,temperature,n,ece,brier,nll,n_bins
+groupdro,groupdro,7F GroupDRO (authorized final primary),raw,1.0,85054,0.4006439581474795,0.41233859378344173,1.9441627836686814,15
+groupdro,groupdro,7F GroupDRO (authorized final primary),calibrated,2.974907,85054,0.2583399203510463,0.3096680541395694,0.8743126064429281,15
+centerstrat_erm,centerstrat_erm,7F center-stratified ERM (authorized matched control),raw,1.0,85054,0.3084182197890404,0.3446598909605201,1.4183276475805955,15
+centerstrat_erm,centerstrat_erm,7F center-stratified ERM (authorized matched control),calibrated,3.496293,85054,0.1489841758680231,0.2555235818479269,0.7130964662716416,15

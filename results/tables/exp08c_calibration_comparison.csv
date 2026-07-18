@@ -1,0 +1,5 @@
+model,model_key,variant,temperature,ece,brier,nll
+7F GroupDRO (primary candidate),groupdro,raw,,0.15602302988441474,0.17820783706024299,0.7591490964497031
+7F GroupDRO (primary candidate),groupdro,calibrated,2.974907398223877,0.03942447816695845,0.14582043238204634,0.44505721947326793
+7F center-stratified ERM (matched control),centerstrat_erm,raw,,0.1829087550427397,0.20704918373595985,1.1910650056630852
+7F center-stratified ERM (matched control),centerstrat_erm,calibrated,3.496293306350708,0.06953214379659593,0.17272121867576712,0.5320650774900768

@@ -1,0 +1,17 @@
+item_checked,protocol_value,manuscript_value,status,action_needed
+primary model,7F GroupDRO-by-center,7F GroupDRO-by-center (primary candidate),match,none
+matched control,7F center-stratified ERM,7F center-stratified ERM (matched control),match,none
+primary checkpoint,results/checkpoints/exp07f_groupdro_resnet18/best.pt,same by reference (Methods M8 defers to frozen protocol),match,none
+control checkpoint,results/checkpoints/exp07f_centerstrat_erm_resnet18/best.pt,same by reference (Methods M8 defers to frozen protocol),match,none
+calibration policy,report both raw + calibrated; frozen 8C T; never refit on ood_test,development-stage temperature scaling; pre-frozen T applied not refit; R7 caveat,match,none
+GroupDRO temperature,2.974907,2.974907,match,none
+ERM temperature,3.496293,3.496293,match,none
+threshold policy,no single final clinical threshold; id_val-selected candidate families only,candidate id_val-selected operating points; none committed (Methods M6),match,none
+fixed-specificity targets,0.80/0.85/0.90/0.95,0.80/0.85/0.90/0.95,match,none
+fixed-sensitivity targets,0.80/0.90/0.95,0.80/0.90/0.95,match,none
+ood_val role,development-only OOD decisions; never final reporting,development-only (center 1); never training/final reporting (Methods M1),match,none
+ood_test role,reserved LOCKED single one-time run after authorization; center 2 n=85054,reserved LOCKED and unread; §10/R7 placeholder,match,none
+final-test results placeholder,outputs specified but NOT produced (schema only),§10 / R7 LOCKED-NOT RUN; contains no numbers,match,none
+clinical readiness claim,FORBIDDEN (F1),absent; disclaimed in Discussion D4/D8,match,none
+independent-test calibration claim,FORBIDDEN (R7 open),absent; only narrow 'improves calibration on this subset'; R7 disclosed,match,none
+old plain ERM comparison claim,FORBIDDEN controlled claim (F6/F-7); context-only,old plain ERM flagged context-only; not a controlled comparator (Discussion D2),match,none

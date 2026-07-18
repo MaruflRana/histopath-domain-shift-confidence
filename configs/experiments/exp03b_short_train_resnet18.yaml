@@ -1,0 +1,35 @@
+# Milestone 3B — short, controlled training run (ResNet18).
+# NOT full training and NOT a paper result. Uses capped BALANCED subsets of
+# train (for training) and id_val (for validation sanity) only. OOD splits are
+# never touched. No checkpointing. See PROJECT_PROTOCOL.md for locked usage rules.
+
+model:
+  backbone_name: resnet18
+  pretrained: false
+  num_classes: 2
+
+data:
+  train_per_class: 128      # 128 label-0 + 128 label-1 = 256 train examples
+  id_val_per_class: 64      # 64 label-0 + 64 label-1  = 128 id_val examples
+  batch_size: 16
+  num_workers: 0
+  # Milestone 3C hardening: bound the label-ordered scan and interleave labels.
+  # The train label-0 (non-tumor) block begins ~151k into the HF stream, so the
+  # one-time build must be allowed to scan past it; after the first run the balanced
+  # subset is cached to results/cache/ and reused instantly (no re-scan/re-download).
+  max_scan_train: 200000
+  max_scan_id_val: 30000
+  progress_every: 5000
+  shuffle_collected: true
+  use_cache: true
+
+training:
+  epochs: 3
+  optimizer: adamw
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  seed: 1337
+
+output:
+  log_csv: results/logs/short_train_resnet18_log.csv
+  report_txt: results/logs/short_train_resnet18_report.txt

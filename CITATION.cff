@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software or its public aggregate evidence, please cite it using this metadata."
+title: "When Development Gains Do Not Transfer: Confidence-Aware Tumor Detection Under Reserved-Hospital Shift"
+type: software
+authors:
+  - given-names: "Jishan Islam"
+    family-names: "Maruf"
+    email: "jishanislammaruf62@gmail.com"
+repository-code: "https://github.com/MaruflRana/histopath-domain-shift-confidence"
